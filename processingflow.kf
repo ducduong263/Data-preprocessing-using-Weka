@@ -1,0 +1,420 @@
+{
+	"flow_name" : "processingflowfinal",
+	"steps" : [
+		{
+			"class" : "weka.knowledgeflow.steps.Filter",
+			"properties" : {
+				"filter" : {
+					"type" : "optionHandler",
+					"class" : "weka.filters.unsupervised.attribute.Remove",
+					"options" : "-R 1,4,14,15"
+				},
+				"name" : "Remove"
+			},
+			"connections" : {
+				"dataSet" : [
+					"ReplaceMissingValues"
+				]
+			},
+			"coordinates" : "353,157"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Filter",
+			"properties" : {
+				"filter" : {
+					"type" : "optionHandler",
+					"class" : "weka.filters.unsupervised.attribute.ReplaceMissingValues",
+					"options" : ""
+				},
+				"name" : "ReplaceMissingValues"
+			},
+			"connections" : {
+				"dataSet" : [
+					"InterquartileRange"
+				]
+			},
+			"coordinates" : "578,159"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Filter",
+			"properties" : {
+				"filter" : {
+					"type" : "optionHandler",
+					"class" : "weka.filters.unsupervised.attribute.InterquartileRange",
+					"options" : "-R first-last -O 1.5 -E 6.0"
+				},
+				"name" : "InterquartileRange"
+			},
+			"connections" : {
+				"dataSet" : [
+					"RemoveWithValues"
+				]
+			},
+			"coordinates" : "782,157"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Filter",
+			"properties" : {
+				"filter" : {
+					"type" : "optionHandler",
+					"class" : "weka.filters.unsupervised.attribute.Remove",
+					"options" : "-R 13,14"
+				},
+				"name" : "Remove2"
+			},
+			"connections" : {
+				"dataSet" : [
+					"Normalize"
+				]
+			},
+			"coordinates" : "1232,158"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Filter",
+			"properties" : {
+				"filter" : {
+					"type" : "optionHandler",
+					"class" : "weka.filters.unsupervised.instance.RemoveWithValues",
+					"options" : "-S 0.0 -C 13 -L 2"
+				},
+				"name" : "RemoveWithValues"
+			},
+			"connections" : {
+				"dataSet" : [
+					"Remove2"
+				]
+			},
+			"coordinates" : "994,158"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Filter",
+			"properties" : {
+				"filter" : {
+					"type" : "optionHandler",
+					"class" : "weka.filters.supervised.instance.SMOTE",
+					"options" : "-C 2 -K 5 -P 100.0 -S 1"
+				},
+				"name" : "SMOTE"
+			},
+			"connections" : {
+				"dataSet" : [
+					"SMOTE2"
+				]
+			},
+			"coordinates" : "782,285"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Filter",
+			"properties" : {
+				"filter" : {
+					"type" : "optionHandler",
+					"class" : "weka.filters.supervised.instance.SMOTE",
+					"options" : "-C 3 -K 5 -P 530.0 -S 1"
+				},
+				"name" : "SMOTE2"
+			},
+			"connections" : {
+				"dataSet" : [
+					"SMOTE3"
+				]
+			},
+			"coordinates" : "577,285"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Filter",
+			"properties" : {
+				"filter" : {
+					"type" : "optionHandler",
+					"class" : "weka.filters.supervised.instance.SMOTE",
+					"options" : "-C 4 -K 5 -P 530.0 -S 1"
+				},
+				"name" : "SMOTE3"
+			},
+			"connections" : {
+				"dataSet" : [
+					"SMOTE4"
+				]
+			},
+			"coordinates" : "353,285"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Filter",
+			"properties" : {
+				"filter" : {
+					"type" : "optionHandler",
+					"class" : "weka.filters.supervised.instance.SMOTE",
+					"options" : "-C 5 -K 5 -P 2262.5 -S 1"
+				},
+				"name" : "SMOTE4"
+			},
+			"connections" : {
+				"dataSet" : [
+					"CSVSaver",
+					"ArffSaver",
+					"CrossValidationFoldMaker"
+				]
+			},
+			"coordinates" : "174,286"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Filter",
+			"properties" : {
+				"filter" : {
+					"type" : "optionHandler",
+					"class" : "weka.filters.unsupervised.attribute.NumericToNominal",
+					"options" : "-R last"
+				},
+				"name" : "NumericToNominal"
+			},
+			"connections" : {
+				"dataSet" : [
+					"SMOTE"
+				]
+			},
+			"coordinates" : "996,285"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Filter",
+			"properties" : {
+				"filter" : {
+					"type" : "optionHandler",
+					"class" : "weka.filters.unsupervised.attribute.Normalize",
+					"options" : "-S 1.0 -T 0.0"
+				},
+				"name" : "Normalize"
+			},
+			"connections" : {
+				"dataSet" : [
+					"NumericToNominal"
+				]
+			},
+			"coordinates" : "1233,285"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ClassifierPerformanceEvaluator",
+			"properties" : {
+				"collectPredictionsForVisAndAUC" : true,
+				"costMatrixString" : "",
+				"errorPlotPointSizeProportionalToMargin" : false,
+				"evaluateWithRespectToCosts" : false,
+				"evaluationMetricsToOutput" : "Correct,Incorrect,Kappa,Total cost,Average cost,KB relative,KB information,Correlation,Complexity 0,Complexity scheme,Complexity improvement,MAE,RMSE,RAE,RRSE,TP rate,FP rate,Precision,Recall,F-measure,MCC,ROC area,PRC area",
+				"name" : "ClassifierPerformanceEvaluator",
+				"outputConfusionMatrix" : true,
+				"outputEntropyMetrics" : false,
+				"outputPerClassStats" : true
+			},
+			"connections" : {
+				"text" : [
+					"KQ phan lop sau khi tien xu ly"
+				]
+			},
+			"coordinates" : "781,430"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Classifier",
+			"properties" : {
+				"classifier" : {
+					"type" : "optionHandler",
+					"class" : "weka.classifiers.trees.RandomForest",
+					"options" : "-P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1"
+				},
+				"loadClassifierFileName" : "",
+				"name" : "RandomForest",
+				"resetIncrementalClassifier" : false,
+				"updateIncrementalClassifier" : true
+			},
+			"connections" : {
+				"batchClassifier" : [
+					"ClassifierPerformanceEvaluator"
+				]
+			},
+			"coordinates" : "578,431"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Saver",
+			"properties" : {
+				"name" : "ArffSaver",
+				"relationNameForFilename" : false,
+				"saver" : {
+					"type" : "saver",
+					"class" : "weka.core.converters.ArffSaver",
+					"filePath" : "",
+					"dir" : "D:/Data Minning/ND",
+					"prefix" : "OutputData",
+					"useRelativePath" : false,
+					"options" : "-decimal 6"
+				}
+			},
+			"connections" : {
+			},
+			"coordinates" : "13,403"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Saver",
+			"properties" : {
+				"name" : "CSVSaver",
+				"relationNameForFilename" : false,
+				"saver" : {
+					"type" : "saver",
+					"class" : "weka.core.converters.CSVSaver",
+					"filePath" : "",
+					"dir" : "D:/Data Minning/ND",
+					"prefix" : "OutputData",
+					"useRelativePath" : false,
+					"options" : "-F , -M ? -decimal 6"
+				}
+			},
+			"connections" : {
+			},
+			"coordinates" : "13,285"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.CrossValidationFoldMaker",
+			"properties" : {
+				"name" : "CrossValidationFoldMaker",
+				"numFolds" : "10",
+				"preserveOrder" : false,
+				"seed" : "1"
+			},
+			"connections" : {
+				"trainingSet" : [
+					"RandomForest"
+				],
+				"testSet" : [
+					"RandomForest"
+				]
+			},
+			"coordinates" : "351,431"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Filter",
+			"properties" : {
+				"filter" : {
+					"type" : "optionHandler",
+					"class" : "weka.filters.unsupervised.attribute.NumericToNominal",
+					"options" : "-R last"
+				},
+				"name" : "NumericToNominal2"
+			},
+			"connections" : {
+				"dataSet" : [
+					"CrossValidationFoldMaker2"
+				]
+			},
+			"coordinates" : "349,43"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.CrossValidationFoldMaker",
+			"properties" : {
+				"name" : "CrossValidationFoldMaker2",
+				"numFolds" : "10",
+				"preserveOrder" : false,
+				"seed" : "1"
+			},
+			"connections" : {
+				"trainingSet" : [
+					"RandomForest2"
+				],
+				"testSet" : [
+					"RandomForest2"
+				]
+			},
+			"coordinates" : "575,42"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Classifier",
+			"properties" : {
+				"classifier" : {
+					"type" : "optionHandler",
+					"class" : "weka.classifiers.trees.RandomForest",
+					"options" : "-P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1"
+				},
+				"loadClassifierFileName" : "",
+				"name" : "RandomForest2",
+				"resetIncrementalClassifier" : false,
+				"updateIncrementalClassifier" : true
+			},
+			"connections" : {
+				"batchClassifier" : [
+					"ClassifierPerformanceEvaluator2"
+				]
+			},
+			"coordinates" : "784,42"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ClassifierPerformanceEvaluator",
+			"properties" : {
+				"collectPredictionsForVisAndAUC" : true,
+				"costMatrixString" : "",
+				"errorPlotPointSizeProportionalToMargin" : false,
+				"evaluateWithRespectToCosts" : false,
+				"evaluationMetricsToOutput" : "Correct,Incorrect,Kappa,Total cost,Average cost,KB relative,KB information,Correlation,Complexity 0,Complexity scheme,Complexity improvement,MAE,RMSE,RAE,RRSE,TP rate,FP rate,Precision,Recall,F-measure,MCC,ROC area,PRC area",
+				"name" : "ClassifierPerformanceEvaluator2",
+				"outputConfusionMatrix" : true,
+				"outputEntropyMetrics" : false,
+				"outputPerClassStats" : true
+			},
+			"connections" : {
+				"text" : [
+					"KQ phan lop trc tien xu ly"
+				]
+			},
+			"coordinates" : "994,41"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Loader",
+			"properties" : {
+				"loader" : {
+					"type" : "loader",
+					"class" : "weka.core.converters.CSVLoader",
+					"filePath" : "D:/Data Minning/ND/heart_disease_uci.csv",
+					"useRelativePath" : false,
+					"options" : "-format \"yyyy-MM-dd\\'T\\'HH:mm:ss\" -M ? -B 100 -E \"\\\",\\'\" -F ,"
+				},
+				"name" : "CSVLoader"
+			},
+			"connections" : {
+				"dataSet" : [
+					"ClassAssigner"
+				]
+			},
+			"coordinates" : "12,159"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Filter",
+			"properties" : {
+				"filter" : {
+					"type" : "optionHandler",
+					"class" : "weka.filters.unsupervised.attribute.ClassAssigner",
+					"options" : "-C last"
+				},
+				"name" : "ClassAssigner"
+			},
+			"connections" : {
+				"dataSet" : [
+					"NumericToNominal2",
+					"Remove"
+				]
+			},
+			"coordinates" : "173,159"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.TextViewer",
+			"properties" : {
+				"name" : "KQ phan lop trc tien xu ly"
+			},
+			"connections" : {
+			},
+			"coordinates" : "1222,39"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.TextViewer",
+			"properties" : {
+				"name" : "KQ phan lop sau khi tien xu ly"
+			},
+			"connections" : {
+			},
+			"coordinates" : "993,429"
+		}
+	]
+}

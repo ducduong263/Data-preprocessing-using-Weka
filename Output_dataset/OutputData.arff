@@ -1,0 +1,1904 @@
+@relation 'heart_disease_uci-weka.filters.unsupervised.attribute.ClassAssigner-Clast-weka.filters.unsupervised.attribute.Remove-R1,4,14,15-weka.filters.unsupervised.attribute.ReplaceMissingValues-weka.filters.unsupervised.attribute.InterquartileRange-Rfirst-last-O1.5-E6.0-weka.filters.unsupervised.instance.RemoveWithValues-S0.0-C13-L2-weka.filters.unsupervised.attribute.Remove-R13,14-weka.filters.unsupervised.attribute.Normalize-S1.0-T0.0-weka.filters.unsupervised.attribute.NumericToNominal-Rlast-weka.filters.supervised.instance.SMOTE-C2-K5-P100.0-S1-weka.filters.supervised.instance.SMOTE-C3-K5-P530.0-S1-weka.filters.supervised.instance.SMOTE-C4-K5-P530.0-S1-weka.filters.supervised.instance.SMOTE-C5-K5-P2262.5-S1'
+
+@attribute age numeric
+@attribute sex {Male,Female}
+@attribute cp {'typical angina',asymptomatic,non-anginal,'atypical angina'}
+@attribute trestbps numeric
+@attribute chol numeric
+@attribute fbs {TRUE,FALSE}
+@attribute restecg {'lv hypertrophy',normal,'st-t abnormality'}
+@attribute thalch numeric
+@attribute exang {FALSE,TRUE}
+@attribute oldpeak numeric
+@attribute slope {downsloping,flat,upsloping}
+@attribute num {0,1,2,3,4}
+
+@data
+0.714286,Male,'typical angina',0.679487,0.478964,TRUE,'lv hypertrophy',0.603053,FALSE,0.638889,downsloping,0
+0.795918,Male,asymptomatic,0.871795,0.650485,FALSE,'lv hypertrophy',0.282443,TRUE,0.416667,flat,2
+0.795918,Male,asymptomatic,0.358974,0.466019,FALSE,'lv hypertrophy',0.442748,TRUE,0.722222,flat,1
+0.183673,Male,non-anginal,0.487179,0.533981,FALSE,normal,0.885496,FALSE,0.972222,downsloping,0
+0.265306,Female,'atypical angina',0.487179,0.385113,FALSE,'lv hypertrophy',0.770992,FALSE,0.388889,upsloping,0
+0.571429,Male,'atypical angina',0.358974,0.488673,FALSE,normal,0.816794,FALSE,0.222222,upsloping,0
+0.693878,Female,asymptomatic,0.615385,0.592233,FALSE,'lv hypertrophy',0.679389,FALSE,1,downsloping,3
+0.591837,Female,asymptomatic,0.358974,0.87055,FALSE,normal,0.70229,TRUE,0.166667,upsloping,0
+0.714286,Male,asymptomatic,0.487179,0.546926,FALSE,'lv hypertrophy',0.580153,FALSE,0.388889,flat,2
+0.510204,Male,asymptomatic,0.615385,0.381877,TRUE,'lv hypertrophy',0.641221,TRUE,0.861111,downsloping,1
+0.591837,Male,asymptomatic,0.615385,0.346278,FALSE,normal,0.587786,FALSE,0.111111,flat,0
+0.571429,Female,'atypical angina',0.615385,0.676375,FALSE,'lv hypertrophy',0.625954,FALSE,0.361111,flat,0
+0.571429,Male,non-anginal,0.487179,0.553398,TRUE,'lv hypertrophy',0.541985,TRUE,0.166667,flat,2
+0.326531,Male,'atypical angina',0.358974,0.576052,FALSE,normal,0.778626,FALSE,0,upsloping,0
+0.591837,Male,non-anginal,0.74359,0.268608,FALSE,normal,0.78626,FALSE,0.444444,upsloping,0
+0.408163,Male,'atypical angina',0.230769,0.466019,FALSE,normal,0.740458,FALSE,0.277778,downsloping,1
+0.530612,Male,asymptomatic,0.615385,0.498382,FALSE,normal,0.679389,FALSE,0.333333,upsloping,0
+0.408163,Female,non-anginal,0.487179,0.614887,FALSE,normal,0.519084,FALSE,0.055556,upsloping,0
+0.428571,Male,'atypical angina',0.487179,0.585761,FALSE,normal,0.763359,FALSE,0.166667,upsloping,0
+0.734694,Male,'typical angina',0.230769,0.407767,FALSE,'lv hypertrophy',0.557252,TRUE,0.5,flat,0
+0.612245,Female,'typical angina',0.74359,0.640777,TRUE,'lv hypertrophy',0.694656,FALSE,0.277778,upsloping,0
+0.612245,Male,'atypical angina',0.358974,0.644013,FALSE,'lv hypertrophy',0.679389,FALSE,0.5,flat,1
+0.612245,Male,non-anginal,0.512821,0.449838,FALSE,'lv hypertrophy',0.778626,FALSE,0.888889,upsloping,3
+0.653061,Male,asymptomatic,0.487179,0.391586,FALSE,'lv hypertrophy',0.465649,TRUE,0.666667,flat,4
+0.44898,Female,non-anginal,0.358974,0.433657,FALSE,normal,0.664122,FALSE,0.444444,flat,0
+0.612245,Female,non-anginal,0.358974,0.825243,FALSE,normal,0.770992,FALSE,0,upsloping,0
+0.77551,Female,'typical angina',0.74359,0.456311,FALSE,normal,0.328244,FALSE,0.722222,downsloping,0
+0.306122,Male,asymptomatic,0.74359,0.524272,FALSE,normal,0.763359,FALSE,0.416667,upsloping,0
+0.244898,Male,asymptomatic,0.230769,0.265372,FALSE,'lv hypertrophy',0.328244,TRUE,0.555556,flat,3
+0.836735,Female,'typical angina',0.615385,0.498382,FALSE,normal,0.610687,FALSE,0.5,upsloping,0
+0.653061,Male,asymptomatic,0.320513,0.469256,TRUE,normal,0.679389,TRUE,0.388889,upsloping,2
+0.734694,Male,non-anginal,0.615385,0.809061,FALSE,normal,0.664122,FALSE,0,upsloping,1
+0.632653,Male,asymptomatic,0.551282,0.482201,FALSE,normal,0.687023,FALSE,0.138889,flat,0
+0.326531,Male,non-anginal,0.487179,0.478964,FALSE,normal,0.824427,TRUE,0.111111,upsloping,0
+0.285714,Male,asymptomatic,0.615385,0.456311,FALSE,normal,0.816794,FALSE,0,upsloping,0
+0.306122,Male,asymptomatic,0.358974,0.297735,FALSE,'lv hypertrophy',0.374046,TRUE,0.694444,flat,3
+0.591837,Male,asymptomatic,0.74359,0.618123,FALSE,'lv hypertrophy',0.312977,TRUE,0.166667,flat,1
+0.55102,Male,asymptomatic,0.512821,0.867314,FALSE,normal,0.465649,TRUE,0.333333,flat,3
+0.673469,Male,non-anginal,0.74359,0.511327,TRUE,normal,0.503817,TRUE,0.277778,flat,0
+0.755102,Female,asymptomatic,0.74359,0.453074,FALSE,'lv hypertrophy',0.328244,FALSE,0.277778,flat,4
+0.244898,Male,'typical angina',0.615385,0.368932,FALSE,normal,0.816794,TRUE,0.388889,upsloping,0
+0.877551,Female,'atypical angina',0.871795,0.702265,FALSE,normal,0.694656,FALSE,0.111111,upsloping,0
+0.632653,Male,non-anginal,0.74359,0.411003,TRUE,normal,0.656489,FALSE,0.444444,upsloping,0
+0.673469,Female,asymptomatic,0.487179,0.79288,FALSE,'lv hypertrophy',0.748092,FALSE,0,upsloping,1
+0.612245,Male,non-anginal,0.25641,0.469256,FALSE,'lv hypertrophy',0.717557,FALSE,0.694444,flat,4
+0.469388,Male,non-anginal,0.230769,0.291262,FALSE,normal,0.396947,FALSE,0.166667,upsloping,0
+0.44898,Male,asymptomatic,0.74359,0.511327,FALSE,'lv hypertrophy',0.435115,FALSE,0.722222,flat,4
+0.510204,Male,non-anginal,0.487179,0.36246,TRUE,'lv hypertrophy',0.618321,FALSE,0.333333,downsloping,0
+0.265306,Female,'atypical angina',0.166667,0.365696,FALSE,normal,0.740458,FALSE,0,upsloping,0
+0.755102,Male,asymptomatic,0.358974,0.297735,FALSE,normal,0.526718,FALSE,0.111111,upsloping,0
+0.326531,Male,asymptomatic,0.25641,0.66343,FALSE,'lv hypertrophy',0.625954,FALSE,0,upsloping,2
+0.326531,Male,'atypical angina',0.487179,0.433657,FALSE,'lv hypertrophy',0.89313,FALSE,0,upsloping,0
+0.653061,Male,asymptomatic,0.487179,0.543689,FALSE,normal,0.557252,TRUE,0.388889,upsloping,1
+0.530612,Male,asymptomatic,0.410256,0.585761,FALSE,'lv hypertrophy',0.290076,TRUE,0.611111,flat,1
+0.44898,Male,non-anginal,0.615385,0.478964,FALSE,normal,0.70229,FALSE,0.166667,flat,1
+0.265306,Male,asymptomatic,0.230769,0.281553,FALSE,'lv hypertrophy',0.664122,FALSE,0,upsloping,1
+0.530612,Male,non-anginal,0.423077,0.608414,FALSE,'lv hypertrophy',0.618321,FALSE,0.138889,downsloping,0
+0.469388,Male,'typical angina',0.423077,0.414239,FALSE,'lv hypertrophy',0.412214,TRUE,0.388889,upsloping,0
+0.469388,Female,asymptomatic,0.487179,0.711974,FALSE,normal,0.541985,TRUE,0.333333,flat,2
+0.367347,Female,non-anginal,0.641026,0.297735,FALSE,'lv hypertrophy',0.679389,TRUE,0.388889,downsloping,0
+0.612245,Male,asymptomatic,0.461538,0.423948,FALSE,'lv hypertrophy',0.458015,TRUE,0.611111,flat,1
+0.530612,Female,non-anginal,0.551282,0.708738,TRUE,normal,0.755725,FALSE,0,upsloping,0
+0.530612,Male,asymptomatic,0.358974,0.333333,FALSE,normal,0.320611,FALSE,0.388889,flat,2
+0.653061,Male,asymptomatic,0.679487,0.63754,FALSE,'lv hypertrophy',0.541985,TRUE,0.777778,flat,2
+0.653061,Male,non-anginal,0.615385,0.323625,FALSE,'lv hypertrophy',0.641221,FALSE,0.833333,flat,1
+0.530612,Male,non-anginal,0.74359,0.475728,FALSE,'lv hypertrophy',0.717557,FALSE,0.444444,upsloping,0
+0.632653,Male,asymptomatic,1,0.779935,FALSE,'lv hypertrophy',0.526718,TRUE,0.944444,downsloping,2
+0.367347,Male,non-anginal,0.74359,0.472492,FALSE,normal,0.580153,FALSE,1,flat,1
+0.755102,Female,non-anginal,0.807692,0.595469,FALSE,normal,0.587786,FALSE,0.222222,upsloping,0
+0.795918,Male,asymptomatic,0.423077,0.546926,TRUE,normal,0.70229,FALSE,0.055556,flat,3
+0.693878,Male,asymptomatic,0.358974,0.588997,FALSE,normal,0.21374,TRUE,0.5,flat,1
+0.755102,Male,asymptomatic,0.230769,0.527508,FALSE,'lv hypertrophy',0.664122,FALSE,0.166667,upsloping,1
+0.326531,Male,asymptomatic,0.230769,0.36246,FALSE,'lv hypertrophy',0.80916,FALSE,0,upsloping,1
+0.755102,Female,non-anginal,0.871795,0.889968,FALSE,'lv hypertrophy',0.610687,FALSE,0.222222,upsloping,0
+0.653061,Male,asymptomatic,0.423077,0.559871,FALSE,'lv hypertrophy',0.534351,TRUE,0.777778,flat,1
+0.469388,Female,non-anginal,0.615385,0.721683,FALSE,'lv hypertrophy',0.541985,FALSE,0.416667,upsloping,0
+0.408163,Male,'atypical angina',0.487179,0.517799,FALSE,'lv hypertrophy',0.832061,FALSE,0.055556,flat,0
+0.612245,Male,asymptomatic,0.74359,0.598706,FALSE,'lv hypertrophy',0.305344,TRUE,0.222222,upsloping,3
+0.346939,Male,asymptomatic,0.153846,0.398058,FALSE,'lv hypertrophy',0.587786,TRUE,0.833333,flat,0
+0.510204,Female,asymptomatic,0.487179,0.579288,FALSE,'lv hypertrophy',0.549618,FALSE,0.111111,flat,0
+0.22449,Male,non-anginal,0.615385,0.763754,FALSE,'lv hypertrophy',0.847328,FALSE,0,upsloping,0
+0.489796,Male,'atypical angina',0.358974,0.776699,FALSE,normal,0.770992,FALSE,0.055556,upsloping,0
+0.326531,Male,non-anginal,0.615385,0.485437,FALSE,'lv hypertrophy',0.832061,FALSE,0,upsloping,0
+0.387755,Male,non-anginal,0.589744,0.556634,FALSE,'lv hypertrophy',0.648855,FALSE,0,upsloping,0
+0.510204,Female,non-anginal,0.461538,0.423948,FALSE,'lv hypertrophy',0.335878,FALSE,0,upsloping,0
+0.510204,Female,asymptomatic,0.589744,0.482201,FALSE,'lv hypertrophy',0.679389,FALSE,0,upsloping,0
+0.469388,Female,non-anginal,0.487179,0.553398,FALSE,'lv hypertrophy',0.59542,FALSE,0.138889,upsloping,0
+0.77551,Male,asymptomatic,0.358974,0.702265,FALSE,'lv hypertrophy',0.610687,FALSE,0.111111,flat,0
+0.693878,Male,non-anginal,0.487179,0.472492,FALSE,normal,0.572519,FALSE,0.5,flat,0
+0.326531,Female,non-anginal,0.205128,0.18123,FALSE,normal,0.793893,FALSE,0.166667,flat,0
+0.714286,Female,non-anginal,0.551282,0.540453,FALSE,'lv hypertrophy',0.770992,FALSE,0,upsloping,0
+0.489796,Male,asymptomatic,0.461538,0.550162,FALSE,normal,0.687023,TRUE,0,upsloping,1
+0.632653,Male,asymptomatic,0.230769,0.498382,FALSE,'lv hypertrophy',0.541985,TRUE,0.333333,flat,2
+0.653061,Female,asymptomatic,0.74359,0.559871,FALSE,'lv hypertrophy',0.656489,FALSE,0.722222,flat,3
+0.489796,Male,'atypical angina',0.538462,0.375405,FALSE,normal,0.664122,FALSE,0.222222,upsloping,0
+0.408163,Male,asymptomatic,0.384615,0.443366,FALSE,'lv hypertrophy',0.877863,FALSE,0,upsloping,0
+0.346939,Male,asymptomatic,0.294872,0.566343,FALSE,'lv hypertrophy',0.870229,FALSE,0,upsloping,0
+0.122449,Male,'typical angina',0.333333,0.313916,FALSE,'lv hypertrophy',0.78626,FALSE,0,upsloping,0
+0.591837,Female,asymptomatic,0.461538,0.705502,FALSE,'lv hypertrophy',0.671756,FALSE,0,upsloping,0
+0.877551,Female,non-anginal,0.230769,0.582524,TRUE,'lv hypertrophy',0.450382,FALSE,0,upsloping,0
+0.428571,Male,non-anginal,0.358974,0.333333,FALSE,normal,0.519084,FALSE,0.555556,flat,3
+0.530612,Male,'atypical angina',0.205128,0.724919,FALSE,normal,0.648855,FALSE,0,upsloping,0
+0.632653,Male,asymptomatic,0.615385,0.297735,FALSE,normal,0.694656,TRUE,0,upsloping,2
+0.591837,Male,non-anginal,0.461538,0.466019,FALSE,'lv hypertrophy',0.603053,FALSE,0.111111,flat,1
+0.673469,Male,asymptomatic,0.358974,0.566343,FALSE,normal,0.526718,TRUE,1,flat,2
+0.22449,Male,asymptomatic,0.333333,0.433657,FALSE,normal,0.526718,FALSE,0.333333,flat,3
+0.673469,Female,asymptomatic,0.679487,0.718447,FALSE,'lv hypertrophy',0.572519,TRUE,0.277778,flat,1
+0.571429,Male,asymptomatic,0.423077,0.530744,TRUE,'lv hypertrophy',0.557252,TRUE,0.333333,flat,1
+0.489796,Male,'typical angina',0.333333,0.326861,FALSE,'lv hypertrophy',0.908397,FALSE,0,flat,0
+0.306122,Female,asymptomatic,0.512821,0.828479,TRUE,'lv hypertrophy',0.496183,TRUE,0.833333,flat,2
+0.693878,Female,non-anginal,0.487179,0.576052,FALSE,normal,0.198473,FALSE,0.333333,flat,2
+0.265306,Male,'atypical angina',0.551282,0.381877,FALSE,normal,0.465649,FALSE,0,flat,0
+0.612245,Male,non-anginal,0.615385,0.407767,TRUE,'lv hypertrophy',0.717557,FALSE,0,upsloping,0
+0.142857,Female,asymptomatic,0.589744,0.317152,FALSE,normal,0.847328,FALSE,0.388889,upsloping,0
+0.714286,Male,asymptomatic,0.487179,0.79288,TRUE,'lv hypertrophy',0.465649,TRUE,0.5,upsloping,3
+0.755102,Male,asymptomatic,0.551282,0.546926,FALSE,'lv hypertrophy',0.427481,FALSE,0.777778,flat,2
+0.408163,Male,asymptomatic,0.487179,0.553398,TRUE,'lv hypertrophy',0.603053,TRUE,0,upsloping,3
+0.469388,Male,non-anginal,0.102564,0.443366,FALSE,normal,0.549618,TRUE,0.333333,flat,0
+0.755102,Male,'typical angina',0.589744,0.63754,TRUE,'lv hypertrophy',0.78626,FALSE,0.388889,flat,1
+0.346939,Female,'atypical angina',0.487179,0.482201,FALSE,'lv hypertrophy',0.793893,FALSE,0.166667,flat,0
+0.530612,Male,asymptomatic,0.230769,0.498382,FALSE,normal,0.419847,TRUE,0.777778,flat,3
+0.326531,Male,'atypical angina',0.358974,0.436893,FALSE,normal,0.755725,FALSE,0,upsloping,0
+0.693878,Female,asymptomatic,0.410256,0.401294,FALSE,normal,0.70229,FALSE,0,upsloping,0
+0.530612,Male,non-anginal,0.358974,0.559871,FALSE,'lv hypertrophy',0.580153,FALSE,0.111111,flat,0
+0.469388,Male,non-anginal,0.025641,0.459547,FALSE,normal,0.633588,TRUE,0,upsloping,0
+0.020408,Male,'atypical angina',0.487179,0.385113,FALSE,'lv hypertrophy',1,FALSE,0,upsloping,0
+0.469388,Male,asymptomatic,0.615385,0.569579,FALSE,'lv hypertrophy',0.877863,TRUE,0,upsloping,0
+0.306122,Female,non-anginal,0.384615,0.414239,FALSE,normal,0.717557,FALSE,0.055556,flat,0
+0.55102,Female,'atypical angina',0.551282,0.533981,FALSE,'lv hypertrophy',0.687023,FALSE,0.388889,flat,0
+0.857143,Male,asymptomatic,0.679487,0.288026,FALSE,normal,0.412214,TRUE,0.722222,downsloping,4
+0.693878,Male,'atypical angina',0.358974,0.634304,FALSE,'lv hypertrophy',0.244275,FALSE,0.388889,flat,3
+0.142857,Male,asymptomatic,0.358974,0.365696,FALSE,normal,0.450382,TRUE,0.444444,flat,1
+0.469388,Male,non-anginal,0.423077,0.517799,TRUE,'lv hypertrophy',0.725191,FALSE,0.666667,flat,0
+0.632653,Male,'atypical angina',0.615385,0.440129,FALSE,normal,0.709924,TRUE,0,upsloping,0
+0.632653,Male,'typical angina',1,0.656958,FALSE,'lv hypertrophy',0.671756,FALSE,0.055556,flat,1
+0.489796,Male,'atypical angina',0.461538,0.38835,TRUE,normal,0.862595,FALSE,0,upsloping,0
+0.734694,Male,non-anginal,0.423077,0.724919,FALSE,normal,0.458015,TRUE,0.5,flat,1
+0.612245,Male,non-anginal,0.166667,0.501618,FALSE,'lv hypertrophy',0.633588,TRUE,0.166667,flat,0
+0.387755,Male,non-anginal,0.205128,0.511327,FALSE,normal,0.618321,FALSE,0,upsloping,1
+0.591837,Male,asymptomatic,0.935897,0.660194,TRUE,'lv hypertrophy',0.40458,FALSE,0.277778,flat,4
+0.265306,Male,non-anginal,0.25641,0.533981,FALSE,normal,0.824427,FALSE,0,upsloping,0
+0.346939,Male,'atypical angina',0.461538,0.721683,FALSE,'lv hypertrophy',0.755725,FALSE,0,upsloping,0
+0.653061,Female,non-anginal,0.128205,0.754045,FALSE,normal,0.679389,FALSE,0,upsloping,0
+0.489796,Male,'typical angina',0.769231,0.68932,TRUE,normal,0.816794,FALSE,0.333333,flat,0
+0.285714,Female,asymptomatic,0.128205,0.582524,FALSE,'lv hypertrophy',0.389313,FALSE,0.166667,flat,0
+0.55102,Male,asymptomatic,0.871795,0.660194,FALSE,'lv hypertrophy',0.564885,TRUE,0.222222,flat,4
+0.734694,Male,asymptomatic,0.358974,0.521036,FALSE,'lv hypertrophy',0.19084,TRUE,0.611111,downsloping,3
+0.857143,Male,asymptomatic,0.487179,0.76699,FALSE,'lv hypertrophy',0.290076,FALSE,0.666667,flat,1
+0.469388,Male,asymptomatic,0.615385,0.692557,FALSE,normal,0.778626,TRUE,0.444444,upsloping,1
+0.612245,Male,asymptomatic,0.423077,0.695793,FALSE,'lv hypertrophy',0.763359,FALSE,0,upsloping,1
+0.653061,Male,asymptomatic,0.615385,0.673139,FALSE,'lv hypertrophy',0.755725,FALSE,0.333333,flat,2
+0.816327,Male,non-anginal,0.333333,0.621359,FALSE,normal,0.610687,FALSE,0.277778,upsloping,0
+0.367347,Male,'atypical angina',0.115385,0.36246,TRUE,normal,0.648855,FALSE,0,upsloping,0
+1,Male,asymptomatic,0.423077,0.708738,FALSE,'lv hypertrophy',0.694656,TRUE,0,upsloping,4
+0.530612,Female,non-anginal,0.230769,0.417476,FALSE,normal,0.664122,FALSE,0.444444,flat,0
+0.612245,Female,asymptomatic,0.102564,0.527508,FALSE,'lv hypertrophy',0.389313,FALSE,0.277778,flat,0
+0.408163,Male,non-anginal,0.410256,0.550162,TRUE,normal,0.793893,FALSE,0,upsloping,0
+0.591837,Male,asymptomatic,0.512821,0.394822,FALSE,normal,0.740458,TRUE,0,upsloping,0
+0.489796,Male,non-anginal,0.589744,0.446602,FALSE,normal,0.748092,FALSE,0,upsloping,0
+0.530612,Female,'atypical angina',0.512821,0.656958,TRUE,'lv hypertrophy',0.671756,TRUE,0,upsloping,0
+0.142857,Male,asymptomatic,0.435897,0.63754,FALSE,'lv hypertrophy',0.648855,TRUE,0,upsloping,1
+0.346939,Female,'atypical angina',0.25641,0.242718,FALSE,normal,0.51145,FALSE,0,flat,0
+0.857143,Male,non-anginal,0.871795,0.595469,FALSE,normal,0.312977,TRUE,0.805556,flat,3
+0.510204,Male,asymptomatic,0.641026,0.456311,FALSE,'lv hypertrophy',0.305344,TRUE,0,upsloping,0
+0.693878,Female,asymptomatic,0.615385,1,FALSE,'lv hypertrophy',0.656489,FALSE,0.333333,flat,0
+0.734694,Male,asymptomatic,0.679487,0.411003,FALSE,'lv hypertrophy',0.465649,FALSE,0.555556,flat,4
+0.591837,Male,asymptomatic,0.769231,0.61165,FALSE,normal,0.129771,TRUE,0.333333,flat,1
+0.489796,Male,asymptomatic,0.205128,0.478964,TRUE,normal,0.580153,FALSE,0.027778,upsloping,0
+0.571429,Male,asymptomatic,0.512821,0.320388,FALSE,'lv hypertrophy',0.259542,TRUE,0.583333,flat,1
+0.306122,Male,non-anginal,0.487179,0.744337,FALSE,normal,0.694656,FALSE,0.527778,upsloping,0
+0.510204,Male,non-anginal,0.487179,0.521036,TRUE,'lv hypertrophy',0.778626,FALSE,0,upsloping,0
+0.408163,Male,asymptomatic,0.410256,0.61165,FALSE,'lv hypertrophy',0.725191,FALSE,0.138889,flat,3
+0.285714,Male,'typical angina',0.717949,0.514563,FALSE,'lv hypertrophy',0.816794,FALSE,0.222222,upsloping,0
+0.653061,Female,asymptomatic,0.846154,0.711974,FALSE,'lv hypertrophy',0.687023,FALSE,0,upsloping,1
+0.714286,Female,'atypical angina',0.615385,0.355987,FALSE,normal,0.824427,FALSE,0,upsloping,0
+0.285714,Male,non-anginal,0.358974,0.501618,TRUE,normal,0.938931,FALSE,0.222222,downsloping,0
+0.77551,Male,'atypical angina',0.871795,0.521036,FALSE,normal,0.374046,TRUE,0,flat,2
+0.836735,Male,non-anginal,0.615385,0.546926,FALSE,'lv hypertrophy',0.572519,FALSE,0.555556,flat,2
+0.44898,Male,non-anginal,0.474359,0.359223,FALSE,normal,0.70229,FALSE,0,upsloping,0
+0.306122,Male,asymptomatic,0.512821,0.524272,TRUE,'lv hypertrophy',0.549618,TRUE,0.027778,flat,1
+0.693878,Female,asymptomatic,0.589744,0.676375,TRUE,normal,0.267176,FALSE,0.527778,flat,2
+0.816327,Female,non-anginal,0.358974,0.407767,FALSE,'lv hypertrophy',0.335878,FALSE,0.416667,flat,0
+0.795918,Male,asymptomatic,0.102564,0.692557,FALSE,'lv hypertrophy',0.412214,TRUE,0.25,flat,3
+0.836735,Male,'typical angina',0.871795,0.482201,TRUE,'lv hypertrophy',0.458015,FALSE,0.027778,flat,0
+0.346939,Female,asymptomatic,0.589744,0.488673,FALSE,'lv hypertrophy',0.618321,TRUE,0.055556,flat,0
+0.44898,Female,'atypical angina',0.358974,0.514563,FALSE,normal,0.694656,FALSE,0.305556,upsloping,0
+0.632653,Male,'typical angina',0.871795,0.608414,FALSE,'lv hypertrophy',0.412214,FALSE,0,upsloping,1
+0.44898,Female,asymptomatic,0.230769,0.546926,FALSE,'lv hypertrophy',0.671756,FALSE,0,upsloping,0
+0.591837,Male,non-anginal,0.74359,0.132686,TRUE,normal,0.778626,FALSE,0.055556,upsloping,0
+0.734694,Female,non-anginal,0.615385,0.737864,FALSE,normal,0.473282,FALSE,0.055556,upsloping,0
+0.306122,Male,asymptomatic,0.230769,0.407767,FALSE,normal,0.687023,FALSE,0,upsloping,0
+0.346939,Male,asymptomatic,0.641026,0.724919,FALSE,'lv hypertrophy',0.580153,TRUE,0,flat,3
+0.612245,Male,asymptomatic,0.461538,0.563107,FALSE,'lv hypertrophy',0.450382,TRUE,0.833333,flat,3
+0.44898,Male,asymptomatic,0.666667,0.372168,FALSE,'lv hypertrophy',0.419847,TRUE,0.25,flat,3
+0.55102,Male,'atypical angina',0.487179,0.572816,FALSE,normal,0.641221,FALSE,0,upsloping,0
+0.693878,Female,asymptomatic,0.74359,0.514563,FALSE,normal,0.633588,TRUE,0.388889,flat,1
+0.183673,Female,non-anginal,0.358974,0.420712,FALSE,normal,0.755725,FALSE,0,upsloping,0
+0.265306,Male,non-anginal,0.487179,0.417476,FALSE,'lv hypertrophy',0.740458,FALSE,0.555556,flat,0
+0.489796,Male,asymptomatic,0.25641,0.469256,FALSE,normal,0.679389,FALSE,0,upsloping,1
+0.571429,Male,'typical angina',0.358974,0.349515,FALSE,'lv hypertrophy',0.694656,FALSE,0.527778,flat,0
+0.367347,Female,'atypical angina',0.166667,0.385113,FALSE,normal,0.770992,FALSE,0,upsloping,0
+0.367347,Female,asymptomatic,0.589744,0.511327,FALSE,'lv hypertrophy',0.618321,TRUE,0,flat,0
+0.734694,Female,asymptomatic,0.487179,0.705502,FALSE,normal,0.389313,FALSE,0.555556,flat,0
+0.632653,Male,asymptomatic,0.589744,0.601942,FALSE,'lv hypertrophy',0.847328,FALSE,0,upsloping,0
+0.265306,Female,non-anginal,0.25641,0.592233,FALSE,'lv hypertrophy',0.770992,TRUE,0,upsloping,0
+0.530612,Female,non-anginal,0.205128,0.588997,FALSE,'lv hypertrophy',0.732824,FALSE,0,upsloping,0
+0.22449,Female,non-anginal,0.025641,0.368932,FALSE,normal,0.824427,FALSE,0,upsloping,0
+0.510204,Male,asymptomatic,0.397436,0.63754,FALSE,normal,0.183206,TRUE,0.555556,flat,3
+0.714286,Female,asymptomatic,0.205128,0.595469,FALSE,normal,0.748092,TRUE,0.5,flat,1
+0.122449,Female,'atypical angina',0.333333,0.404531,FALSE,normal,0.923664,FALSE,0.194444,upsloping,0
+0.387755,Male,asymptomatic,0.25641,0.385113,FALSE,normal,0.549618,FALSE,0.027778,upsloping,0
+0.795918,Female,non-anginal,0.769231,0.621359,FALSE,normal,0.770992,FALSE,0,upsloping,0
+0.530612,Male,asymptomatic,0.230769,0.391586,FALSE,'lv hypertrophy',0.282443,TRUE,0,flat,3
+0.77551,Male,asymptomatic,0.25641,0.411003,FALSE,'lv hypertrophy',0.465649,TRUE,0.027778,upsloping,2
+0.489796,Female,non-anginal,0.564103,0.359223,FALSE,'lv hypertrophy',0.748092,FALSE,0.027778,flat,0
+0.428571,Male,non-anginal,0.333333,0.20712,FALSE,'lv hypertrophy',0.419847,FALSE,0.222222,upsloping,1
+0.938776,Female,'atypical angina',0.358974,0.595469,FALSE,'lv hypertrophy',0.381679,TRUE,0.055556,upsloping,0
+0.530612,Female,non-anginal,0.871795,0.375405,FALSE,normal,0.70229,FALSE,0,upsloping,0
+0.530612,Male,asymptomatic,0.384615,0.650485,FALSE,'lv hypertrophy',0.343511,TRUE,0.888889,flat,3
+0.571429,Male,asymptomatic,0.487179,0.640777,TRUE,'lv hypertrophy',0.244275,TRUE,0.444444,downsloping,2
+0.367347,Male,asymptomatic,0.358974,0.530744,FALSE,'lv hypertrophy',0.557252,FALSE,0.222222,upsloping,1
+0.428571,Female,'atypical angina',0.538462,0.601942,FALSE,normal,0.694656,FALSE,0,flat,0
+0.285714,Male,'atypical angina',0.358974,0.679612,FALSE,normal,0.694656,FALSE,0,upsloping,0
+0.265306,Male,'atypical angina',0.230769,0.485437,FALSE,normal,0.625954,FALSE,0,upsloping,0
+0.265306,Female,'atypical angina',0.435897,0.71521,FALSE,normal,0.70229,FALSE,0,upsloping,0
+0.428571,Female,asymptomatic,0.487179,0.595469,FALSE,normal,0.70229,FALSE,0,upsloping,0
+0.673469,Male,'typical angina',0.538462,0.482201,FALSE,normal,0.564885,FALSE,0.722222,flat,2
+0.653061,Female,non-anginal,0.358974,0.300971,TRUE,normal,0.19084,FALSE,0,upsloping,0
+0.795918,Male,asymptomatic,0.358974,0.491909,FALSE,normal,0,FALSE,0.277778,flat,2
+0.612245,Male,asymptomatic,0.102564,0.482201,FALSE,normal,0.648855,FALSE,0.027778,upsloping,2
+0.387755,Male,asymptomatic,0.230769,0.614887,FALSE,'lv hypertrophy',0.358779,TRUE,0.277778,flat,1
+0.489796,Male,asymptomatic,0.423077,0.411003,FALSE,normal,0.740458,FALSE,0.277778,upsloping,3
+0.693878,Male,'atypical angina',0.461538,0.398058,TRUE,'lv hypertrophy',0.526718,FALSE,0,upsloping,0
+0.591837,Male,asymptomatic,0.230769,0.375405,FALSE,normal,0.419847,TRUE,0.416667,flat,0
+0.612245,Male,asymptomatic,0.692308,0.430421,FALSE,normal,0.259542,FALSE,0.555556,flat,1
+0.734694,Male,asymptomatic,0.461538,0.576052,FALSE,normal,0.259542,TRUE,0.055556,flat,0
+0.469388,Female,non-anginal,0.358974,0.679612,FALSE,'lv hypertrophy',0.656489,FALSE,0.166667,upsloping,0
+0.306122,Male,asymptomatic,0.294872,0.705502,FALSE,normal,0.839695,FALSE,0.333333,flat,0
+0.285714,Female,non-anginal,0.358974,0.401294,FALSE,normal,0.778626,FALSE,0,flat,0
+0.795918,Female,asymptomatic,0.179487,0.446602,FALSE,normal,0.541985,FALSE,0.083333,upsloping,0
+0.979592,Female,non-anginal,0.615385,0.36246,FALSE,'st-t abnormality',0.343511,FALSE,0.305556,flat,0
+0.857143,Male,'atypical angina',0.820513,0.517799,FALSE,'lv hypertrophy',0.549618,FALSE,0,upsloping,0
+0.591837,Male,'atypical angina',0.410256,0.569579,FALSE,normal,0.534351,FALSE,0.083333,upsloping,1
+0.326531,Female,non-anginal,0.333333,0.508091,FALSE,normal,0.59542,FALSE,0.083333,flat,0
+0.612245,Female,'atypical angina',0.564103,0.757282,TRUE,'lv hypertrophy',0.618321,FALSE,0,upsloping,3
+0.653061,Female,'typical angina',0.74359,0.501618,FALSE,normal,0.763359,FALSE,0.25,upsloping,0
+0.326531,Male,non-anginal,0.358974,0.456311,FALSE,normal,0.748092,FALSE,0,upsloping,0
+0.673469,Male,asymptomatic,0.589744,0.262136,FALSE,'lv hypertrophy',0.412214,TRUE,1,flat,4
+0.285714,Male,asymptomatic,0.564103,0.744337,FALSE,normal,0.412214,TRUE,0.5,flat,2
+0.489796,Male,asymptomatic,0.461538,0.385113,TRUE,normal,0.648855,TRUE,0.277778,flat,2
+0.632653,Male,non-anginal,0.435897,0.430421,TRUE,normal,0.480916,FALSE,0.611111,flat,2
+0.244898,Male,asymptomatic,0.769231,0.446602,FALSE,normal,0.839695,FALSE,0,upsloping,1
+0.285714,Male,non-anginal,0.487179,0.307443,FALSE,normal,0.603053,FALSE,0,upsloping,0
+0.673469,Male,asymptomatic,0.615385,0.394822,FALSE,'lv hypertrophy',0.51145,TRUE,0.527778,upsloping,1
+0.77551,Male,asymptomatic,0.871795,0.462783,FALSE,'lv hypertrophy',0.51145,FALSE,0.638889,upsloping,0
+0.367347,Male,asymptomatic,0.615385,0.731392,FALSE,normal,0.374046,TRUE,0.5,flat,2
+0.877551,Female,asymptomatic,0.25641,0.20712,FALSE,normal,0.412214,FALSE,0.444444,flat,0
+0.632653,Male,'typical angina',0.538462,0.385113,FALSE,normal,0.694656,FALSE,0.222222,upsloping,1
+0.734694,Male,'typical angina',1,0.459547,FALSE,'lv hypertrophy',0.641221,FALSE,0.166667,flat,0
+0.77551,Female,non-anginal,0.692308,0.624595,FALSE,'lv hypertrophy',0.618321,FALSE,0,flat,0
+0.22449,Female,non-anginal,0.589744,0.436893,FALSE,normal,0.618321,FALSE,0,flat,0
+0.591837,Male,'atypical angina',0.794872,0.475728,FALSE,'lv hypertrophy',0.709924,FALSE,0,upsloping,1
+0.612245,Female,asymptomatic,0.487179,0.36246,FALSE,normal,0.458015,FALSE,0.166667,flat,0
+0.591837,Male,asymptomatic,0.230769,0.809061,FALSE,normal,0.549618,TRUE,0.833333,flat,2
+0.387755,Male,non-anginal,0.487179,0.543689,FALSE,normal,0.824427,FALSE,0,upsloping,0
+0.55102,Female,asymptomatic,0.461538,0.38835,FALSE,'st-t abnormality',0.450382,TRUE,0.555556,flat,3
+0.142857,Male,'atypical angina',0.384615,0.346278,FALSE,normal,0.78626,FALSE,0,upsloping,0
+0.673469,Male,asymptomatic,0.717949,0.381877,FALSE,normal,0.687023,FALSE,0,upsloping,2
+0.612245,Female,asymptomatic,1,0.453074,TRUE,'lv hypertrophy',0.572519,TRUE,0.777778,flat,2
+0.612245,Male,'atypical angina',0.423077,0.436893,FALSE,normal,0.557252,FALSE,0.111111,flat,0
+0.571429,Male,'atypical angina',0.487179,0.440129,FALSE,'lv hypertrophy',0.70229,FALSE,0,upsloping,0
+0.571429,Male,'atypical angina',0.358974,0.501618,FALSE,normal,0.748092,FALSE,0,downsloping,0
+0.795918,Male,non-anginal,0.769231,0.411003,FALSE,'lv hypertrophy',0.603053,FALSE,0.222222,flat,1
+0.55102,Female,'atypical angina',0.512821,0.831715,FALSE,normal,0.725191,FALSE,0.333333,upsloping,0
+0.326531,Male,asymptomatic,0.358974,0.271845,FALSE,normal,0.557252,TRUE,0.777778,downsloping,2
+0.714286,Female,asymptomatic,0.410256,0.36246,FALSE,normal,0.496183,TRUE,0,flat,1
+0.265306,Male,'atypical angina',0.358974,0.23301,FALSE,normal,0.847328,FALSE,0,upsloping,0
+0.632653,Male,asymptomatic,0.923077,0.294498,TRUE,'lv hypertrophy',0.145038,FALSE,0.277778,flat,3
+0.591837,Female,asymptomatic,0.615385,0.504854,FALSE,normal,0.396947,TRUE,0.055556,flat,1
+0.346939,Male,'typical angina',0.230769,0.579288,FALSE,normal,0.465649,FALSE,0.333333,flat,1
+0.816327,Male,asymptomatic,0.666667,0.349515,TRUE,normal,0.534351,FALSE,0.944444,flat,2
+0.591837,Male,asymptomatic,0.487179,0.148867,FALSE,normal,0.335878,TRUE,0.333333,flat,3
+0.591837,Female,'atypical angina',0.487179,0.488673,FALSE,'lv hypertrophy',0.78626,FALSE,0,flat,1
+0.204082,Male,non-anginal,0.589744,0.291262,FALSE,normal,0.778626,FALSE,0,upsloping,0
+0,Male,'atypical angina',0.487179,0.152104,FALSE,'lv hypertrophy',0.870229,FALSE,0,flat,0
+0.020408,Male,'atypical angina',0.358974,0.511327,FALSE,normal,0.679389,FALSE,0,flat,0
+0.020408,Male,'atypical angina',0.615385,0.369354,FALSE,normal,0.755725,FALSE,0,flat,0
+0.040816,Female,'typical angina',1,0.491909,FALSE,'st-t abnormality',0.755725,FALSE,0,flat,0
+0.061224,Female,'atypical angina',0.102564,0.433657,FALSE,'st-t abnormality',0.603053,FALSE,0,flat,0
+0.081633,Female,'atypical angina',0.166667,0.365696,FALSE,normal,0.717557,FALSE,0,flat,0
+0.081633,Male,'atypical angina',0.230769,0.453074,FALSE,normal,0.862595,FALSE,0,flat,0
+0.081633,Male,'atypical angina',0.423077,0.546926,FALSE,normal,0.641221,FALSE,0,flat,0
+0.102041,Male,non-anginal,0.358974,0.68932,FALSE,normal,0.870229,FALSE,0,flat,0
+0.122449,Female,'atypical angina',0.487179,0.245955,FALSE,normal,0.908397,FALSE,0,flat,0
+0.122449,Male,'atypical angina',0.74359,0.417476,FALSE,'st-t abnormality',0.740458,FALSE,0,flat,0
+0.122449,Male,'atypical angina',0.076923,0.436893,FALSE,normal,0.603053,FALSE,0,flat,0
+0.142857,Female,'typical angina',0.358974,0.242718,FALSE,'st-t abnormality',0.870229,FALSE,0,flat,0
+0.142857,Female,asymptomatic,0.615385,0.265372,FALSE,normal,0.603053,FALSE,0,flat,0
+0.142857,Male,'atypical angina',0.358974,0.721683,FALSE,'lv hypertrophy',0.832061,FALSE,0,flat,0
+0.142857,Male,'atypical angina',0.74359,0.579288,FALSE,normal,0.740458,FALSE,0,flat,0
+0.163265,Male,'atypical angina',0.358974,0.262136,FALSE,normal,0.832061,FALSE,0,flat,0
+0.163265,Male,non-anginal,0.25641,0.825243,FALSE,normal,0.862595,FALSE,0.277778,flat,0
+0.163265,Male,non-anginal,0.487179,0.401294,FALSE,normal,0.816794,FALSE,0,flat,0
+0.163265,Male,non-anginal,0.74359,0.242718,FALSE,normal,0.770992,FALSE,0,flat,0
+0.183673,Female,'atypical angina',0.358974,0.566343,FALSE,normal,0.450382,FALSE,0,flat,0
+0.183673,Female,non-anginal,0.487179,0.407767,FALSE,normal,0.541985,FALSE,0,flat,0
+0.183673,Female,asymptomatic,0.487179,0.28479,FALSE,'st-t abnormality',0.862595,FALSE,0,flat,0
+0.183673,Male,'atypical angina',0.487179,0.640777,FALSE,'st-t abnormality',0.206107,FALSE,0,flat,0
+0.183673,Male,non-anginal,0.487179,0.352751,FALSE,normal,0.603053,FALSE,0,flat,0
+0.183673,Male,asymptomatic,0.358974,0.446602,FALSE,normal,0.740458,FALSE,0,flat,0
+0.183673,Male,asymptomatic,0.487179,0.744337,FALSE,normal,0.664122,FALSE,0,flat,0
+0.204082,Female,'atypical angina',0.358974,0.614887,FALSE,normal,0.442748,FALSE,0,flat,0
+0.204082,Male,'atypical angina',0.615385,0.686084,FALSE,normal,0.603053,FALSE,0,flat,0
+0.204082,Male,non-anginal,0.679487,0.669903,FALSE,normal,0.450382,FALSE,0,flat,0
+0.22449,Female,non-anginal,0.230769,0.313916,FALSE,'st-t abnormality',0.832061,FALSE,0,flat,0
+0.22449,Male,'atypical angina',0.358974,0.369354,FALSE,'st-t abnormality',0.572519,FALSE,0.555556,upsloping,0
+0.22449,Male,'atypical angina',0.358974,0.372168,FALSE,normal,0.679389,TRUE,0.277778,flat,0
+0.22449,Male,'atypical angina',0.358974,0.385113,FALSE,normal,0.564885,FALSE,0,flat,0
+0.22449,Male,'atypical angina',0.487179,0.369354,FALSE,normal,0.374046,FALSE,0,flat,0
+0.22449,Male,non-anginal,0.358974,0.822006,FALSE,normal,0.755725,FALSE,0,flat,0
+0.22449,Male,non-anginal,0.871795,0.200647,TRUE,normal,0.679389,FALSE,0,flat,0
+0.22449,Male,asymptomatic,0.230769,0.608414,FALSE,normal,0.465649,FALSE,0,flat,0
+0.22449,Male,asymptomatic,0.487179,0.718447,FALSE,normal,0.526718,FALSE,0,flat,0
+0.244898,Male,'atypical angina',0.487179,0.614887,FALSE,normal,0.603053,FALSE,0,flat,0
+0.244898,Male,'atypical angina',0.615385,0.660194,FALSE,normal,0.770992,FALSE,0,flat,0
+0.244898,Male,non-anginal,0.487179,0.420712,FALSE,normal,0.51145,FALSE,0,flat,0
+0.244898,Male,non-anginal,0.487179,0.634304,FALSE,normal,0.732824,FALSE,0,flat,0
+0.244898,Male,non-anginal,0.615385,0.369354,FALSE,normal,0.89313,FALSE,0,flat,0
+0.265306,Female,'atypical angina',0.230769,0.533981,FALSE,'st-t abnormality',0.541985,FALSE,0,flat,0
+0.265306,Female,'atypical angina',0.423077,0.320388,FALSE,normal,0.832061,FALSE,0,flat,0
+0.265306,Female,'atypical angina',0.487179,0.517799,FALSE,normal,0.603053,FALSE,0,flat,0
+0.265306,Male,'atypical angina',0.358974,0.666667,FALSE,'st-t abnormality',0.679389,FALSE,0,flat,0
+0.265306,Male,'atypical angina',0.358974,0.679612,FALSE,normal,0.755725,FALSE,0,flat,0
+0.265306,Male,'atypical angina',0.423077,0.595469,FALSE,normal,0.557252,FALSE,0,flat,0
+0.265306,Male,asymptomatic,0.25641,0.533981,FALSE,normal,0.541985,FALSE,0,flat,0
+0.285714,Female,non-anginal,0.294872,0.407767,FALSE,'st-t abnormality',0.503817,FALSE,0,flat,0
+0.285714,Male,'atypical angina',0.358974,0.359223,FALSE,normal,0.603053,FALSE,0,flat,0
+0.285714,Male,'atypical angina',0.358974,0.365696,FALSE,normal,0.641221,FALSE,0,flat,0
+0.285714,Male,'atypical angina',0.74359,0.592233,FALSE,normal,0.496183,FALSE,0,flat,0
+0.285714,Male,non-anginal,0.358974,0.462783,FALSE,normal,0.618321,TRUE,0.416667,flat,0
+0.285714,Male,non-anginal,0.871795,0.200647,FALSE,normal,0.572519,FALSE,0,flat,0
+0.285714,Male,asymptomatic,0.615385,0.883495,FALSE,normal,0.755725,FALSE,0,flat,0
+0.306122,Female,'typical angina',0.102564,0.446602,FALSE,normal,0.541985,FALSE,0,flat,0
+0.306122,Female,'atypical angina',0.358974,0.375405,FALSE,normal,0.717557,FALSE,0,flat,0
+0.306122,Female,'atypical angina',0.358974,0.420712,FALSE,'st-t abnormality',0.793893,FALSE,0,flat,0
+0.306122,Female,'atypical angina',0.358974,0.530744,FALSE,'st-t abnormality',0.801527,FALSE,0,flat,0
+0.306122,Female,'atypical angina',0.358974,0.585761,FALSE,normal,0.358779,FALSE,0,flat,0
+0.306122,Female,'atypical angina',0.74359,0.326861,FALSE,normal,0.633588,FALSE,0,flat,0
+0.306122,Female,non-anginal,0.74359,0.369354,FALSE,normal,0.793893,FALSE,0,flat,0
+0.306122,Male,'atypical angina',0.641026,0.394822,FALSE,normal,0.51145,FALSE,0,flat,0
+0.326531,Female,asymptomatic,0.358974,0.430421,FALSE,'st-t abnormality',0.335878,FALSE,0,flat,0
+0.326531,Male,'atypical angina',0.358974,0.320388,FALSE,normal,0.541985,FALSE,0.277778,flat,0
+0.326531,Male,'atypical angina',0.487179,0.420712,FALSE,normal,0.48855,FALSE,0,flat,0
+0.346939,Female,'atypical angina',0.487179,0.491909,FALSE,normal,0.755725,FALSE,0,flat,0
+0.346939,Female,asymptomatic,0.512821,0.686084,FALSE,normal,0.557252,FALSE,0,flat,0
+0.346939,Male,'atypical angina',0.615385,0.449838,TRUE,normal,0.389313,FALSE,0,flat,0
+0.346939,Male,non-anginal,0.551282,0.369354,FALSE,normal,0.29771,FALSE,0,flat,0
+0.346939,Male,asymptomatic,0.358974,0.453074,FALSE,normal,0.526718,FALSE,0,flat,0
+0.346939,Male,asymptomatic,0.615385,0.449838,FALSE,normal,0.557252,FALSE,0,flat,0
+0.367347,Female,asymptomatic,0.487179,0.495146,FALSE,normal,0.145038,FALSE,0,flat,0
+0.367347,Male,'atypical angina',0.615385,0.614887,FALSE,normal,0.717557,TRUE,0,flat,0
+0.367347,Male,non-anginal,0.358974,0.469256,FALSE,normal,0.603053,FALSE,0,flat,0
+0.367347,Male,non-anginal,0.74359,0.252427,FALSE,normal,0.343511,FALSE,0,flat,0
+0.367347,Male,asymptomatic,0.230769,0.495146,FALSE,'st-t abnormality',0.526718,TRUE,0.277778,flat,0
+0.367347,Male,asymptomatic,0.230769,0.501618,FALSE,'st-t abnormality',0.526718,FALSE,0,flat,0
+0.387755,Female,'atypical angina',0.615385,0.556634,FALSE,normal,0.48855,FALSE,0.277778,upsloping,0
+0.387755,Female,non-anginal,0.487179,0.369354,FALSE,normal,0.564885,FALSE,0.555556,flat,0
+0.387755,Male,'typical angina',0.230769,0.530744,FALSE,normal,0.603053,FALSE,0,flat,0
+0.387755,Male,'atypical angina',0.871795,0.576052,FALSE,normal,0.78626,FALSE,0,flat,0
+0.387755,Male,asymptomatic,0.615385,0.618123,TRUE,normal,0.412214,TRUE,0,flat,0
+0.408163,Female,'atypical angina',0.514518,0.721683,FALSE,'st-t abnormality',0.507982,FALSE,0.555556,upsloping,0
+0.408163,Female,'atypical angina',0.358974,0.369354,TRUE,'st-t abnormality',0.587786,FALSE,0,flat,0
+0.408163,Female,'atypical angina',0.358974,0.644013,FALSE,normal,0.374046,FALSE,0,flat,0
+0.408163,Female,non-anginal,0.358974,0.355987,FALSE,normal,0.412214,FALSE,0,flat,0
+0.408163,Female,asymptomatic,0.205128,0.252427,FALSE,normal,0.793893,FALSE,0.555556,upsloping,0
+0.408163,Female,asymptomatic,0.358974,0.546926,FALSE,'st-t abnormality',0.29771,FALSE,0,flat,0
+0.408163,Female,asymptomatic,0.74359,0.459547,FALSE,normal,0.450382,TRUE,0.277778,flat,0
+0.408163,Male,'atypical angina',0.102564,0.369354,FALSE,normal,0.221374,FALSE,0,flat,0
+0.408163,Male,'atypical angina',0.487179,0.517799,FALSE,normal,0.679389,FALSE,0,flat,0
+0.408163,Male,'atypical angina',0.615385,0.495146,FALSE,normal,0.358779,FALSE,0,flat,0
+0.408163,Male,non-anginal,0.230769,0.407767,FALSE,normal,0.51145,FALSE,0,flat,0
+0.428571,Female,'atypical angina',0.230769,0.369354,FALSE,normal,0.679389,FALSE,0,flat,0
+0.428571,Female,'atypical angina',0.230769,0.369354,FALSE,normal,0.679389,FALSE,0,flat,0
+0.428571,Female,'atypical angina',0.410256,0.375405,FALSE,normal,0.709924,FALSE,0,flat,0
+0.428571,Female,non-anginal,0.487179,0.394822,FALSE,'st-t abnormality',0.48855,FALSE,0,flat,0
+0.428571,Male,'atypical angina',0.102564,0.543689,FALSE,normal,0.78626,FALSE,0,flat,0
+0.428571,Male,non-anginal,0.615385,0.330097,FALSE,normal,0.770992,FALSE,0,flat,0
+0.428571,Male,asymptomatic,0.358974,0.686084,FALSE,normal,0.465649,FALSE,0.277778,flat,0
+0.428571,Male,asymptomatic,0.615385,0.369354,FALSE,normal,0.450382,FALSE,0,flat,0
+0.44898,Female,'atypical angina',0.230769,0.378641,FALSE,normal,0.564885,FALSE,0,flat,0
+0.44898,Female,asymptomatic,0.358974,0.786408,FALSE,normal,0.29771,TRUE,0.277778,flat,0
+0.44898,Male,'atypical angina',0.358974,0.268608,FALSE,normal,0.679389,FALSE,0,flat,0
+0.44898,Male,'atypical angina',0.615385,0.423948,FALSE,normal,0.755725,FALSE,0,flat,0
+0.44898,Male,'atypical angina',1,0.401294,FALSE,'st-t abnormality',0.343511,FALSE,0,flat,0
+0.44898,Male,asymptomatic,0.615385,0.142395,FALSE,normal,0.48855,FALSE,0,flat,0
+0.44898,Male,asymptomatic,0.74359,0.420712,FALSE,normal,0.526718,TRUE,0,flat,0
+0.469388,Female,'atypical angina',0.871795,0.352751,FALSE,normal,0.755725,FALSE,0,flat,0
+0.469388,Female,non-anginal,0.230769,0.339806,FALSE,normal,0.374046,FALSE,0,flat,0
+0.469388,Female,non-anginal,0.487179,0.436893,FALSE,normal,0.679389,TRUE,0.555556,upsloping,0
+0.469388,Female,non-anginal,0.74359,0.372168,FALSE,normal,0.374046,FALSE,0.138889,upsloping,0
+0.469388,Male,'atypical angina',0.423077,0.333333,FALSE,normal,0.564885,FALSE,0,flat,0
+0.469388,Male,'atypical angina',0.487179,0.449838,FALSE,normal,0.603053,FALSE,0,flat,0
+0.469388,Male,asymptomatic,0.487179,0.304207,FALSE,normal,0.221374,FALSE,0,flat,0
+0.489796,Female,'atypical angina',0.358974,0.404531,FALSE,normal,0.587786,FALSE,0,flat,0
+0.489796,Female,'atypical angina',0.615385,0.369354,FALSE,normal,0.526718,FALSE,0,flat,0
+0.489796,Female,non-anginal,0.423077,0.605178,FALSE,normal,0.519084,FALSE,0,flat,0
+0.489796,Female,asymptomatic,0.487179,0.307443,FALSE,normal,0.526718,TRUE,0.416667,flat,0
+0.489796,Male,'atypical angina',0.358974,0.644013,FALSE,normal,0.358779,FALSE,0,flat,0
+0.489796,Male,'atypical angina',0.615385,0.048544,FALSE,normal,0.51145,TRUE,0,flat,0
+0.489796,Male,'atypical angina',0.871795,0.359223,FALSE,normal,0.717557,FALSE,0,flat,0
+0.489796,Male,non-anginal,0.615385,0.563107,FALSE,'st-t abnormality',0.755725,FALSE,0,flat,0
+0.510204,Female,'atypical angina',0.615385,0.423948,FALSE,normal,0.541985,TRUE,0.555556,flat,0
+0.510204,Female,non-anginal,0.358974,0.61165,FALSE,normal,0.450382,FALSE,0,flat,0
+0.510204,Male,'atypical angina',0.358974,0.369354,FALSE,normal,0.465649,FALSE,0,flat,0
+0.510204,Male,'atypical angina',0.615385,0.760518,FALSE,normal,0.694656,FALSE,0,flat,0
+0.510204,Male,non-anginal,0.358974,0.355987,FALSE,normal,0.526718,FALSE,0,flat,0
+0.510204,Male,asymptomatic,0.410256,0.566343,FALSE,'st-t abnormality',0.312977,TRUE,0.833333,flat,0
+0.510204,Male,asymptomatic,0.487179,0.313916,FALSE,normal,0.587786,FALSE,0,flat,0
+0.510204,Male,asymptomatic,0.615385,0.511327,FALSE,normal,0.641221,FALSE,0,flat,0
+0.530612,Female,'atypical angina',0.358974,0.440129,FALSE,normal,0.51145,FALSE,0.277778,upsloping,0
+0.530612,Female,'atypical angina',0.358974,0.469256,TRUE,normal,0.526718,FALSE,0,flat,0
+0.530612,Female,'atypical angina',0.358974,0.608414,FALSE,normal,0.603053,FALSE,0.416667,flat,0
+0.530612,Female,'atypical angina',0.487179,0.543689,FALSE,'st-t abnormality',0.641221,FALSE,0,flat,0
+0.530612,Female,'atypical angina',0.615385,0.724919,FALSE,'st-t abnormality',0.526718,FALSE,0,flat,0
+0.530612,Female,'atypical angina',0.74359,0.469256,FALSE,normal,0.450382,FALSE,0,flat,0
+0.530612,Female,'atypical angina',0.871795,0.734628,FALSE,normal,0.450382,FALSE,0,flat,0
+0.530612,Male,'typical angina',0.358974,0.278317,FALSE,normal,0.503817,FALSE,0.555556,upsloping,0
+0.530612,Male,'atypical angina',0.230769,0.398058,FALSE,normal,0.541985,FALSE,0,flat,0
+0.530612,Male,'atypical angina',0.358974,0.495146,FALSE,normal,0.633588,FALSE,0,flat,0
+0.530612,Male,'atypical angina',0.358974,0.521036,FALSE,normal,0.29771,FALSE,0,flat,0
+0.530612,Male,'atypical angina',0.871795,0.355987,FALSE,'st-t abnormality',0.450382,FALSE,0.277778,upsloping,0
+0.530612,Male,'atypical angina',0.871795,0.711974,FALSE,normal,0.793893,FALSE,0,flat,0
+0.530612,Male,non-anginal,0.358974,0.427184,FALSE,normal,0.503817,FALSE,0,flat,0
+0.530612,Male,non-anginal,0.74359,0.369354,FALSE,normal,0.389313,FALSE,0,flat,0
+0.530612,Male,asymptomatic,0.74359,0.906149,FALSE,'st-t abnormality',0.480916,FALSE,0.277778,upsloping,0
+0.55102,Female,'atypical angina',0.230769,0.838188,FALSE,'st-t abnormality',0.679389,FALSE,0,flat,0
+0.55102,Female,'atypical angina',0.384615,0.760518,FALSE,normal,0.641221,FALSE,0,flat,0
+0.55102,Female,'atypical angina',0.487179,1,FALSE,'lv hypertrophy',0.603053,FALSE,0,flat,0
+0.55102,Male,'atypical angina',0.358974,0.553398,TRUE,normal,0.503817,FALSE,0,flat,0
+0.55102,Male,'atypical angina',0.615385,0.359223,FALSE,normal,0.603053,FALSE,0,flat,0
+0.55102,Male,'atypical angina',0.679487,0.779935,FALSE,normal,0.641221,FALSE,0,flat,0
+0.55102,Male,non-anginal,0.230769,0.621359,FALSE,normal,0.679389,FALSE,0,flat,0
+0.55102,Male,non-anginal,0.358974,0.436893,FALSE,'lv hypertrophy',0.480916,FALSE,0,flat,0
+0.55102,Male,asymptomatic,0.358974,0.598706,FALSE,normal,0.526718,FALSE,0,flat,0
+0.55102,Male,asymptomatic,0.615385,0.466019,FALSE,normal,0.29771,TRUE,0.138889,flat,0
+0.571429,Female,non-anginal,0.487179,0.433657,FALSE,'st-t abnormality',0.709924,FALSE,0,flat,0
+0.571429,Male,'atypical angina',0.487179,0.320388,FALSE,normal,0.221374,FALSE,0,flat,0
+0.571429,Male,non-anginal,0.487179,0.369354,FALSE,normal,0.328244,FALSE,0,flat,0
+0.571429,Male,non-anginal,0.487179,0.618123,FALSE,normal,0.435115,TRUE,0.277778,upsloping,0
+0.571429,Male,asymptomatic,0.358974,0,FALSE,normal,0.526718,FALSE,0,flat,0
+0.591837,Female,'typical angina',0.487179,0.721683,FALSE,normal,0.206107,FALSE,0.277778,flat,0
+0.591837,Male,'atypical angina',0.615385,0.566343,TRUE,normal,0.526718,FALSE,0,flat,0
+0.612245,Male,'atypical angina',0.487179,0.469256,FALSE,normal,0.603053,FALSE,0,flat,0
+0.612245,Male,'atypical angina',0.487179,0.537217,FALSE,normal,0.29771,FALSE,0,flat,0
+0.612245,Male,non-anginal,0.615385,0.304207,FALSE,normal,0.679389,FALSE,0,flat,0
+0.612245,Male,asymptomatic,0.551282,0.443366,FALSE,normal,0.221374,FALSE,0,flat,0
+0.632653,Female,'atypical angina',0.487179,0.333333,FALSE,normal,0.40458,FALSE,0.277778,flat,0
+0.632653,Male,'atypical angina',0.615385,0.653722,FALSE,normal,0.603053,FALSE,0,flat,0
+0.632653,Male,non-anginal,0.487179,0.754045,FALSE,normal,0.374046,TRUE,0.277778,flat,0
+0.632653,Male,asymptomatic,0.615385,0.369354,FALSE,normal,0.526718,FALSE,0,flat,0
+0.653061,Male,non-anginal,0.358974,0.521036,FALSE,'lv hypertrophy',0.48855,FALSE,0,flat,0
+0.673469,Female,asymptomatic,0.487179,0.676375,FALSE,'st-t abnormality',0.374046,TRUE,0.277778,flat,0
+0.673469,Male,asymptomatic,0.423077,0.669903,FALSE,'st-t abnormality',0.335878,TRUE,0,flat,0
+0.693878,Female,'typical angina',0.871795,0.349515,FALSE,normal,0.343511,FALSE,0,flat,0
+0.693878,Male,'atypical angina',0.615385,0.601942,FALSE,normal,0.618321,FALSE,0.277778,upsloping,0
+0.061224,Male,asymptomatic,0.358974,0.598706,FALSE,normal,0.625954,TRUE,0.416667,flat,1
+0.102041,Female,asymptomatic,0.102564,0.521036,FALSE,normal,0.603053,TRUE,0.277778,flat,1
+0.122449,Male,'typical angina',0.615385,0.229773,FALSE,normal,0.832061,FALSE,0,flat,1
+0.142857,Male,'atypical angina',0.230769,0.556634,FALSE,normal,0.526718,FALSE,0,flat,1
+0.163265,Male,'atypical angina',0.358974,0.588997,FALSE,normal,0.679389,FALSE,0.833333,flat,1
+0.183673,Male,asymptomatic,0.615385,0.394822,FALSE,normal,0.450382,TRUE,0.416667,flat,1
+0.204082,Male,asymptomatic,0.230769,0.359223,FALSE,normal,0.725191,FALSE,0,flat,1
+0.204082,Male,asymptomatic,0.358974,0.63754,FALSE,normal,0.755725,FALSE,0,flat,1
+0.204082,Male,asymptomatic,0,0.10356,FALSE,normal,0.480916,TRUE,0.694444,flat,1
+0.265306,Male,asymptomatic,0.230769,0.660194,FALSE,normal,0.755725,FALSE,0,flat,1
+0.265306,Male,asymptomatic,0.358974,0.491909,FALSE,normal,0.51145,TRUE,0.277778,flat,1
+0.306122,Male,asymptomatic,0.74359,0.524272,FALSE,normal,0.450382,TRUE,0.555556,flat,1
+0.367347,Male,asymptomatic,0.230769,0.378641,FALSE,normal,0.603053,TRUE,0,flat,1
+0.367347,Male,asymptomatic,0.333333,0.326861,FALSE,normal,0.40458,FALSE,0,flat,1
+0.367347,Male,asymptomatic,0.358974,0.621359,FALSE,normal,0.412214,TRUE,0.277778,flat,1
+0.387755,Male,non-anginal,0.615385,0.349515,FALSE,normal,0.564885,TRUE,0.277778,flat,1
+0.387755,Male,asymptomatic,0.74359,0.456311,FALSE,normal,0.206107,TRUE,0.416667,flat,1
+0.408163,Male,asymptomatic,0.179487,0.576052,TRUE,normal,0.29771,FALSE,0,flat,1
+0.408163,Male,asymptomatic,0.358974,0.566343,FALSE,normal,0.335878,FALSE,0.555556,flat,1
+0.408163,Male,asymptomatic,0.871795,0.592233,FALSE,normal,0.244275,TRUE,0.277778,flat,1
+0.428571,Female,non-anginal,0.871795,0.307443,FALSE,normal,0.648855,FALSE,0.277778,flat,1
+0.428571,Male,non-anginal,0.294872,0.582524,FALSE,normal,0.793893,FALSE,0,flat,1
+0.428571,Male,asymptomatic,0.487179,0.391586,FALSE,normal,0.755725,FALSE,0,flat,1
+0.44898,Female,non-anginal,0.615385,0.656958,FALSE,normal,0.526718,TRUE,0,flat,1
+0.44898,Male,asymptomatic,0.679487,0.579288,FALSE,normal,0.603053,FALSE,0,flat,1
+0.469388,Female,asymptomatic,0.871795,0.705502,FALSE,normal,0.603053,TRUE,0.277778,flat,1
+0.489796,Male,asymptomatic,0.487179,0.453074,FALSE,normal,0.374046,TRUE,0.555556,flat,1
+0.530612,Male,asymptomatic,0.423077,0.423948,FALSE,normal,0.526718,FALSE,0,flat,1
+0.530612,Male,asymptomatic,0.423077,0.449838,FALSE,normal,0.389313,FALSE,0.555556,flat,1
+0.55102,Male,asymptomatic,0.615385,0.375405,FALSE,normal,0.450382,TRUE,0.833333,flat,1
+0.591837,Male,'atypical angina',0.615385,0.582524,FALSE,'st-t abnormality',0.564885,TRUE,0.277778,flat,1
+0.612245,Male,non-anginal,0.487179,0.414239,FALSE,'st-t abnormality',0.526718,FALSE,0,flat,1
+0.632653,Female,asymptomatic,0.487179,0.81877,TRUE,'st-t abnormality',0.450382,TRUE,0.416667,flat,1
+0.653061,Male,asymptomatic,0.102564,0.527508,FALSE,normal,0.412214,FALSE,0.277778,flat,1
+0.714286,Male,asymptomatic,0.74359,0.446602,FALSE,normal,0.335878,FALSE,0,flat,1
+0.755102,Male,asymptomatic,0.615385,0.71521,TRUE,normal,0.122137,TRUE,0.416667,flat,1
+0.204082,Male,asymptomatic,0.230769,0.369354,FALSE,normal,0.603053,TRUE,0.277778,flat,1
+0.22449,Male,asymptomatic,0.230769,0.631068,FALSE,normal,0.603053,FALSE,0,flat,1
+0.244898,Female,asymptomatic,0.74359,0.993528,FALSE,normal,0.450382,FALSE,0.555556,flat,1
+0.306122,Male,'typical angina',0.358974,0.666667,FALSE,'st-t abnormality',0.641221,FALSE,0,flat,1
+0.346939,Male,asymptomatic,0.487179,0.433657,FALSE,'st-t abnormality',0.450382,TRUE,0.277778,flat,1
+0.367347,Male,asymptomatic,0.358974,0.472492,FALSE,normal,0.335878,TRUE,0,flat,1
+0.367347,Male,asymptomatic,0.487179,0.443366,FALSE,normal,0.312977,FALSE,0,flat,1
+0.408163,Male,asymptomatic,0.384615,0.614887,TRUE,'st-t abnormality',0.603053,TRUE,0.555556,downsloping,1
+0.408163,Male,asymptomatic,0.871795,0.349515,FALSE,normal,0.236641,TRUE,0.833333,flat,1
+0.408163,Male,asymptomatic,0.871795,0.789644,FALSE,normal,0.160305,TRUE,0.416667,flat,1
+0.408163,Male,asymptomatic,0.871795,0.873786,FALSE,normal,0.21374,TRUE,0.555556,flat,1
+0.44898,Male,asymptomatic,0.487179,0.478964,FALSE,normal,0.381679,TRUE,0.555556,flat,1
+0.489796,Male,asymptomatic,0.358974,0.313916,FALSE,normal,0.603053,FALSE,0,flat,1
+0.489796,Male,asymptomatic,1,0.369354,FALSE,normal,0.419847,TRUE,0.416667,flat,1
+0.510204,Male,asymptomatic,0.358974,0.521036,FALSE,normal,0.343511,TRUE,0,flat,1
+0.530612,Male,non-anginal,0.358974,0.491909,FALSE,normal,0.603053,TRUE,0.416667,flat,1
+0.530612,Male,asymptomatic,0.487179,0.508091,FALSE,normal,0.152672,TRUE,0.277778,flat,1
+0.530612,Male,asymptomatic,0.615385,0.369354,FALSE,normal,0.358779,TRUE,0,flat,1
+0.55102,Male,asymptomatic,0.615385,0.592233,FALSE,normal,0.435115,TRUE,0.416667,flat,1
+0.571429,Male,asymptomatic,0.74359,0.414239,TRUE,normal,0.412214,TRUE,0.277778,flat,1
+0.591837,Male,asymptomatic,0.74359,0.550162,FALSE,normal,0.160305,TRUE,0.833333,flat,1
+0.612245,Male,non-anginal,0.871795,0.407767,TRUE,'st-t abnormality',0.160305,FALSE,0,flat,1
+0.612245,Male,asymptomatic,0.487179,0.576052,FALSE,normal,0.526718,TRUE,0.555556,flat,1
+0.265306,Male,asymptomatic,0.487179,0.281553,FALSE,'st-t abnormality',0.450382,FALSE,0.555556,flat,1
+0.306122,Male,asymptomatic,0.358974,0.291262,FALSE,normal,0.374046,TRUE,0.277778,flat,1
+0.326531,Male,'atypical angina',0.74359,0.656958,FALSE,normal,0.603053,TRUE,0.833333,flat,1
+0.326531,Male,asymptomatic,0.487179,0.66343,FALSE,normal,0.221374,TRUE,0.555556,flat,1
+0.367347,Male,'typical angina',0.615385,0.605178,TRUE,normal,0.793893,FALSE,0.555556,flat,1
+0.387755,Female,non-anginal,0.551282,0.527508,TRUE,normal,0.755725,FALSE,0,flat,1
+0.408163,Female,asymptomatic,0.589744,0.417476,FALSE,normal,0.282443,TRUE,0.416667,flat,1
+0.428571,Male,asymptomatic,0.487179,0.828479,FALSE,normal,0.374046,TRUE,0.277778,flat,1
+0.428571,Male,asymptomatic,0.615385,0.482201,FALSE,normal,0.526718,TRUE,0.277778,flat,1
+0.469388,Male,non-anginal,0.551282,0.242718,FALSE,normal,0.603053,FALSE,0.555556,flat,1
+0.489796,Male,asymptomatic,0.25641,0.831715,FALSE,'st-t abnormality',0.19084,TRUE,0.277778,flat,1
+0.489796,Male,asymptomatic,0.487179,0.68932,FALSE,normal,0.29771,TRUE,0.277778,flat,1
+0.530612,Male,asymptomatic,0.615385,0.423948,FALSE,normal,0.259542,FALSE,0.416667,flat,1
+0.55102,Male,'typical angina',0.615385,0.679612,FALSE,normal,0.496183,FALSE,0,flat,1
+0.55102,Male,'atypical angina',0.871795,0.669903,TRUE,normal,0.549618,TRUE,0.555556,flat,1
+0.55102,Male,asymptomatic,0.679487,0.527508,FALSE,normal,0.19084,TRUE,0.555556,flat,1
+0.571429,Female,'atypical angina',0.358974,0.627832,FALSE,normal,0.603053,FALSE,0.277778,flat,1
+0.571429,Male,asymptomatic,0.74359,0.469256,FALSE,'st-t abnormality',0.40458,TRUE,0.416667,flat,1
+0.571429,Male,asymptomatic,1,0.980583,FALSE,'st-t abnormality',0.389313,TRUE,0.555556,flat,1
+0.612245,Male,'atypical angina',0.564103,0.255663,FALSE,'st-t abnormality',0.21374,TRUE,0.555556,flat,1
+0.632653,Male,asymptomatic,0.487179,0.369354,FALSE,normal,0.412214,FALSE,0,flat,1
+0.632653,Male,asymptomatic,0.615385,0.579288,TRUE,'lv hypertrophy',0.366412,TRUE,0,flat,1
+0.755102,Male,asymptomatic,1,0.576052,TRUE,normal,0.312977,TRUE,0.555556,flat,1
+0.77551,Male,asymptomatic,0.615385,0.369354,FALSE,normal,0.175573,TRUE,0.277778,flat,1
+0.265306,Male,asymptomatic,0.358974,0.812298,FALSE,normal,0.358779,TRUE,0.833333,flat,1
+0.306122,Male,asymptomatic,0.615385,0.656958,FALSE,normal,0.48855,TRUE,0.555556,flat,1
+0.387755,Female,asymptomatic,0.358974,0.38835,FALSE,normal,0.206107,TRUE,0.555556,flat,1
+0.387755,Male,asymptomatic,0.871795,0.666667,FALSE,'st-t abnormality',0.664122,TRUE,0.833333,flat,1
+0.428571,Male,asymptomatic,0.461538,0.411003,FALSE,normal,0.19084,TRUE,0,flat,1
+0.428571,Male,asymptomatic,0.74359,0.443366,FALSE,normal,0.389313,FALSE,0.555556,flat,1
+0.44898,Male,asymptomatic,0.615385,0.828479,FALSE,'st-t abnormality',0.412214,TRUE,0.694444,flat,1
+0.489796,Male,asymptomatic,0.615385,0.585761,FALSE,normal,0.480916,TRUE,0.555556,flat,1
+0.489796,Male,asymptomatic,0.871795,0.796117,FALSE,normal,0.175573,TRUE,0.694444,flat,1
+0.530612,Female,non-anginal,0.487179,0.676375,FALSE,'st-t abnormality',0.221374,TRUE,0,flat,1
+0.571429,Male,asymptomatic,0.807692,0.831715,TRUE,normal,0.603053,TRUE,0.833333,flat,1
+0.755102,Male,asymptomatic,0.487179,0.614887,FALSE,'st-t abnormality',0.335878,TRUE,0.277778,flat,1
+0.714286,Male,asymptomatic,0.615385,0.566343,FALSE,'st-t abnormality',0.312977,TRUE,0.833333,flat,2
+0.326531,Male,asymptomatic,0.487179,0.401294,FALSE,'st-t abnormality',0.427481,FALSE,0,flat,0
+0.653061,Male,asymptomatic,0.512821,0.430421,FALSE,'st-t abnormality',0.526718,TRUE,0.416667,downsloping,2
+0.55102,Male,asymptomatic,0.641026,0.462783,FALSE,'st-t abnormality',0.59542,TRUE,0.694444,upsloping,1
+0.77551,Male,non-anginal,0.230769,0.414239,TRUE,'lv hypertrophy',0.21374,TRUE,0.361111,flat,0
+0.755102,Male,asymptomatic,0.74359,0.488673,TRUE,'st-t abnormality',0.259542,TRUE,0,flat,3
+0.653061,Male,'atypical angina',0.871795,0.588997,TRUE,'st-t abnormality',0.656489,FALSE,0.138889,flat,1
+0.571429,Male,'atypical angina',0.435897,0.262136,FALSE,'st-t abnormality',0.526718,FALSE,0,flat,0
+0.693878,Male,asymptomatic,0.358974,0.436893,FALSE,'st-t abnormality',0.114504,FALSE,0,flat,0
+0.714286,Male,asymptomatic,1,0.297735,FALSE,normal,0.099237,TRUE,0.694444,downsloping,4
+0.367347,Male,asymptomatic,0.230769,0.488673,FALSE,normal,0.412214,TRUE,0.555556,flat,1
+0.653061,Male,asymptomatic,0.487179,0.326861,TRUE,'st-t abnormality',0.526718,TRUE,0.138889,flat,1
+0.571429,Male,asymptomatic,0.358974,0.048544,FALSE,normal,0.374046,TRUE,0.416667,flat,1
+0.55102,Male,non-anginal,0.514518,0.462783,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+1,Male,asymptomatic,0.410256,0.278317,FALSE,'st-t abnormality',0.29771,TRUE,0.555556,upsloping,3
+0.714286,Male,asymptomatic,0.871795,0.469256,TRUE,normal,0.259542,TRUE,0.277778,flat,3
+0.653061,Male,asymptomatic,0.514518,0.634304,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,2
+0.612245,Male,asymptomatic,0.514518,0.381877,TRUE,normal,0.507982,FALSE,0.244108,flat,1
+0.591837,Male,asymptomatic,0.514518,0.621359,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,4
+0.632653,Male,asymptomatic,0.384615,0.478964,FALSE,normal,0.351145,TRUE,0.361111,downsloping,1
+0.285714,Male,non-anginal,0.538462,0.501618,FALSE,normal,0.679389,FALSE,0,flat,0
+0.693878,Male,asymptomatic,0.769231,0.220065,FALSE,'st-t abnormality',0.198473,TRUE,0.444444,upsloping,2
+0.571429,Male,'atypical angina',0.410256,0.449838,TRUE,normal,0.687023,FALSE,0.555556,flat,0
+0.653061,Male,non-anginal,0.514518,0.747573,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.469388,Male,asymptomatic,0.514518,0.430421,TRUE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,0
+0.591837,Male,asymptomatic,0.487179,0.731392,FALSE,'st-t abnormality',0.587786,TRUE,0.555556,flat,1
+0.795918,Male,'typical angina',0.641026,0.598706,TRUE,normal,0.412214,FALSE,0.694444,upsloping,3
+0.714286,Male,'atypical angina',0.514518,0.427184,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,1
+0.55102,Male,'atypical angina',0.230769,0.417476,TRUE,'st-t abnormality',0.832061,FALSE,0.244108,flat,0
+0.591837,Male,asymptomatic,0.615385,0.417476,FALSE,'st-t abnormality',0.557252,TRUE,0.555556,flat,2
+0.755102,Male,'typical angina',0.514518,0.540453,FALSE,normal,0.507982,FALSE,0.244108,flat,0
+0.530612,Male,asymptomatic,0.564103,0.436893,FALSE,normal,0.526718,TRUE,0.833333,flat,3
+0.897959,Male,non-anginal,0.358974,0.417476,FALSE,normal,0.236641,TRUE,0.277778,flat,3
+0.959184,Male,asymptomatic,1,0.381877,TRUE,'st-t abnormality',0.282443,FALSE,0,flat,1
+0.469388,Male,non-anginal,0.514518,0.822006,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.653061,Male,asymptomatic,0.641026,0.423948,FALSE,normal,0.29771,TRUE,0.694444,flat,2
+0.734694,Female,asymptomatic,0.641026,0.618123,FALSE,normal,0.526718,TRUE,0.277778,flat,1
+0.673469,Male,asymptomatic,0.692308,0.504854,FALSE,normal,0.587786,TRUE,0.833333,downsloping,2
+0.795918,Male,asymptomatic,0.871795,0.967638,TRUE,'st-t abnormality',0.450382,TRUE,0,flat,2
+0.693878,Male,asymptomatic,0.551282,0.686084,FALSE,normal,0.450382,TRUE,0.277778,flat,2
+0.714286,Male,asymptomatic,0.487179,0.721683,FALSE,normal,0.51145,TRUE,0.555556,flat,2
+0.836735,Male,asymptomatic,0.615385,0.398058,FALSE,'st-t abnormality',0.526718,TRUE,0.555556,flat,3
+0.469388,Male,asymptomatic,0.514518,0.459547,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,0
+0.693878,Male,asymptomatic,0.846154,0.404531,TRUE,normal,0.312977,TRUE,0.833333,downsloping,1
+0.55102,Male,non-anginal,0.514518,0.517799,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,1
+0.959184,Male,asymptomatic,0.564103,0.453074,FALSE,normal,0.312977,TRUE,0.833333,flat,3
+0.244898,Male,non-anginal,0.179487,0.501618,FALSE,normal,0.068702,TRUE,0,flat,0
+0.612245,Male,asymptomatic,0.230769,0.365696,FALSE,normal,0.29771,FALSE,0,flat,1
+0.653061,Male,asymptomatic,0.514518,0.355987,FALSE,normal,0.507982,FALSE,0.244108,flat,0
+0.714286,Male,asymptomatic,0.871795,0.588997,TRUE,'st-t abnormality',0.129771,TRUE,0.555556,flat,3
+0.142857,Male,non-anginal,0.514518,0.245955,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,0
+0.693878,Male,'typical angina',0.25641,0.559871,FALSE,'st-t abnormality',0.603053,TRUE,0.244108,flat,1
+0.816327,Male,non-anginal,0.74359,0.355987,TRUE,normal,0.465649,FALSE,0,flat,1
+0.755102,Male,asymptomatic,0.74359,0.485437,FALSE,normal,0.374046,TRUE,0.416667,flat,3
+0.714286,Male,asymptomatic,0.051282,0.711974,FALSE,'st-t abnormality',0.381679,TRUE,0.277778,upsloping,1
+0.734694,Male,asymptomatic,0.487179,0.446602,FALSE,'st-t abnormality',0.435115,FALSE,0.138889,flat,0
+0.44898,Male,asymptomatic,0.666667,0.854369,FALSE,'lv hypertrophy',0.374046,TRUE,0.277778,upsloping,1
+0.632653,Male,asymptomatic,0.410256,0.369354,FALSE,normal,0.351145,TRUE,0.277778,flat,1
+0.55102,Male,asymptomatic,0.74359,0.242718,FALSE,'st-t abnormality',0.603053,FALSE,0,flat,0
+0.346939,Male,non-anginal,0.514518,0.488673,FALSE,normal,0.507982,FALSE,0.244108,flat,0
+0.755102,Male,asymptomatic,0.514518,0.734628,FALSE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,3
+0.673469,Male,'atypical angina',0.514518,0.640777,FALSE,normal,0.507982,FALSE,0.244108,flat,0
+0.428571,Male,non-anginal,0.514518,0.184466,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.897959,Male,asymptomatic,0.514518,0.407767,FALSE,normal,0.507982,FALSE,0.244108,flat,1
+0.44898,Male,asymptomatic,0.514518,0.430421,FALSE,normal,0.507982,FALSE,0.244108,flat,1
+0.734694,Male,asymptomatic,0.514518,0.71521,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.55102,Male,asymptomatic,0.307692,0.326861,TRUE,'st-t abnormality',0.236641,FALSE,0,flat,2
+0.714286,Male,asymptomatic,0.230769,0.540453,FALSE,'st-t abnormality',0.526718,TRUE,0.555556,flat,2
+0.632653,Male,asymptomatic,0.423077,0.443366,FALSE,normal,0.48855,TRUE,0.694444,downsloping,3
+0.530612,Male,asymptomatic,0.487179,0.378641,TRUE,normal,0.312977,TRUE,0.555556,flat,1
+0.591837,Male,asymptomatic,0.230769,0.36246,FALSE,'lv hypertrophy',0.221374,FALSE,0,flat,0
+0.693878,Male,non-anginal,0.514518,0.385113,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,1
+0.979592,Male,non-anginal,0.153846,0.369354,FALSE,'lv hypertrophy',0.374046,FALSE,0.972222,downsloping,4
+0.530612,Female,asymptomatic,0.589744,0.61165,FALSE,normal,0.259542,TRUE,0.416667,flat,1
+0.857143,Male,asymptomatic,1,0.346278,FALSE,'st-t abnormality',0.442748,TRUE,0.833333,downsloping,2
+0.673469,Female,'atypical angina',0.615385,0.68932,TRUE,normal,0.374046,TRUE,0,flat,0
+0.408163,Male,asymptomatic,0.514518,0.605178,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,0
+0.408163,Male,non-anginal,0.512821,0.436893,TRUE,'st-t abnormality',0.694656,FALSE,0,flat,1
+0.673469,Male,'typical angina',0.641026,0.372168,TRUE,'st-t abnormality',0.221374,FALSE,0.416667,downsloping,3
+0.77551,Male,asymptomatic,0.25641,0.569579,FALSE,normal,0.526718,FALSE,0.416667,upsloping,1
+0.816327,Male,'typical angina',0.514518,0.31068,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,0
+0.693878,Male,non-anginal,0.358974,0.436893,FALSE,'lv hypertrophy',0.114504,FALSE,0,flat,0
+0.877551,Male,non-anginal,0.514518,0.440129,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.938776,Male,'typical angina',0.514518,0.423948,TRUE,normal,0.507982,FALSE,0.244108,flat,3
+0.510204,Male,non-anginal,0.807692,0.291262,TRUE,'st-t abnormality',0.679389,FALSE,0.244108,flat,0
+0.612245,Male,non-anginal,0.74359,0.433657,FALSE,'st-t abnormality',0.358779,TRUE,0,flat,2
+0.959184,Male,asymptomatic,0.871795,0.728155,TRUE,normal,0.312977,TRUE,0.555556,downsloping,0
+0.571429,Male,non-anginal,0.514518,0.398058,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,4
+0.612245,Male,non-anginal,0.514518,0.475728,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,2
+0.530612,Male,non-anginal,0.514518,0.381877,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,0
+0.530612,Male,'atypical angina',0.514518,0.313916,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,0
+0.632653,Male,asymptomatic,0.615385,0.61165,FALSE,normal,0.633588,TRUE,0.555556,flat,0
+0.55102,Male,asymptomatic,0.514518,0.385113,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,1
+0.591837,Male,asymptomatic,0.666667,0.598706,TRUE,'st-t abnormality',0.679389,TRUE,0.555556,flat,3
+0.673469,Male,asymptomatic,0.514518,0.669903,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.265306,Male,asymptomatic,0.74359,0.278317,FALSE,normal,0.435115,TRUE,0.416667,flat,0
+0.877551,Male,asymptomatic,0.487179,0.440129,FALSE,'st-t abnormality',0.335878,TRUE,0,flat,3
+0.204082,Male,asymptomatic,0.230769,0.660194,FALSE,normal,0.259542,TRUE,0.416667,downsloping,1
+0.55102,Male,asymptomatic,0.846154,0.427184,FALSE,normal,0.29771,TRUE,0.694444,flat,1
+0.571429,Male,asymptomatic,0.461538,0.446602,FALSE,'st-t abnormality',0.366412,TRUE,0.555556,downsloping,2
+0.836735,Male,asymptomatic,0.514518,0.369354,TRUE,normal,0.507982,FALSE,0.244108,flat,2
+0.734694,Male,asymptomatic,0.74359,0.349515,FALSE,'st-t abnormality',0.48855,TRUE,0.138889,flat,2
+0.897959,Male,asymptomatic,0.871795,0.369354,TRUE,'lv hypertrophy',0.450382,FALSE,0.416667,flat,2
+0.836735,Male,asymptomatic,0.514518,0.404531,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,2
+0.571429,Male,asymptomatic,0.514518,0.63754,TRUE,normal,0.507982,FALSE,0.244108,flat,1
+0.693878,Male,asymptomatic,0.514518,0.275081,FALSE,'st-t abnormality',0.374046,TRUE,0.833333,flat,4
+0.795918,Male,asymptomatic,0.514518,0.919094,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.591837,Male,asymptomatic,0.820513,0.28479,FALSE,'lv hypertrophy',0.366412,TRUE,0.833333,downsloping,3
+0.836735,Male,asymptomatic,0.514518,0.660194,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.469388,Male,asymptomatic,0.514518,0.369354,TRUE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,1
+0.408163,Male,asymptomatic,0.615385,0.369354,FALSE,normal,0.671756,TRUE,0.416667,upsloping,3
+0.836735,Male,asymptomatic,0.384615,0.423948,TRUE,'lv hypertrophy',0.099237,TRUE,0,flat,2
+0.836735,Male,non-anginal,0.514518,0.601942,FALSE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,0
+0.734694,Male,asymptomatic,0.514518,0.514563,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,2
+0.510204,Male,asymptomatic,0.410256,0.511327,FALSE,normal,0.389313,TRUE,0.555556,flat,1
+0.183673,Male,non-anginal,0.333333,0.501618,FALSE,'lv hypertrophy',0.717557,FALSE,0.277778,flat,0
+0.795918,Male,asymptomatic,0.615385,0.433657,FALSE,'st-t abnormality',0.389313,TRUE,0.555556,flat,3
+0.938776,Male,non-anginal,0.615385,0.491909,TRUE,normal,0.175573,FALSE,0,flat,1
+0.714286,Male,'atypical angina',0.514518,0.2589,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,0
+0.612245,Male,asymptomatic,0.102564,0.414239,FALSE,'st-t abnormality',0.29771,FALSE,0,flat,0
+0.734694,Male,asymptomatic,0.487179,0.559871,TRUE,'lv hypertrophy',0.450382,FALSE,0,flat,2
+0.612245,Male,asymptomatic,0.871795,0.553398,TRUE,'lv hypertrophy',0.320611,TRUE,0.277778,upsloping,3
+0.653061,Male,asymptomatic,0.487179,0.326861,TRUE,'lv hypertrophy',0.526718,TRUE,0.138889,flat,1
+0.591837,Male,asymptomatic,0.384615,0.579288,FALSE,'lv hypertrophy',0.221374,FALSE,0,flat,1
+0.55102,Male,non-anginal,0.514518,0.369354,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,0
+0.55102,Male,asymptomatic,0.358974,0.456311,FALSE,'lv hypertrophy',0.427481,TRUE,0.472222,downsloping,1
+0.571429,Male,asymptomatic,0.487179,0.381877,TRUE,normal,0.206107,FALSE,0.416667,flat,1
+0.591837,Male,asymptomatic,0.487179,0.394822,FALSE,'st-t abnormality',0.19084,TRUE,0.277778,flat,0
+0.673469,Male,non-anginal,0.514518,0.644013,FALSE,normal,0.507982,FALSE,0.244108,flat,1
+0.673469,Male,non-anginal,0.358974,0.815534,FALSE,normal,0.206107,TRUE,0,flat,3
+0.612245,Male,non-anginal,0.74359,0.433657,FALSE,'st-t abnormality',0.358779,TRUE,0,flat,2
+0.938776,Male,asymptomatic,0.807692,0.728155,FALSE,normal,0.312977,TRUE,0.416667,downsloping,2
+0.816327,Male,non-anginal,0.538462,0.546926,TRUE,normal,0.610687,TRUE,0,flat,0
+0.469388,Female,asymptomatic,0.282051,0.559871,TRUE,'lv hypertrophy',0.19084,FALSE,0.277778,upsloping,0
+0.693878,Male,asymptomatic,0.871795,0.546926,TRUE,'st-t abnormality',0.282443,TRUE,0.833333,flat,4
+0.510204,Male,asymptomatic,0.666667,0.695793,TRUE,'st-t abnormality',0.435115,TRUE,0.416667,flat,3
+0.693878,Male,asymptomatic,0.846154,0.275081,FALSE,'st-t abnormality',0.51145,TRUE,0,flat,1
+0.367347,Male,asymptomatic,0.538462,0.728155,FALSE,normal,0.419847,FALSE,0,flat,2
+0.530612,Female,asymptomatic,0.448718,0.802589,TRUE,'st-t abnormality',0.633588,FALSE,0,flat,1
+0.693878,Male,'typical angina',0.514518,0.174757,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,0
+0.55102,Male,asymptomatic,0.384615,0.446602,TRUE,'st-t abnormality',0.221374,FALSE,0,flat,2
+0.612245,Male,asymptomatic,0.514518,0.970874,TRUE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,0
+0.693878,Male,'atypical angina',0.358974,0.546926,FALSE,'lv hypertrophy',0.167939,TRUE,0,flat,1
+0.781565,Male,asymptomatic,0.385092,0.46942,FALSE,'lv hypertrophy',0.503102,TRUE,0.761708,flat,1
+0.569206,Male,asymptomatic,0.434641,0.522883,TRUE,'lv hypertrophy',0.562535,TRUE,0.651491,downsloping,1
+0.36589,Male,'atypical angina',0.230769,0.544353,FALSE,normal,0.625196,FALSE,0.115735,flat,1
+0.618643,Male,non-anginal,0.455949,0.599235,FALSE,'lv hypertrophy',0.652865,FALSE,0.768409,flat,1
+0.647729,Male,non-anginal,0.613583,0.510174,FALSE,normal,0.67252,FALSE,0.016753,upsloping,1
+0.580059,Male,asymptomatic,0.74359,0.525324,FALSE,'lv hypertrophy',0.329897,TRUE,0.169338,flat,1
+0.524614,Male,asymptomatic,0.424678,0.7597,FALSE,'lv hypertrophy',0.723243,FALSE,0.045839,upsloping,1
+0.617534,Male,asymptomatic,0.476102,0.545198,FALSE,normal,0.672736,TRUE,0.373984,upsloping,1
+0.514495,Male,asymptomatic,0.369189,0.61465,FALSE,'lv hypertrophy',0.330353,TRUE,0.290373,flat,1
+0.533085,Male,non-anginal,0.568648,0.534026,FALSE,normal,0.61617,FALSE,0.205707,flat,1
+0.577243,Male,asymptomatic,0.230769,0.365403,FALSE,'lv hypertrophy',0.664122,FALSE,0.019445,upsloping,1
+0.587094,Male,asymptomatic,0.424753,0.579679,FALSE,'lv hypertrophy',0.422833,TRUE,0.611111,flat,1
+0.767512,Male,non-anginal,0.632283,0.368955,FALSE,'lv hypertrophy',0.621117,FALSE,0.6133,flat,1
+0.315325,Male,non-anginal,0.444391,0.498708,FALSE,normal,0.677713,FALSE,0.866064,flat,1
+0.67916,Male,asymptomatic,0.415054,0.563043,FALSE,normal,0.173776,TRUE,0.417139,flat,1
+0.413739,Male,asymptomatic,0.321416,0.529849,FALSE,'lv hypertrophy',0.609673,FALSE,0.221506,upsloping,1
+0.290005,Male,asymptomatic,0.230769,0.321247,FALSE,'lv hypertrophy',0.71426,FALSE,0,upsloping,1
+0.646954,Male,asymptomatic,0.462638,0.564694,FALSE,'lv hypertrophy',0.565955,TRUE,0.76155,flat,1
+0.495528,Male,asymptomatic,0.395653,0.53987,FALSE,normal,0.633787,TRUE,0,upsloping,1
+0.714007,Male,non-anginal,0.551413,0.417801,FALSE,'lv hypertrophy',0.603053,FALSE,0.158137,flat,1
+0.534809,Female,asymptomatic,0.602015,0.633987,FALSE,normal,0.308468,TRUE,0.338394,flat,1
+0.641833,Male,asymptomatic,0.480893,0.518004,TRUE,'lv hypertrophy',0.533929,TRUE,0.250169,flat,1
+0.636574,Male,'typical angina',0.848398,0.648275,TRUE,'st-t abnormality',0.724036,FALSE,0.321652,flat,1
+0.157948,Male,asymptomatic,0.327117,0.368282,FALSE,normal,0.501942,TRUE,0.343222,flat,1
+0.560908,Male,'typical angina',0.679652,0.662958,FALSE,'lv hypertrophy',0.570501,FALSE,0.048274,flat,1
+0.59671,Male,non-anginal,0.377207,0.551707,FALSE,normal,0.592771,TRUE,0.450842,flat,1
+0.390653,Male,non-anginal,0.429282,0.76009,FALSE,normal,0.652457,FALSE,0,upsloping,1
+0.553831,Male,asymptomatic,0.512396,0.508115,FALSE,normal,0.285263,FALSE,0.656122,flat,1
+0.46837,Male,asymptomatic,0.661349,0.739858,FALSE,normal,0.455948,TRUE,0.356605,upsloping,1
+0.534702,Male,asymptomatic,0.380316,0.625409,FALSE,'lv hypertrophy',0.680801,FALSE,0.16528,upsloping,1
+0.182869,Male,asymptomatic,0.55277,0.429078,FALSE,'lv hypertrophy',0.540496,TRUE,0.004219,upsloping,1
+0.585348,Male,asymptomatic,0.757834,0.50423,FALSE,normal,0.184662,TRUE,0.398163,flat,1
+0.634424,Male,asymptomatic,0.463022,0.551679,FALSE,'lv hypertrophy',0.473983,TRUE,0.644977,flat,1
+0.647746,Male,asymptomatic,0.746953,0.701358,FALSE,'lv hypertrophy',0.730705,FALSE,0,upsloping,1
+0.436719,Male,asymptomatic,0.502757,0.442047,TRUE,'lv hypertrophy',0.548588,TRUE,0.107204,flat,1
+0.614498,Male,'typical angina',0.807972,0.528549,FALSE,'lv hypertrophy',0.602137,FALSE,0,upsloping,1
+0.726406,Female,asymptomatic,0.709224,0.574562,FALSE,normal,0.577866,TRUE,0.343603,flat,1
+0.29738,Male,asymptomatic,0.235716,0.39629,FALSE,'lv hypertrophy',0.67534,FALSE,0,upsloping,1
+0.711097,Female,asymptomatic,0.468351,0.515312,FALSE,normal,0.635926,TRUE,0.482939,flat,1
+0.479592,Male,non-anginal,0.351147,0.350286,FALSE,'lv hypertrophy',0.457146,FALSE,0.171525,flat,1
+0.450107,Male,asymptomatic,0.412423,0.594826,FALSE,'lv hypertrophy',0.69799,FALSE,0.11397,upsloping,1
+0.449611,Male,asymptomatic,0.248244,0.741459,FALSE,'lv hypertrophy',0.296683,TRUE,0.277778,flat,1
+0.491244,Male,asymptomatic,0.708408,0.430431,FALSE,normal,0.273289,FALSE,0.555556,flat,1
+0.636968,Male,'atypical angina',0.577594,0.606838,FALSE,normal,0.59319,FALSE,0.056691,upsloping,1
+0.283139,Male,asymptomatic,0.386566,0.458943,FALSE,normal,0.720489,FALSE,0,upsloping,1
+0.647005,Male,asymptomatic,0.615385,0.420046,FALSE,'lv hypertrophy',0.525429,TRUE,0.488615,upsloping,1
+0.732651,Male,'typical angina',0.566946,0.754709,FALSE,normal,0.693076,FALSE,0.060846,upsloping,1
+0.595934,Male,non-anginal,0.857867,0.574959,FALSE,'lv hypertrophy',0.596835,FALSE,0,upsloping,1
+0.700946,Male,non-anginal,0.708583,0.394515,FALSE,'lv hypertrophy',0.558014,FALSE,0.242078,flat,1
+0.426978,Female,asymptomatic,0.427103,0.415258,FALSE,normal,0.321177,TRUE,0.089504,flat,1
+0.658991,Female,asymptomatic,0.721335,0.507749,FALSE,normal,0.43454,TRUE,0.17578,flat,1
+0.356705,Male,non-anginal,0.263499,0.581692,FALSE,normal,0.484316,FALSE,0.14672,flat,1
+0.580339,Female,non-anginal,0.3675,0.586023,FALSE,'lv hypertrophy',0.760359,FALSE,0.224194,flat,1
+0.079398,Male,asymptomatic,0.358974,0.530438,FALSE,normal,0.470484,TRUE,0.431787,flat,1
+0.40381,Female,asymptomatic,0.56334,0.422945,FALSE,normal,0.483526,TRUE,0.390933,flat,1
+0.353609,Male,'typical angina',0.615385,0.429954,FALSE,normal,0.821409,FALSE,0.079934,flat,1
+0.54874,Male,'atypical angina',0.392944,0.566287,FALSE,normal,0.530916,FALSE,0.037894,flat,1
+0.564311,Male,'atypical angina',0.358974,0.63295,FALSE,normal,0.679389,FALSE,0.79001,flat,1
+0.245543,Male,asymptomatic,0.615385,0.553956,FALSE,normal,0.488241,TRUE,0.450658,flat,1
+0.222791,Male,asymptomatic,0.230769,0.406116,FALSE,normal,0.708913,FALSE,0,flat,1
+0.220384,Male,asymptomatic,0.284343,0.634163,FALSE,normal,0.689435,FALSE,0,flat,1
+0.151923,Male,asymptomatic,0.017638,0.336815,FALSE,normal,0.480071,TRUE,0.541457,flat,1
+0.328035,Male,asymptomatic,0.399597,0.598893,FALSE,normal,0.755725,FALSE,0,flat,1
+0.136359,Male,asymptomatic,0.358974,0.562126,FALSE,normal,0.585108,TRUE,0.287195,flat,1
+0.306122,Male,asymptomatic,0.743359,0.559113,FALSE,normal,0.462625,TRUE,0.555556,flat,1
+0.349654,Male,asymptomatic,0.251995,0.483109,FALSE,normal,0.511811,TRUE,0.204583,flat,1
+0.367347,Male,asymptomatic,0.406869,0.332107,FALSE,normal,0.370501,FALSE,0,flat,1
+0.386469,Male,asymptomatic,0.586774,0.520919,FALSE,normal,0.494821,TRUE,0.277778,flat,1
+0.576996,Male,non-anginal,0.615385,0.356986,FALSE,normal,0.564885,TRUE,0.277778,flat,1
+0.494389,Male,asymptomatic,0.565691,0.459725,FALSE,normal,0.178368,TRUE,0.303989,flat,1
+0.405405,Male,asymptomatic,0.317928,0.415674,TRUE,normal,0.381107,FALSE,0,flat,1
+0.446162,Male,asymptomatic,0.399753,0.512829,FALSE,normal,0.502105,FALSE,0.456713,flat,1
+0.519484,Male,asymptomatic,0.77676,0.608321,FALSE,normal,0.215157,TRUE,0.318924,flat,1
+0.571667,Female,non-anginal,0.573481,0.398148,FALSE,normal,0.693672,FALSE,0.275819,flat,1
+0.484677,Male,non-anginal,0.316496,0.53508,FALSE,normal,0.742102,FALSE,0.009823,flat,1
+0.438205,Male,asymptomatic,0.489384,0.412518,FALSE,normal,0.556329,FALSE,0.207403,flat,1
+0.467156,Female,non-anginal,0.835289,0.701539,FALSE,normal,0.574168,TRUE,0.27432,flat,1
+0.606998,Male,asymptomatic,0.579545,0.428004,FALSE,normal,0.594764,FALSE,0,flat,1
+0.477928,Female,asymptomatic,0.827023,0.561384,FALSE,normal,0.502397,TRUE,0.138001,flat,1
+0.508504,Male,asymptomatic,0.450897,0.497797,FALSE,normal,0.386583,TRUE,0.555556,flat,1
+0.476523,Male,asymptomatic,0.45972,0.430249,FALSE,normal,0.51196,FALSE,0.017057,flat,1
+0.604049,Male,asymptomatic,0.589146,0.440288,FALSE,normal,0.278901,FALSE,0.555556,flat,1
+0.508958,Male,asymptomatic,0.518083,0.469816,FALSE,normal,0.418369,TRUE,0.5913,flat,1
+0.548922,Male,'atypical angina',0.615385,0.582463,FALSE,'st-t abnormality',0.564885,TRUE,0.277778,flat,1
+0.608473,Male,non-anginal,0.46342,0.416539,FALSE,'st-t abnormality',0.557624,FALSE,0.034433,flat,1
+0.598625,Female,asymptomatic,0.571563,0.778161,FALSE,normal,0.400336,TRUE,0.416667,flat,1
+0.456494,Male,asymptomatic,0.347762,0.550848,FALSE,normal,0.39157,FALSE,0.428693,flat,1
+0.657062,Male,asymptomatic,0.737227,0.397265,FALSE,normal,0.369,FALSE,0,flat,1
+0.73079,Male,asymptomatic,0.620079,0.592267,TRUE,normal,0.142272,TRUE,0.406348,flat,1
+0.254162,Male,asymptomatic,0.331976,0.464944,FALSE,normal,0.518974,TRUE,0.277778,flat,1
+0.211095,Male,asymptomatic,0.298004,0.632772,FALSE,normal,0.713517,FALSE,0,flat,1
+0.406479,Male,asymptomatic,0.74359,0.577886,FALSE,normal,0.410702,FALSE,0.555556,flat,1
+0.525176,Male,'typical angina',0.37783,0.66164,FALSE,'st-t abnormality',0.606642,FALSE,0.069111,flat,1
+0.376923,Male,asymptomatic,0.628587,0.450754,FALSE,'st-t abnormality',0.415052,TRUE,0.321551,flat,1
+0.367347,Male,asymptomatic,0.358974,0.480938,FALSE,normal,0.394772,TRUE,0.151658,flat,1
+0.512428,Male,asymptomatic,0.257775,0.398863,FALSE,normal,0.30527,FALSE,0,flat,1
+0.420542,Male,asymptomatic,0.455136,0.384092,TRUE,'lv hypertrophy',0.619823,TRUE,0.56328,downsloping,1
+0.407342,Male,asymptomatic,0.829896,0.48352,FALSE,normal,0.317657,TRUE,0.736003,flat,1
+0.532525,Male,asymptomatic,0.86651,0.658825,FALSE,normal,0.151427,TRUE,0.368112,flat,1
+0.479678,Male,asymptomatic,0.871795,0.845978,FALSE,normal,0.209057,TRUE,0.580952,flat,1
+0.485305,Male,asymptomatic,0.563955,0.559218,FALSE,normal,0.420469,TRUE,0.555556,flat,1
+0.487975,Male,asymptomatic,0.401625,0.336215,FALSE,normal,0.535447,FALSE,0.03943,flat,1
+0.390291,Male,asymptomatic,0.788082,0.389219,FALSE,normal,0.402406,TRUE,0.416667,flat,1
+0.511407,Male,asymptomatic,0.523038,0.47979,FALSE,normal,0.356239,TRUE,0,flat,1
+0.564674,Male,non-anginal,0.45853,0.517512,FALSE,normal,0.599804,TRUE,0.357146,flat,1
+0.504753,Male,asymptomatic,0.47925,0.425977,FALSE,normal,0.154646,TRUE,0.027681,flat,1
+0.517304,Male,asymptomatic,0.602816,0.418808,FALSE,normal,0.347685,TRUE,0,flat,1
+0.558523,Male,asymptomatic,0.492352,0.5841,FALSE,normal,0.445039,TRUE,0.483,flat,1
+0.650712,Male,asymptomatic,0.621717,0.389185,TRUE,normal,0.450481,TRUE,0.177044,flat,1
+0.587042,Male,asymptomatic,0.829153,0.542801,FALSE,normal,0.285524,TRUE,0.777134,flat,1
+0.629876,Male,non-anginal,0.67188,0.471294,TRUE,'st-t abnormality',0.168507,FALSE,0,flat,1
+0.54736,Male,asymptomatic,0.472912,0.546036,FALSE,normal,0.516299,TRUE,0.555556,flat,1
+0.318691,Male,asymptomatic,0.514191,0.313639,FALSE,normal,0.475653,FALSE,0.55062,flat,1
+0.352399,Male,asymptomatic,0.358974,0.478658,FALSE,normal,0.381949,TRUE,0.277778,flat,1
+0.42033,Male,non-anginal,0.60758,0.573029,FALSE,normal,0.603053,TRUE,0.771531,flat,1
+0.495493,Male,asymptomatic,0.417034,0.512123,FALSE,normal,0.261696,TRUE,0.555556,flat,1
+0.688309,Male,'typical angina',0.597623,0.61934,TRUE,normal,0.793342,FALSE,0.515611,flat,1
+0.405429,Female,non-anginal,0.51469,0.505168,TRUE,normal,0.739236,FALSE,0,flat,1
+0.522027,Female,asymptomatic,0.589744,0.45785,FALSE,normal,0.275218,TRUE,0.416667,flat,1
+0.332029,Male,asymptomatic,0.519663,0.767079,FALSE,normal,0.460716,TRUE,0.461478,flat,1
+0.474865,Male,asymptomatic,0.615385,0.564141,FALSE,normal,0.49933,TRUE,0.307654,flat,1
+0.546301,Male,non-anginal,0.52052,0.41061,FALSE,normal,0.508746,FALSE,0.420701,flat,1
+0.468785,Male,asymptomatic,0.248887,0.696266,FALSE,'st-t abnormality',0.236431,TRUE,0.277778,flat,1
+0.487569,Male,asymptomatic,0.487179,0.778712,FALSE,normal,0.359166,TRUE,0.277778,flat,1
+0.530612,Male,asymptomatic,0.536958,0.4378,FALSE,normal,0.378102,FALSE,0.459647,flat,1
+0.387469,Male,'typical angina',0.615385,0.375375,FALSE,normal,0.781725,FALSE,0,flat,1
+0.56568,Male,non-anginal,0.705325,0.601783,FALSE,normal,0.562427,TRUE,0.54115,flat,1
+0.530427,Male,asymptomatic,0.527634,0.476322,FALSE,normal,0.278783,TRUE,0.555556,flat,1
+0.480032,Female,non-anginal,0.810312,0.615294,FALSE,normal,0.619991,FALSE,0.277778,flat,1
+0.558462,Male,asymptomatic,0.59999,0.435373,FALSE,'st-t abnormality',0.443001,TRUE,0.320281,flat,1
+0.421882,Male,asymptomatic,0.905308,0.912545,FALSE,'st-t abnormality',0.218089,TRUE,0.555556,flat,1
+0.683306,Male,'atypical angina',0.47761,0.34197,FALSE,'st-t abnormality',0.183178,TRUE,0.528805,flat,1
+0.577374,Male,asymptomatic,0.436115,0.398148,FALSE,normal,0.426319,FALSE,0,flat,1
+0.63557,Male,asymptomatic,0.583526,0.421366,TRUE,'lv hypertrophy',0.516081,TRUE,0.052702,flat,1
+0.755102,Male,asymptomatic,0.776066,0.676047,TRUE,normal,0.184285,TRUE,0.465781,flat,1
+0.637309,Male,asymptomatic,0.667549,0.489534,FALSE,normal,0.179958,TRUE,0.298101,flat,1
+0.458547,Male,asymptomatic,0.379941,0.644268,FALSE,normal,0.372226,TRUE,0.739237,flat,1
+0.320541,Male,asymptomatic,0.515064,0.660629,FALSE,normal,0.346791,TRUE,0.555556,flat,1
+0.513579,Female,asymptomatic,0.366727,0.466279,FALSE,normal,0.372922,TRUE,0.180499,flat,1
+0.445693,Male,asymptomatic,0.706201,0.710623,FALSE,'st-t abnormality',0.532395,TRUE,0.739108,flat,1
+0.407464,Male,asymptomatic,0.437807,0.435986,FALSE,normal,0.302596,TRUE,0,flat,1
+0.441349,Male,asymptomatic,0.532483,0.442318,FALSE,normal,0.507551,FALSE,0.553182,flat,1
+0.491227,Male,asymptomatic,0.651065,0.769039,FALSE,'st-t abnormality',0.407505,TRUE,0.642565,flat,1
+0.489796,Male,asymptomatic,0.49913,0.479692,FALSE,normal,0.43972,TRUE,0.555556,flat,1
+0.439018,Male,asymptomatic,0.871795,0.79005,FALSE,normal,0.165225,TRUE,0.660956,flat,1
+0.595906,Male,non-anginal,0.373341,0.614189,FALSE,'st-t abnormality',0.185498,TRUE,0,flat,1
+0.590613,Male,asymptomatic,0.834852,0.677819,TRUE,normal,0.419026,TRUE,0.576527,flat,1
+0.59055,Male,asymptomatic,0.65974,0.563243,FALSE,'st-t abnormality',0.376416,TRUE,0.408027,flat,1
+0.462838,Male,asymptomatic,0.658833,0.557358,FALSE,'lv hypertrophy',0.570738,TRUE,0.53295,upsloping,1
+0.740938,Male,non-anginal,0.674986,0.631841,TRUE,'st-t abnormality',0.690082,FALSE,0.153954,flat,1
+0.455858,Male,asymptomatic,0.260257,0.506646,FALSE,normal,0.412086,TRUE,0.555556,flat,1
+0.438709,Male,asymptomatic,0.488951,0.367011,TRUE,'lv hypertrophy',0.547589,TRUE,0.11164,flat,1
+0.511581,Male,asymptomatic,0.370029,0.109748,FALSE,normal,0.374046,TRUE,0.452145,flat,1
+0.579984,Male,asymptomatic,0.514518,0.383244,TRUE,normal,0.507982,FALSE,0.244108,flat,1
+0.632653,Male,asymptomatic,0.408567,0.37791,FALSE,normal,0.351145,TRUE,0.29155,downsloping,1
+0.582689,Male,asymptomatic,0.641729,0.588946,FALSE,'st-t abnormality',0.53547,TRUE,0.439423,flat,1
+0.693071,Male,non-anginal,0.597085,0.541611,TRUE,'st-t abnormality',0.646769,FALSE,0.181739,flat,1
+0.66552,Male,asymptomatic,0.79756,0.381877,TRUE,normal,0.311793,FALSE,0.09805,flat,1
+0.648018,Female,asymptomatic,0.619303,0.617917,FALSE,normal,0.525538,TRUE,0.073144,flat,1
+0.666645,Male,asymptomatic,0.426363,0.431246,TRUE,normal,0.340721,TRUE,0.775137,downsloping,1
+0.574662,Male,non-anginal,0.514518,0.455885,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,1
+0.551362,Male,asymptomatic,0.353099,0.350326,FALSE,normal,0.582019,FALSE,0,flat,1
+0.724009,Male,non-anginal,0.295027,0.562722,FALSE,normal,0.470332,TRUE,0.260915,flat,1
+0.499017,Male,non-anginal,0.607576,0.403002,TRUE,normal,0.605543,FALSE,0,flat,1
+0.705196,Male,asymptomatic,0.41691,0.556401,FALSE,'st-t abnormality',0.410759,TRUE,0.370096,upsloping,1
+0.491956,Male,asymptomatic,0.494177,0.764338,FALSE,'lv hypertrophy',0.463895,TRUE,0.328903,upsloping,1
+0.473186,Male,asymptomatic,0.389943,0.34192,FALSE,normal,0.366358,TRUE,0.277778,flat,1
+0.795872,Male,asymptomatic,0.532482,0.411252,FALSE,normal,0.492574,FALSE,0.243626,flat,1
+0.587998,Male,asymptomatic,0.489979,0.393015,FALSE,normal,0.482466,FALSE,0.144788,flat,1
+0.565469,Male,asymptomatic,0.524006,0.394552,TRUE,normal,0.407071,TRUE,0.532661,flat,1
+0.690035,Male,non-anginal,0.514518,0.449422,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,1
+0.706732,Female,asymptomatic,0.592627,0.613074,FALSE,normal,0.488212,TRUE,0.413476,flat,1
+0.521657,Male,non-anginal,0.513464,0.496668,TRUE,'st-t abnormality',0.511947,FALSE,0.002835,flat,1
+0.687831,Male,asymptomatic,0.22219,0.548858,FALSE,normal,0.485667,FALSE,0.385571,upsloping,1
+0.570285,Male,asymptomatic,0.514518,0.500866,TRUE,normal,0.507982,FALSE,0.244108,flat,1
+0.341593,Male,asymptomatic,0.311466,0.654372,FALSE,normal,0.336385,TRUE,0.407662,downsloping,1
+0.55102,Male,asymptomatic,0.749945,0.414393,FALSE,normal,0.307015,TRUE,0.83203,flat,1
+0.571429,Male,asymptomatic,0.487868,0.554721,TRUE,normal,0.226303,FALSE,0.336605,flat,1
+0.429927,Male,asymptomatic,0.384135,0.43306,TRUE,normal,0.341883,FALSE,0.239955,flat,1
+0.504317,Male,asymptomatic,0.452945,0.511123,FALSE,normal,0.376536,TRUE,0.555556,flat,1
+0.879467,Male,non-anginal,0.526658,0.496601,TRUE,normal,0.410872,FALSE,0.212411,flat,1
+0.650752,Male,asymptomatic,0.608072,0.351065,TRUE,'lv hypertrophy',0.517777,TRUE,0.078628,flat,1
+0.5893,Male,asymptomatic,0.403461,0.470944,FALSE,normal,0.513402,FALSE,0,flat,1
+0.549092,Male,asymptomatic,0.38697,0.515866,FALSE,'lv hypertrophy',0.326939,TRUE,0.598561,downsloping,1
+0.588971,Male,asymptomatic,0.501782,0.381877,TRUE,normal,0.451906,FALSE,0.385212,flat,1
+0.598455,Male,non-anginal,0.506185,0.608656,FALSE,normal,0.537875,FALSE,0.158312,flat,1
+0.648356,Male,asymptomatic,0.836883,0.51267,FALSE,'st-t abnormality',0.442763,TRUE,0.134971,flat,1
+0.544941,Male,asymptomatic,0.458911,0.805388,TRUE,'st-t abnormality',0.595231,FALSE,0.406322,flat,1
+0.693878,Male,'atypical angina',0.259448,0.55783,FALSE,'st-t abnormality',0.601502,TRUE,0.126973,flat,1
+0.73231,Male,asymptomatic,0.812594,0.650866,FALSE,'st-t abnormality',0.309488,TRUE,0.391937,flat,2
+0.783003,Male,asymptomatic,0.830061,0.657829,FALSE,'st-t abnormality',0.424461,TRUE,0.360203,flat,2
+0.776885,Male,asymptomatic,0.643613,0.647261,FALSE,'st-t abnormality',0.300531,TRUE,0.689656,flat,2
+0.694706,Male,asymptomatic,0.683895,0.684739,FALSE,'st-t abnormality',0.326973,TRUE,0.366264,flat,2
+0.74826,Male,asymptomatic,0.786562,0.643959,FALSE,'st-t abnormality',0.54172,TRUE,0.644313,flat,2
+0.728201,Male,asymptomatic,0.504217,0.546926,FALSE,'lv hypertrophy',0.559263,FALSE,0.601257,flat,2
+0.655362,Male,asymptomatic,0.492907,0.562011,FALSE,'lv hypertrophy',0.540534,FALSE,0.308468,flat,2
+0.724873,Male,asymptomatic,0.501579,0.535273,FALSE,'lv hypertrophy',0.548215,FALSE,0.287601,flat,2
+0.700509,Male,asymptomatic,0.613218,0.648353,FALSE,'lv hypertrophy',0.726987,FALSE,0.379828,flat,2
+0.727379,Male,asymptomatic,0.52913,0.546926,FALSE,'lv hypertrophy',0.441135,FALSE,0.507203,flat,2
+0.669998,Male,asymptomatic,0.552499,0.671511,FALSE,'lv hypertrophy',0.607058,FALSE,0.349413,flat,2
+0.59222,Male,asymptomatic,0.654953,0.468649,TRUE,'lv hypertrophy',0.49327,TRUE,0.156092,flat,2
+0.572576,Male,asymptomatic,0.638831,0.544654,TRUE,'lv hypertrophy',0.528419,TRUE,0.053344,flat,2
+0.542585,Male,asymptomatic,0.483206,0.491676,TRUE,'lv hypertrophy',0.602204,TRUE,0.193512,flat,2
+0.625088,Male,asymptomatic,0.296346,0.530113,TRUE,'lv hypertrophy',0.541985,TRUE,0.211882,flat,2
+0.603708,Male,asymptomatic,0.703506,0.501139,TRUE,'lv hypertrophy',0.479941,TRUE,0.116812,flat,2
+0.575254,Male,asymptomatic,0.291328,0.529868,TRUE,'lv hypertrophy',0.541985,TRUE,0.176984,flat,2
+0.686907,Male,asymptomatic,0.411083,0.520173,FALSE,normal,0.511887,TRUE,0.507059,flat,2
+0.739615,Male,asymptomatic,0.298864,0.433877,FALSE,normal,0.611971,TRUE,0.380052,flat,2
+0.647656,Male,asymptomatic,0.490569,0.446775,FALSE,normal,0.680031,TRUE,0.06833,flat,2
+0.683403,Male,asymptomatic,0.534921,0.597161,FALSE,normal,0.531906,TRUE,0.376612,flat,2
+0.63601,Male,asymptomatic,0.540281,0.405883,FALSE,normal,0.687863,TRUE,0.047463,flat,2
+0.542144,Male,asymptomatic,0.232159,0.655786,FALSE,'lv hypertrophy',0.634625,FALSE,0.02185,flat,2
+0.439879,Male,asymptomatic,0.440463,0.602028,FALSE,'lv hypertrophy',0.606826,FALSE,0.334638,flat,2
+0.47448,Male,asymptomatic,0.441283,0.454022,FALSE,'lv hypertrophy',0.648263,FALSE,0,flat,2
+0.65956,Male,asymptomatic,0.438397,0.662499,FALSE,'lv hypertrophy',0.624074,FALSE,0.174877,flat,2
+0.594671,Male,asymptomatic,0.422351,0.572795,FALSE,'lv hypertrophy',0.612759,FALSE,0.30386,flat,2
+0.602472,Male,asymptomatic,0.13636,0.605976,FALSE,'lv hypertrophy',0.643108,FALSE,0.018243,flat,2
+0.616672,Male,asymptomatic,0.523861,0.69758,FALSE,normal,0.519057,TRUE,0.282207,flat,2
+0.392885,Male,asymptomatic,0.490641,0.735108,FALSE,normal,0.468134,TRUE,0.409012,flat,2
+0.616795,Male,asymptomatic,0.487179,0.714919,FALSE,normal,0.539988,TRUE,0.541785,flat,2
+0.374798,Male,asymptomatic,0.500549,0.759459,FALSE,normal,0.526611,TRUE,0.402274,flat,2
+0.405922,Male,asymptomatic,0.493981,0.715746,FALSE,normal,0.511308,TRUE,0.370514,flat,2
+0.833902,Male,asymptomatic,0.511341,0.338864,FALSE,normal,0.49493,FALSE,0.32236,flat,2
+0.742212,Male,asymptomatic,0.413261,0.341551,FALSE,normal,0.352014,FALSE,0.302798,flat,2
+0.578154,Male,asymptomatic,0.465186,0.479947,FALSE,normal,0.334108,FALSE,0.248159,flat,2
+0.685483,Male,asymptomatic,0.358974,0.483345,FALSE,normal,0.100534,FALSE,0.363936,flat,2
+0.530753,Male,asymptomatic,0.372556,0.543393,FALSE,normal,0.476604,FALSE,0.388889,flat,2
+0.643536,Male,asymptomatic,0.650423,0.567184,FALSE,'st-t abnormality',0.550377,TRUE,0.66172,flat,2
+0.686415,Male,asymptomatic,0.631819,0.574929,FALSE,'st-t abnormality',0.45813,TRUE,0.815422,flat,2
+0.658248,Male,asymptomatic,0.676133,0.604081,FALSE,'st-t abnormality',0.354271,TRUE,0.831617,flat,2
+0.599686,Male,asymptomatic,0.67617,0.477731,FALSE,'st-t abnormality',0.550688,TRUE,0.768916,flat,2
+0.698849,Male,asymptomatic,0.606437,0.646603,FALSE,'st-t abnormality',0.518594,TRUE,0.731382,flat,2
+0.64565,Male,asymptomatic,0.769204,0.462833,FALSE,'st-t abnormality',0.526718,TRUE,0.893471,downsloping,2
+0.573897,Male,asymptomatic,0.559119,0.708332,FALSE,'st-t abnormality',0.393059,TRUE,0.844999,downsloping,2
+0.614398,Male,asymptomatic,0.914458,0.659711,FALSE,'st-t abnormality',0.451854,TRUE,0.593134,downsloping,2
+0.647815,Male,asymptomatic,0.981772,0.700217,FALSE,'st-t abnormality',0.532336,TRUE,0.797405,downsloping,2
+0.589823,Male,asymptomatic,0.923875,0.510902,FALSE,'st-t abnormality',0.420756,TRUE,0.833396,downsloping,2
+0.638632,Male,asymptomatic,0.5686,0.589679,FALSE,'st-t abnormality',0.526718,TRUE,0.847834,downsloping,2
+0.593992,Male,asymptomatic,0.374158,0.432466,FALSE,'st-t abnormality',0.546118,TRUE,0.440356,flat,2
+0.69823,Male,asymptomatic,0.230769,0.518559,FALSE,'st-t abnormality',0.52731,TRUE,0.386247,flat,2
+0.708741,Male,asymptomatic,0.512785,0.430687,FALSE,'st-t abnormality',0.503185,TRUE,0.191304,flat,2
+0.697871,Male,asymptomatic,0.230769,0.50385,FALSE,'st-t abnormality',0.528367,TRUE,0.429326,flat,2
+0.694599,Male,asymptomatic,0.739441,0.461948,FALSE,'st-t abnormality',0.522095,TRUE,0.232371,flat,2
+0.643214,Male,asymptomatic,0.606842,0.48351,FALSE,normal,0.480845,TRUE,0.114567,upsloping,2
+0.643303,Male,asymptomatic,0.487352,0.350942,FALSE,normal,0.690566,TRUE,0.119033,upsloping,2
+0.723452,Male,asymptomatic,0.618931,0.329421,FALSE,normal,0.63487,TRUE,0.011337,upsloping,2
+0.637311,Male,asymptomatic,0.544445,0.385661,FALSE,normal,0.689989,TRUE,0.183378,upsloping,2
+0.699743,Male,asymptomatic,0.697856,0.301245,FALSE,normal,0.570432,TRUE,0.076694,upsloping,2
+0.659448,Male,asymptomatic,0.656509,0.323454,FALSE,normal,0.570586,TRUE,0.108713,upsloping,2
+0.598179,Male,asymptomatic,0.231274,0.745105,FALSE,normal,0.545474,TRUE,0.903003,flat,2
+0.675307,Male,asymptomatic,0.406671,0.655311,FALSE,normal,0.513896,TRUE,0.564815,flat,2
+0.658739,Male,asymptomatic,0.590203,0.603444,FALSE,normal,0.541486,TRUE,0.833727,flat,2
+0.674778,Male,asymptomatic,0.407005,0.630026,FALSE,normal,0.515565,TRUE,0.976205,flat,2
+0.672124,Male,asymptomatic,0.50539,0.450821,FALSE,normal,0.405429,TRUE,0.779586,flat,2
+0.699738,Male,asymptomatic,0.459021,0.622721,FALSE,normal,0.514777,TRUE,0.863613,flat,2
+0.442716,Female,asymptomatic,0.673796,0.767882,TRUE,'lv hypertrophy',0.518687,TRUE,0.779455,flat,2
+0.627397,Female,asymptomatic,0.532382,0.715826,TRUE,'lv hypertrophy',0.375714,TRUE,0.552529,flat,2
+0.500191,Female,asymptomatic,0.53791,0.827407,TRUE,'lv hypertrophy',0.441813,TRUE,0.722694,flat,2
+0.447406,Female,asymptomatic,0.558052,0.811598,TRUE,'lv hypertrophy',0.50432,TRUE,0.820735,flat,2
+0.51512,Female,asymptomatic,0.574732,0.699246,TRUE,'lv hypertrophy',0.474665,TRUE,0.660649,flat,2
+0.662228,Female,asymptomatic,0.560636,0.678269,TRUE,'lv hypertrophy',0.280592,TRUE,0.547845,flat,2
+0.679171,Male,non-anginal,0.489407,0.549856,FALSE,normal,0.483106,FALSE,0.409211,flat,2
+0.693878,Male,non-anginal,0.537269,0.639155,FALSE,normal,0.206677,FALSE,0.358159,flat,2
+0.693878,Male,non-anginal,0.571402,0.627823,FALSE,normal,0.208611,FALSE,0.419619,flat,2
+0.832955,Male,non-anginal,0.588164,0.574017,FALSE,normal,0.43261,FALSE,0.532684,flat,2
+0.68384,Male,non-anginal,0.530811,0.557622,FALSE,normal,0.372717,FALSE,0.555899,flat,2
+0.550443,Male,asymptomatic,0.461673,0.360819,FALSE,'lv hypertrophy',0.416136,FALSE,0.625585,flat,2
+0.755075,Male,asymptomatic,0.599189,0.632975,FALSE,'lv hypertrophy',0.743374,FALSE,0.758138,flat,2
+0.750571,Male,asymptomatic,0.577235,0.586039,FALSE,'lv hypertrophy',0.54491,FALSE,0.627925,flat,2
+0.735095,Male,asymptomatic,0.541641,0.552679,FALSE,'lv hypertrophy',0.455217,FALSE,0.372569,flat,2
+0.693776,Male,asymptomatic,0.54134,0.594398,FALSE,'lv hypertrophy',0.461689,FALSE,0.69184,flat,2
+0.705199,Male,asymptomatic,0.571619,0.611669,FALSE,'lv hypertrophy',0.75426,FALSE,0.252306,flat,2
+0.686407,Male,asymptomatic,0.606486,0.664724,FALSE,'lv hypertrophy',0.531521,FALSE,0.21464,flat,2
+0.700815,Male,asymptomatic,0.497709,0.596936,FALSE,'lv hypertrophy',0.616795,FALSE,0.359159,flat,2
+0.674547,Male,asymptomatic,0.522624,0.657873,FALSE,'lv hypertrophy',0.462101,FALSE,0.265456,flat,2
+0.653061,Male,asymptomatic,0.549846,0.666768,FALSE,'lv hypertrophy',0.512325,FALSE,0.31929,flat,2
+0.773465,Male,non-anginal,0.581421,0.623696,FALSE,'st-t abnormality',0.429043,TRUE,0.070296,flat,2
+0.697098,Male,non-anginal,0.772901,0.493497,FALSE,'st-t abnormality',0.359668,TRUE,0,flat,2
+0.763932,Male,non-anginal,0.575057,0.538704,FALSE,'st-t abnormality',0.52361,TRUE,0.05757,flat,2
+0.681964,Male,non-anginal,0.807075,0.503778,FALSE,'st-t abnormality',0.369344,TRUE,0,flat,2
+0.573368,Male,non-anginal,0.702806,0.521854,FALSE,'st-t abnormality',0.516287,TRUE,0.025498,flat,2
+0.774138,Male,non-anginal,0.591087,0.546926,FALSE,'lv hypertrophy',0.547073,FALSE,0.610089,flat,2
+0.686742,Male,non-anginal,0.563196,0.479044,FALSE,'lv hypertrophy',0.570521,FALSE,0.608399,flat,2
+0.792893,Male,non-anginal,0.599653,0.546926,FALSE,'lv hypertrophy',0.57541,FALSE,0.389589,flat,2
+0.668039,Male,non-anginal,0.575958,0.519019,FALSE,'lv hypertrophy',0.569618,FALSE,0.302041,flat,2
+0.82111,Male,non-anginal,0.5698,0.546926,FALSE,'lv hypertrophy',0.499449,FALSE,0.563591,flat,2
+0.693878,Male,asymptomatic,0.581374,0.628276,TRUE,normal,0.26601,FALSE,0.396665,flat,2
+0.649482,Male,asymptomatic,0.397355,0.673309,TRUE,normal,0.284486,FALSE,0.508997,flat,2
+0.73424,Male,asymptomatic,0.583339,0.544801,TRUE,normal,0.400985,FALSE,0.352956,flat,2
+0.555792,Male,asymptomatic,0.577805,0.367518,TRUE,normal,0.291133,FALSE,0.417753,flat,2
+0.740455,Male,asymptomatic,0.535081,0.525713,TRUE,normal,0.502965,FALSE,0.362522,flat,2
+0.693878,Male,asymptomatic,0.578632,0.628461,TRUE,normal,0.199603,FALSE,0.450456,flat,2
+0.734548,Male,asymptomatic,0.37638,0.328852,FALSE,'lv hypertrophy',0.664908,TRUE,0.013591,upsloping,2
+0.766959,Male,asymptomatic,0.583548,0.365171,FALSE,'lv hypertrophy',0.485678,TRUE,0.009242,upsloping,2
+0.667653,Male,asymptomatic,0.449252,0.325698,FALSE,'lv hypertrophy',0.693515,TRUE,0.023308,upsloping,2
+0.709261,Male,asymptomatic,0.254466,0.436946,FALSE,'lv hypertrophy',0.512066,TRUE,0.064614,upsloping,2
+0.766713,Male,asymptomatic,0.470149,0.410029,FALSE,'lv hypertrophy',0.484783,TRUE,0.050442,upsloping,2
+0.606186,Male,asymptomatic,0.59337,0.695809,FALSE,'lv hypertrophy',0.428005,TRUE,0.525756,downsloping,2
+0.602562,Male,asymptomatic,0.646032,0.661417,FALSE,'lv hypertrophy',0.359442,TRUE,0.596506,downsloping,2
+0.652634,Male,asymptomatic,0.493336,0.462556,FALSE,'lv hypertrophy',0.254675,TRUE,0.440558,downsloping,2
+0.598221,Male,asymptomatic,0.524192,0.674128,FALSE,'lv hypertrophy',0.404235,TRUE,0.827016,downsloping,2
+0.591554,Male,asymptomatic,0.494103,0.568032,FALSE,'lv hypertrophy',0.286451,TRUE,0.418022,downsloping,2
+0.660739,Male,non-anginal,0.530908,0.478099,FALSE,normal,0.511207,FALSE,0.490885,flat,2
+0.702692,Male,non-anginal,0.548166,0.525004,FALSE,normal,0.456808,FALSE,0.763001,flat,2
+0.641174,Male,non-anginal,0.477131,0.476631,FALSE,normal,0.518135,FALSE,0.720527,flat,2
+0.741776,Male,non-anginal,0.614767,0.510226,FALSE,normal,0.572381,FALSE,0.602357,flat,2
+0.775459,Male,non-anginal,0.559344,0.505452,FALSE,normal,0.566683,FALSE,0.581782,flat,2
+0.625494,Male,asymptomatic,0.358974,0.470369,FALSE,normal,0.270827,FALSE,0.381055,flat,2
+0.566626,Male,asymptomatic,0.522955,0.565017,FALSE,normal,0.382332,FALSE,0.057976,flat,2
+0.823523,Male,asymptomatic,0.491208,0.465562,FALSE,normal,0.325716,FALSE,0.250166,flat,2
+0.461806,Male,asymptomatic,0.509559,0.504161,FALSE,normal,0.382713,FALSE,0.243378,flat,2
+0.69768,Male,asymptomatic,0.433639,0.618254,FALSE,normal,0.452154,FALSE,0.250602,flat,2
+0.601064,Male,asymptomatic,0.159457,0.607905,FALSE,normal,0.645052,FALSE,0.016365,flat,2
+0.787064,Male,asymptomatic,0.317653,0.488938,FALSE,normal,0.150104,FALSE,0.199781,flat,2
+0.456225,Male,asymptomatic,0.527666,0.570295,FALSE,normal,0.479113,FALSE,0.014725,flat,2
+0.527582,Male,asymptomatic,0.205223,0.490927,FALSE,normal,0.628295,FALSE,0.017412,flat,2
+0.461554,Male,asymptomatic,0.121516,0.491447,FALSE,normal,0.645713,FALSE,0.019955,flat,2
+0.541067,Male,asymptomatic,0.552133,0.722232,FALSE,normal,0.448039,TRUE,0.420398,flat,2
+0.549679,Male,asymptomatic,0.615976,0.537245,FALSE,normal,0.341701,TRUE,0.528487,flat,2
+0.564859,Male,asymptomatic,0.586199,0.720896,FALSE,normal,0.357975,TRUE,0.60284,flat,2
+0.524983,Male,asymptomatic,0.530226,0.736663,FALSE,normal,0.42785,TRUE,0.535911,flat,2
+0.45933,Male,asymptomatic,0.387241,0.797871,FALSE,normal,0.429952,TRUE,0.721319,flat,2
+0.40789,Male,asymptomatic,0.596017,0.644861,FALSE,normal,0.525071,TRUE,0.478191,flat,2
+0.434357,Male,asymptomatic,0.515171,0.628817,FALSE,normal,0.645497,TRUE,0.28141,flat,2
+0.581005,Male,asymptomatic,0.481296,0.629405,FALSE,normal,0.612121,TRUE,0.389394,flat,2
+0.506306,Male,asymptomatic,0.550956,0.387407,FALSE,normal,0.515726,TRUE,0.277778,flat,2
+0.456027,Male,asymptomatic,0.524811,0.452204,FALSE,normal,0.466346,TRUE,0.43893,flat,2
+0.779481,Male,non-anginal,0.524853,0.350341,TRUE,normal,0.519252,FALSE,0.701248,flat,2
+0.613524,Male,non-anginal,0.489182,0.435883,TRUE,normal,0.486852,FALSE,0.274769,flat,2
+0.730692,Male,non-anginal,0.488683,0.417689,TRUE,normal,0.485508,FALSE,0.24606,flat,2
+0.7555,Male,non-anginal,0.549766,0.53813,TRUE,normal,0.526439,FALSE,0.59471,flat,2
+0.647127,Male,non-anginal,0.496415,0.478979,TRUE,normal,0.502622,FALSE,0.657813,flat,2
+0.642511,Male,non-anginal,0.447332,0.45049,TRUE,normal,0.540625,FALSE,0.707441,flat,2
+0.619515,Male,asymptomatic,0.622022,0.712865,FALSE,normal,0.370985,TRUE,0.531151,flat,2
+0.545455,Male,asymptomatic,0.613242,0.734174,FALSE,normal,0.48474,TRUE,0.509781,flat,2
+0.425456,Male,asymptomatic,0.638753,0.655993,FALSE,normal,0.345769,TRUE,0.559837,flat,2
+0.354996,Male,asymptomatic,0.581172,0.734698,FALSE,normal,0.385568,TRUE,0.5,flat,2
+0.462194,Male,asymptomatic,0.282248,0.780527,FALSE,normal,0.4925,TRUE,0.537997,flat,2
+0.630758,Male,asymptomatic,0.620833,0.474758,FALSE,normal,0.331224,TRUE,0.649498,flat,2
+0.636196,Male,asymptomatic,0.26738,0.606111,FALSE,normal,0.531525,TRUE,0.849511,flat,2
+0.635132,Male,asymptomatic,0.614175,0.580784,FALSE,normal,0.319438,TRUE,0.763067,flat,2
+0.474299,Male,asymptomatic,0.274148,0.783064,FALSE,normal,0.520779,TRUE,0.795031,flat,2
+0.591428,Male,asymptomatic,0.234264,0.737539,FALSE,normal,0.387543,TRUE,0.756535,flat,2
+0.607388,Male,asymptomatic,0.255293,0.790755,FALSE,normal,0.519555,TRUE,0.663311,flat,2
+0.436419,Male,asymptomatic,0.594044,0.623217,FALSE,normal,0.668132,FALSE,0,upsloping,2
+0.570487,Male,asymptomatic,0.288204,0.562891,FALSE,normal,0.665669,FALSE,0,upsloping,2
+0.671001,Male,asymptomatic,0.389459,0.378689,FALSE,normal,0.549468,FALSE,0.067879,upsloping,2
+0.590455,Male,asymptomatic,0.498662,0.342393,FALSE,normal,0.534434,FALSE,0.364405,upsloping,2
+0.61687,Male,asymptomatic,0.616024,0.465232,FALSE,normal,0.679431,FALSE,0.019399,upsloping,2
+0.584759,Male,asymptomatic,0.629923,0.54121,FALSE,normal,0.47456,FALSE,0,upsloping,2
+0.626584,Male,asymptomatic,0.787086,0.635287,FALSE,'lv hypertrophy',0.5474,TRUE,0.777778,flat,2
+0.584771,Male,asymptomatic,0.956382,0.453815,FALSE,'lv hypertrophy',0.540726,TRUE,0.808482,flat,2
+0.637246,Male,asymptomatic,0.914604,0.528128,FALSE,'lv hypertrophy',0.552327,TRUE,0.777778,flat,2
+0.694338,Male,asymptomatic,0.878439,0.469345,FALSE,'lv hypertrophy',0.355969,TRUE,0.590581,flat,2
+0.657868,Male,asymptomatic,0.928107,0.598747,FALSE,'lv hypertrophy',0.566305,TRUE,0.693221,flat,2
+0.65263,Male,asymptomatic,0.890272,0.457609,FALSE,'lv hypertrophy',0.436513,TRUE,0.578305,flat,2
+0.567777,Male,asymptomatic,0.635035,0.273611,FALSE,normal,0.316708,TRUE,0.745263,downsloping,2
+0.487357,Male,asymptomatic,0.41413,0.307348,FALSE,normal,0.54442,TRUE,0.526297,downsloping,2
+0.485622,Male,asymptomatic,0.358974,0.539896,FALSE,normal,0.531576,TRUE,0.991473,downsloping,2
+0.337676,Male,asymptomatic,0.358974,0.319578,FALSE,normal,0.529337,TRUE,0.889587,downsloping,2
+0.407193,Male,asymptomatic,0.368351,0.428933,FALSE,normal,0.538451,TRUE,0.506269,downsloping,2
+0.405863,Male,asymptomatic,0.454677,0.365521,FALSE,normal,0.550574,TRUE,0.628541,downsloping,2
+0.841486,Male,asymptomatic,0.828703,0.349852,TRUE,normal,0.466835,FALSE,0.604264,flat,2
+0.816398,Male,asymptomatic,0.539337,0.362373,TRUE,normal,0.51653,FALSE,0.445528,flat,2
+0.831118,Male,asymptomatic,0.811869,0.366778,TRUE,normal,0.479595,FALSE,0.914026,flat,2
+0.788931,Male,asymptomatic,0.649506,0.342494,TRUE,normal,0.384768,FALSE,0.835744,flat,2
+0.830561,Male,asymptomatic,0.521153,0.388927,TRUE,normal,0.516715,FALSE,0.412095,flat,2
+0.657951,Male,asymptomatic,0.615385,0.430927,FALSE,'st-t abnormality',0.464984,TRUE,0.567591,flat,2
+0.707034,Male,asymptomatic,0.615385,0.539207,FALSE,'st-t abnormality',0.551942,TRUE,0.645598,flat,2
+0.730502,Male,asymptomatic,0.696007,0.620623,FALSE,'st-t abnormality',0.28887,TRUE,0.477474,flat,2
+0.671882,Male,asymptomatic,0.637569,0.624001,FALSE,'st-t abnormality',0.408076,TRUE,0.814905,flat,2
+0.714286,Male,asymptomatic,0.534859,0.541096,FALSE,'st-t abnormality',0.524452,TRUE,0.618925,flat,2
+0.584299,Male,asymptomatic,0.461721,0.438837,FALSE,'st-t abnormality',0.50723,TRUE,0.416699,downsloping,2
+0.619875,Male,asymptomatic,0.499593,0.562631,FALSE,'st-t abnormality',0.28164,TRUE,0.425213,downsloping,2
+0.590098,Male,asymptomatic,0.497172,0.637292,FALSE,'st-t abnormality',0.259913,TRUE,0.425602,downsloping,2
+0.592374,Male,asymptomatic,0.544125,0.428401,FALSE,'st-t abnormality',0.538486,TRUE,0.533082,downsloping,2
+0.797679,Male,asymptomatic,0.773633,0.378754,FALSE,'st-t abnormality',0.471991,TRUE,0.830301,downsloping,2
+0.678695,Male,asymptomatic,0.514518,0.449637,FALSE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,2
+0.703167,Male,asymptomatic,0.542786,0.578654,FALSE,'lv hypertrophy',0.479863,FALSE,0.621748,flat,2
+0.661839,Male,asymptomatic,0.530725,0.628677,FALSE,'lv hypertrophy',0.442302,FALSE,0.609858,flat,2
+0.665852,Male,asymptomatic,0.491076,0.582213,FALSE,'lv hypertrophy',0.558736,FALSE,0.344571,flat,2
+0.692602,Male,asymptomatic,0.514518,0.609351,FALSE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,2
+0.704794,Male,asymptomatic,0.742577,0.263755,FALSE,'st-t abnormality',0.282563,TRUE,0.527185,flat,2
+0.616034,Male,asymptomatic,0.757618,0.348677,FALSE,'st-t abnormality',0.44438,TRUE,0.472601,flat,2
+0.759382,Male,asymptomatic,0.646508,0.370142,FALSE,'st-t abnormality',0.306463,TRUE,0.38432,flat,2
+0.725347,Male,asymptomatic,0.751317,0.283878,FALSE,'st-t abnormality',0.468627,TRUE,0.161894,flat,2
+0.68205,Male,asymptomatic,0.707496,0.272172,FALSE,'st-t abnormality',0.267315,TRUE,0.199703,flat,2
+0.628143,Male,asymptomatic,0.615385,0.483031,FALSE,'st-t abnormality',0.357366,TRUE,0.794816,flat,2
+0.67465,Male,asymptomatic,0.367408,0.476798,FALSE,'st-t abnormality',0.551647,TRUE,0.555556,flat,2
+0.698339,Male,asymptomatic,0.615385,0.554501,FALSE,'st-t abnormality',0.449843,TRUE,0.577437,flat,2
+0.606241,Male,asymptomatic,0.303287,0.472617,FALSE,'st-t abnormality',0.554778,TRUE,0.532777,flat,2
+0.68677,Male,asymptomatic,0.615385,0.543356,FALSE,'st-t abnormality',0.371781,TRUE,0.815371,flat,2
+0.668523,Male,asymptomatic,0.48037,0.497836,FALSE,normal,0.354578,TRUE,0.79993,flat,2
+0.673798,Male,asymptomatic,0.617365,0.565517,FALSE,normal,0.342405,TRUE,0.673493,flat,2
+0.669102,Male,asymptomatic,0.381896,0.498875,FALSE,normal,0.509569,TRUE,0.996909,flat,2
+0.606636,Male,asymptomatic,0.637725,0.508942,FALSE,normal,0.327673,TRUE,0.550455,flat,2
+0.300031,Male,asymptomatic,0.613341,0.431804,FALSE,normal,0.390132,TRUE,0.669211,flat,2
+0.550779,Male,asymptomatic,0.582031,0.479021,FALSE,normal,0.57852,TRUE,0.811157,downsloping,2
+0.593821,Male,asymptomatic,0.466135,0.460814,FALSE,normal,0.561985,TRUE,0.580424,downsloping,2
+0.733658,Male,asymptomatic,0.911218,0.47321,FALSE,normal,0.473066,TRUE,0.833333,downsloping,2
+0.436266,Male,asymptomatic,0.653254,0.353422,FALSE,normal,0.559166,TRUE,0.819969,downsloping,2
+0.659511,Male,asymptomatic,0.98026,0.57543,FALSE,normal,0.544686,TRUE,0.911237,downsloping,2
+0.790456,Male,asymptomatic,0.777116,0.613683,TRUE,'lv hypertrophy',0.456821,TRUE,0.003958,flat,2
+0.762528,Male,asymptomatic,0.79302,0.925443,TRUE,'lv hypertrophy',0.453165,TRUE,0.080638,flat,2
+0.735383,Male,asymptomatic,0.841563,0.433385,TRUE,'lv hypertrophy',0.487277,TRUE,0.1281,flat,2
+0.758633,Male,asymptomatic,0.839331,0.521658,TRUE,'lv hypertrophy',0.585687,TRUE,0.040127,flat,2
+0.814266,Male,asymptomatic,0.803196,0.878764,TRUE,'lv hypertrophy',0.344046,TRUE,0,flat,2
+0.589671,Male,asymptomatic,0.559583,0.733784,FALSE,normal,0.43501,TRUE,0.429823,flat,2
+0.669218,Male,asymptomatic,0.560944,0.656748,FALSE,normal,0.406872,TRUE,0.568825,flat,2
+0.51393,Male,asymptomatic,0.552561,0.722335,FALSE,normal,0.44069,TRUE,0.461531,flat,2
+0.689482,Male,asymptomatic,0.340066,0.726536,FALSE,normal,0.543205,TRUE,0.327314,flat,2
+0.358171,Male,asymptomatic,0.553811,0.73152,FALSE,normal,0.431519,TRUE,0.388403,flat,2
+0.701477,Male,asymptomatic,0.498524,0.724481,FALSE,normal,0.503991,TRUE,0.545967,flat,2
+0.678814,Male,asymptomatic,0.365695,0.786734,FALSE,normal,0.544383,TRUE,0.71424,flat,2
+0.625126,Male,asymptomatic,0.443695,0.742243,FALSE,normal,0.514572,TRUE,0.589824,flat,2
+0.415636,Male,asymptomatic,0.545092,0.73013,FALSE,normal,0.458909,TRUE,0.538623,flat,2
+0.678846,Male,asymptomatic,0.511932,0.596555,FALSE,normal,0.443798,TRUE,0.590017,flat,2
+0.645928,Male,asymptomatic,0.476908,0.486873,TRUE,'st-t abnormality',0.311029,FALSE,0,flat,2
+0.647131,Male,asymptomatic,0.497444,0.489711,TRUE,'st-t abnormality',0.284447,FALSE,0.050126,flat,2
+0.563163,Male,asymptomatic,0.399487,0.537943,TRUE,'st-t abnormality',0.264063,FALSE,0,flat,2
+0.806705,Male,asymptomatic,0.329562,0.352132,TRUE,'st-t abnormality',0.47396,FALSE,0.122924,flat,2
+0.55102,Male,asymptomatic,0.320997,0.413272,TRUE,'st-t abnormality',0.227791,FALSE,0,flat,2
+0.713554,Male,asymptomatic,0.230769,0.505414,FALSE,'st-t abnormality',0.535441,TRUE,0.448966,flat,2
+0.714286,Male,asymptomatic,0.404832,0.601393,FALSE,'st-t abnormality',0.521618,TRUE,0.555556,flat,2
+0.714286,Male,asymptomatic,0.404767,0.561643,FALSE,'st-t abnormality',0.388269,TRUE,0.63612,flat,2
+0.714286,Male,asymptomatic,0.476938,0.671057,FALSE,'st-t abnormality',0.517208,TRUE,0.555556,flat,2
+0.697037,Male,asymptomatic,0.230769,0.534898,FALSE,'st-t abnormality',0.537963,TRUE,0.395872,flat,2
+0.925738,Male,asymptomatic,0.977793,0.65786,FALSE,'st-t abnormality',0.33586,TRUE,0.599601,downsloping,2
+0.786406,Male,asymptomatic,0.72715,0.48428,FALSE,'st-t abnormality',0.550921,TRUE,0.833333,downsloping,2
+0.785158,Male,asymptomatic,0.840827,0.360608,FALSE,'st-t abnormality',0.478567,TRUE,0.739218,downsloping,2
+0.778184,Male,asymptomatic,1,0.664,FALSE,'st-t abnormality',0.471866,TRUE,0.913575,downsloping,2
+0.874919,Male,asymptomatic,0.924062,0.583924,FALSE,'st-t abnormality',0.427742,TRUE,0.46556,downsloping,2
+0.612245,Male,non-anginal,0.74359,0.433657,FALSE,'st-t abnormality',0.358779,TRUE,0,flat,2
+0.660854,Male,non-anginal,0.74359,0.425652,FALSE,'st-t abnormality',0.375237,TRUE,0.019392,flat,2
+0.628104,Male,non-anginal,0.786244,0.488798,FALSE,'st-t abnormality',0.366373,TRUE,0,flat,2
+0.689889,Male,non-anginal,0.74359,0.421087,FALSE,'st-t abnormality',0.385192,TRUE,0.058969,flat,2
+0.612245,Male,non-anginal,0.573628,0.474047,FALSE,'st-t abnormality',0.432502,TRUE,0.243058,flat,2
+0.576905,Male,non-anginal,0.63437,0.466375,FALSE,'st-t abnormality',0.370808,TRUE,0.112381,flat,2
+0.653867,Male,non-anginal,0.53679,0.477616,FALSE,'lv hypertrophy',0.552989,FALSE,0.712472,flat,2
+0.671605,Male,non-anginal,0.538148,0.480155,FALSE,'lv hypertrophy',0.518024,FALSE,0.505303,flat,2
+0.631877,Male,non-anginal,0.519927,0.478861,FALSE,'lv hypertrophy',0.516207,FALSE,0.489005,flat,2
+0.615776,Male,non-anginal,0.504835,0.543356,FALSE,'lv hypertrophy',0.522114,FALSE,0.372813,flat,2
+0.6258,Male,non-anginal,0.514518,0.496703,FALSE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,2
+0.611137,Male,asymptomatic,0.50325,0.432267,FALSE,'st-t abnormality',0.402621,TRUE,0.425062,downsloping,2
+0.484697,Male,asymptomatic,0.449385,0.287727,FALSE,'st-t abnormality',0.477997,TRUE,0.684354,downsloping,2
+0.571429,Male,asymptomatic,0.464211,0.622147,FALSE,'st-t abnormality',0.327771,TRUE,0.538619,downsloping,2
+0.652261,Male,asymptomatic,0.675589,0.454071,FALSE,'st-t abnormality',0.521845,TRUE,0.727423,downsloping,2
+0.437178,Male,asymptomatic,0.424609,0.423643,FALSE,'st-t abnormality',0.431705,TRUE,0.731128,downsloping,2
+0.836735,Male,asymptomatic,0.514518,0.391245,TRUE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,2
+0.779491,Male,asymptomatic,0.514518,0.470245,TRUE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,2
+0.797408,Male,asymptomatic,0.514518,0.47501,TRUE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,2
+0.836735,Male,asymptomatic,0.514518,0.371281,TRUE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,2
+0.857402,Male,asymptomatic,0.657208,0.369354,TRUE,'lv hypertrophy',0.456304,FALSE,0.276171,flat,2
+0.744938,Male,asymptomatic,0.767196,0.591728,FALSE,'st-t abnormality',0.328848,TRUE,0.196776,flat,2
+0.741345,Male,asymptomatic,0.785083,0.49282,FALSE,'st-t abnormality',0.454722,TRUE,0.27932,flat,2
+0.71932,Male,asymptomatic,0.355025,0.513206,FALSE,'st-t abnormality',0.499349,TRUE,0.429716,flat,2
+0.726467,Male,asymptomatic,0.594606,0.451738,FALSE,'st-t abnormality',0.502248,TRUE,0.397461,flat,2
+0.641916,Male,asymptomatic,0.558038,0.374588,FALSE,'st-t abnormality',0.537798,TRUE,0.153056,flat,2
+0.753393,Male,asymptomatic,0.56901,0.544855,TRUE,'lv hypertrophy',0.484627,FALSE,0.402238,flat,2
+0.878876,Male,asymptomatic,0.831907,0.369354,TRUE,'lv hypertrophy',0.452334,FALSE,0.311453,flat,2
+0.868467,Male,asymptomatic,0.56983,0.39178,TRUE,'lv hypertrophy',0.493962,FALSE,0.340753,flat,2
+0.891478,Male,asymptomatic,0.710499,0.369354,TRUE,'lv hypertrophy',0.486652,FALSE,0.281613,flat,2
+0.84577,Male,asymptomatic,0.640978,0.538777,TRUE,'lv hypertrophy',0.450382,FALSE,0.196585,flat,2
+0.557672,Male,asymptomatic,0.387738,0.428649,TRUE,'st-t abnormality',0.235308,FALSE,0.050679,flat,2
+0.806367,Male,asymptomatic,0.498198,0.532581,TRUE,'st-t abnormality',0.473464,FALSE,0.163944,flat,2
+0.726024,Male,asymptomatic,0.329123,0.38813,TRUE,'st-t abnormality',0.356733,FALSE,0.015399,flat,2
+0.846684,Male,asymptomatic,0.737867,0.374076,TRUE,'st-t abnormality',0.454727,FALSE,0.258601,flat,2
+0.581269,Male,asymptomatic,0.506847,0.411272,TRUE,'st-t abnormality',0.477184,FALSE,0.066444,flat,2
+0.815987,Male,asymptomatic,0.475191,0.958638,TRUE,'lv hypertrophy',0.197987,TRUE,0,flat,2
+0.783254,Male,asymptomatic,0.672612,0.40945,TRUE,'lv hypertrophy',0.422408,TRUE,0.027567,flat,2
+0.797812,Male,asymptomatic,0.654845,0.441992,TRUE,'lv hypertrophy',0.217234,TRUE,0.374465,flat,2
+0.826078,Male,asymptomatic,0.54833,0.545979,TRUE,'lv hypertrophy',0.161256,TRUE,0.18675,flat,2
+0.817192,Male,asymptomatic,0.358009,0.491961,TRUE,'lv hypertrophy',0.396704,TRUE,0.180814,flat,2
+0.787942,Male,asymptomatic,0.514518,0.452363,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,2
+0.814359,Male,asymptomatic,0.514518,0.456682,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,2
+0.734694,Male,asymptomatic,0.487841,0.530873,TRUE,'st-t abnormality',0.458824,FALSE,0.139618,flat,2
+0.75051,Male,asymptomatic,0.514518,0.427383,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,2
+0.563718,Male,asymptomatic,0.403425,0.508373,TRUE,'st-t abnormality',0.312464,FALSE,0.229317,flat,2
+0.734694,Male,asymptomatic,0.504005,0.519986,TRUE,'st-t abnormality',0.462073,FALSE,0.23709,flat,2
+0.604134,Male,asymptomatic,0.396827,0.546982,TRUE,'st-t abnormality',0.3681,FALSE,0,flat,2
+0.659009,Male,asymptomatic,0.436217,0.542354,TRUE,'st-t abnormality',0.400913,FALSE,0,flat,2
+0.659884,Male,asymptomatic,0.380755,0.470112,TRUE,'st-t abnormality',0.350277,FALSE,0,flat,2
+0.807956,Male,asymptomatic,0.545548,0.477346,TRUE,'st-t abnormality',0.450382,FALSE,0.258717,flat,2
+0.791073,Male,asymptomatic,0.488134,0.525425,TRUE,'st-t abnormality',0.465534,FALSE,0.220973,flat,2
+0.598945,Male,non-anginal,0.526229,0.526061,FALSE,'st-t abnormality',0.517147,TRUE,0.087295,flat,2
+0.643416,Male,non-anginal,0.830257,0.517993,FALSE,'st-t abnormality',0.369196,TRUE,0,flat,2
+0.646854,Male,non-anginal,0.74359,0.381506,FALSE,'st-t abnormality',0.389906,TRUE,0.017638,flat,2
+0.655221,Male,non-anginal,0.857028,0.484814,FALSE,'st-t abnormality',0.358795,TRUE,0,flat,2
+0.593359,Male,non-anginal,0.542231,0.438509,FALSE,'st-t abnormality',0.529745,TRUE,0.039264,flat,2
+0.650161,Male,non-anginal,0.74359,0.414096,FALSE,'st-t abnormality',0.417095,TRUE,0.132185,flat,2
+0.832813,Male,asymptomatic,0.484853,0.526999,FALSE,normal,0.355919,TRUE,0.499258,downsloping,2
+0.931886,Male,asymptomatic,0.909349,0.450096,FALSE,normal,0.398286,TRUE,0.776523,downsloping,2
+0.901244,Male,asymptomatic,0.555059,0.471616,FALSE,normal,0.502444,TRUE,0.416667,downsloping,2
+0.71068,Male,asymptomatic,0.780647,0.721255,FALSE,normal,0.373073,TRUE,0.75981,downsloping,2
+0.921191,Male,asymptomatic,0.713771,0.597002,FALSE,normal,0.436105,TRUE,0.701616,downsloping,2
+0.520169,Male,asymptomatic,0.584943,0.700653,FALSE,normal,0.727018,FALSE,0.028226,flat,2
+0.507723,Male,asymptomatic,0.392633,0.608088,FALSE,normal,0.326216,FALSE,0.059579,flat,2
+0.581129,Male,asymptomatic,0.493505,0.684736,FALSE,normal,0.563242,FALSE,0.232616,flat,2
+0.576056,Male,asymptomatic,0.608359,0.719587,FALSE,normal,0.752619,FALSE,0.28238,flat,2
+0.430669,Male,asymptomatic,0.504526,0.606462,FALSE,normal,0.184069,FALSE,0.187015,flat,2
+0.768591,Male,asymptomatic,0.406608,0.687416,FALSE,normal,0.333969,FALSE,0.0218,flat,2
+0.635673,Male,asymptomatic,0.44145,0.478345,TRUE,'st-t abnormality',0.302667,FALSE,0.134782,flat,2
+0.601298,Male,asymptomatic,0.436556,0.531918,TRUE,'st-t abnormality',0.411701,FALSE,0,flat,2
+0.667836,Male,asymptomatic,0.411291,0.502322,TRUE,'st-t abnormality',0.31016,FALSE,0,flat,2
+0.706312,Male,asymptomatic,0.447649,0.468935,TRUE,'st-t abnormality',0.368044,FALSE,0.072226,flat,2
+0.639492,Male,asymptomatic,0.478444,0.440082,TRUE,'st-t abnormality',0.457848,FALSE,0.178815,flat,2
+0.732043,Male,asymptomatic,0.596754,0.593754,FALSE,'lv hypertrophy',0.651785,FALSE,0.86541,downsloping,3
+0.701627,Male,asymptomatic,0.602251,0.621606,FALSE,'lv hypertrophy',0.534438,FALSE,0.692699,downsloping,3
+0.66057,Male,asymptomatic,0.478476,0.584419,FALSE,'lv hypertrophy',0.54373,FALSE,0.708812,downsloping,3
+0.754605,Male,asymptomatic,0.556252,0.729247,FALSE,'lv hypertrophy',0.63394,FALSE,0.72569,downsloping,3
+0.680261,Male,asymptomatic,0.672207,0.575918,FALSE,'lv hypertrophy',0.656512,FALSE,0.824888,downsloping,3
+0.674862,Male,non-anginal,0.546896,0.467207,FALSE,normal,0.72849,FALSE,0.782705,flat,3
+0.553322,Male,non-anginal,0.513176,0.452073,FALSE,normal,0.630055,FALSE,0.530733,flat,3
+0.749882,Male,non-anginal,0.513715,0.446343,FALSE,normal,0.658856,FALSE,0.437804,flat,3
+0.570914,Male,non-anginal,0.361574,0.356213,FALSE,normal,0.561567,FALSE,0.834521,flat,3
+0.671164,Male,non-anginal,0.596721,0.505347,FALSE,normal,0.444983,FALSE,0.829732,flat,3
+0.479381,Male,non-anginal,0.434437,0.334836,FALSE,normal,0.738852,FALSE,0.652031,flat,3
+0.276085,Male,asymptomatic,0.314656,0.288277,FALSE,'lv hypertrophy',0.340423,TRUE,0.564368,flat,3
+0.24662,Male,asymptomatic,0.306595,0.267735,FALSE,'lv hypertrophy',0.331636,TRUE,0.649991,flat,3
+0.374696,Male,asymptomatic,0.266533,0.374573,FALSE,'lv hypertrophy',0.397066,TRUE,0.622668,flat,3
+0.49531,Male,asymptomatic,0.230769,0.31879,FALSE,'lv hypertrophy',0.311032,TRUE,0.404837,flat,3
+0.293317,Male,asymptomatic,0.338933,0.279496,FALSE,'lv hypertrophy',0.343755,TRUE,0.597101,flat,3
+0.262752,Male,asymptomatic,0.230769,0.319354,FALSE,'lv hypertrophy',0.28248,TRUE,0.521166,flat,3
+0.385095,Male,asymptomatic,0.52618,0.312749,FALSE,'lv hypertrophy',0.419728,TRUE,0.379324,flat,3
+0.464805,Male,asymptomatic,0.367634,0.511973,FALSE,'lv hypertrophy',0.364415,TRUE,0.699203,flat,3
+0.387203,Male,asymptomatic,0.418124,0.332516,FALSE,'lv hypertrophy',0.377255,TRUE,0.80893,flat,3
+0.473001,Male,asymptomatic,0.239859,0.416095,FALSE,'lv hypertrophy',0.403543,TRUE,0.703652,flat,3
+0.561894,Male,asymptomatic,0.435416,0.395782,FALSE,'lv hypertrophy',0.416416,TRUE,0.816382,flat,3
+0.520219,Male,asymptomatic,0.494632,0.857622,FALSE,normal,0.35871,TRUE,0.508135,flat,3
+0.562952,Male,asymptomatic,0.49237,0.488667,FALSE,normal,0.411452,TRUE,0.333333,flat,3
+0.63805,Male,asymptomatic,0.605257,0.583288,FALSE,normal,0.432186,TRUE,0.39698,flat,3
+0.586076,Male,asymptomatic,0.4926,0.861571,FALSE,normal,0.460323,TRUE,0.333333,flat,3
+0.579246,Male,asymptomatic,0.494383,0.308398,FALSE,normal,0.428262,TRUE,0.333333,flat,3
+0.5116,Male,asymptomatic,0.422783,0.79447,FALSE,normal,0.254088,TRUE,0.479278,flat,3
+0.795918,Male,asymptomatic,0.475402,0.753839,TRUE,normal,0.653656,FALSE,0.229077,flat,3
+0.770417,Male,asymptomatic,0.427192,0.667221,TRUE,normal,0.591713,FALSE,0.141171,flat,3
+0.451967,Male,asymptomatic,0.365825,0.512564,TRUE,normal,0.690808,FALSE,0.31612,flat,3
+0.772271,Male,asymptomatic,0.470754,0.623428,TRUE,normal,0.637069,FALSE,0.081553,flat,3
+0.780052,Male,asymptomatic,0.447331,0.553002,TRUE,normal,0.572146,FALSE,0.069577,flat,3
+0.45049,Male,asymptomatic,0.668238,0.563921,TRUE,'lv hypertrophy',0.411871,TRUE,0.234986,upsloping,3
+0.499392,Male,asymptomatic,0.716743,0.547024,TRUE,'lv hypertrophy',0.324534,TRUE,0.23874,upsloping,3
+0.533008,Male,asymptomatic,0.656046,0.48698,TRUE,'lv hypertrophy',0.331739,TRUE,0.411225,upsloping,3
+0.612245,Male,asymptomatic,0.790994,0.555845,TRUE,'lv hypertrophy',0.315823,TRUE,0.234699,upsloping,3
+0.612088,Male,asymptomatic,0.716427,0.554147,TRUE,'lv hypertrophy',0.484277,TRUE,0.104269,upsloping,3
+0.637186,Male,asymptomatic,0.615706,0.505034,FALSE,'lv hypertrophy',0.543193,FALSE,0.635179,flat,3
+0.675297,Male,asymptomatic,0.648254,0.58833,FALSE,'lv hypertrophy',0.664874,FALSE,0.910443,flat,3
+0.656519,Male,asymptomatic,0.736882,0.575079,FALSE,'lv hypertrophy',0.67526,FALSE,0.991416,flat,3
+0.564103,Male,asymptomatic,0.728993,0.435313,FALSE,'lv hypertrophy',0.538989,FALSE,0.715576,flat,3
+0.668324,Male,asymptomatic,0.656574,0.571722,FALSE,'lv hypertrophy',0.542728,FALSE,0.622401,flat,3
+0.298598,Male,non-anginal,0.346827,0.424353,FALSE,normal,0.522905,FALSE,0.534093,flat,3
+0.546084,Male,non-anginal,0.48633,0.36114,FALSE,normal,0.509828,FALSE,0.475913,flat,3
+0.465081,Male,non-anginal,0.383685,0.380023,FALSE,normal,0.513899,FALSE,0.274203,flat,3
+0.458895,Male,non-anginal,0.36782,0.606913,FALSE,normal,0.514999,FALSE,0.280785,flat,3
+0.514232,Male,non-anginal,0.380964,0.437812,FALSE,normal,0.511746,FALSE,0.466621,flat,3
+0.368779,Male,non-anginal,0.336269,0.387944,FALSE,normal,0.524441,FALSE,0.514878,flat,3
+0.765742,Male,asymptomatic,0.400881,0.82915,FALSE,normal,0.521645,FALSE,0.290362,flat,3
+0.372038,Male,asymptomatic,0.339647,0.519024,FALSE,normal,0.717486,FALSE,0.287033,flat,3
+0.65058,Male,asymptomatic,0.382686,0.485164,FALSE,normal,0.654204,FALSE,0.130435,flat,3
+0.37123,Male,asymptomatic,0.36024,0.456791,FALSE,normal,0.703755,FALSE,0.24934,flat,3
+0.571385,Male,asymptomatic,0.422351,0.461378,FALSE,normal,0.592068,FALSE,0.189101,flat,3
+0.679082,Male,asymptomatic,0.5111,0.746436,TRUE,'lv hypertrophy',0.438922,TRUE,0.46563,upsloping,3
+0.554543,Male,asymptomatic,0.487179,0.718591,TRUE,'lv hypertrophy',0.502459,TRUE,0.346957,upsloping,3
+0.968522,Male,asymptomatic,0.485052,0.477994,TRUE,'lv hypertrophy',0.416934,TRUE,0.504535,upsloping,3
+0.644423,Male,asymptomatic,0.487179,0.670115,TRUE,'lv hypertrophy',0.507656,TRUE,0.264228,upsloping,3
+0.902138,Male,asymptomatic,0.437697,0.757993,TRUE,'lv hypertrophy',0.364429,TRUE,0.530678,upsloping,3
+0.789311,Male,asymptomatic,0.462505,0.537291,TRUE,'lv hypertrophy',0.364555,TRUE,0.543485,upsloping,3
+0.596389,Male,asymptomatic,0.87028,0.553398,TRUE,'lv hypertrophy',0.371729,TRUE,0.161662,upsloping,3
+0.421949,Male,asymptomatic,0.487179,0.690557,TRUE,'lv hypertrophy',0.487657,TRUE,0.489584,upsloping,3
+0.363973,Male,asymptomatic,0.598169,0.642777,TRUE,'lv hypertrophy',0.580901,TRUE,0,upsloping,3
+0.417978,Male,asymptomatic,0.487179,0.651576,TRUE,'lv hypertrophy',0.502679,TRUE,0.02677,upsloping,3
+0.421622,Male,asymptomatic,0.620285,0.590155,TRUE,'lv hypertrophy',0.445379,TRUE,0.160301,upsloping,3
+0.605182,Male,asymptomatic,0.487179,0.640313,TRUE,'lv hypertrophy',0.495589,TRUE,0.153435,upsloping,3
+0.699345,Male,asymptomatic,0.552719,0.484003,FALSE,normal,0.367338,TRUE,0.831656,flat,3
+0.547521,Male,asymptomatic,0.302493,0.771625,FALSE,normal,0.443941,TRUE,0.369336,flat,3
+0.540826,Male,asymptomatic,0.322765,0.500983,FALSE,normal,0.430721,TRUE,0.616847,flat,3
+0.705139,Male,asymptomatic,0.321232,0.494376,FALSE,normal,0.400861,TRUE,0.790376,flat,3
+0.541612,Male,asymptomatic,0.457779,0.811841,FALSE,normal,0.424151,TRUE,0.526601,flat,3
+0.549355,Male,asymptomatic,0.406094,0.862722,FALSE,normal,0.462966,TRUE,0.362522,flat,3
+0.532105,Male,non-anginal,0.36573,0.686696,FALSE,normal,0.449126,FALSE,0.36064,flat,3
+0.591268,Male,non-anginal,0.434938,0.526418,FALSE,normal,0.275766,FALSE,0.370404,flat,3
+0.584202,Male,non-anginal,0.486702,0.545792,FALSE,normal,0.283186,FALSE,0.324641,flat,3
+0.654141,Male,non-anginal,0.481493,0.642219,FALSE,normal,0.409344,FALSE,0.259009,flat,3
+0.583465,Male,non-anginal,0.491314,0.671164,FALSE,normal,0.369678,FALSE,0.306029,flat,3
+0.54864,Male,asymptomatic,0.370922,0.633828,FALSE,'lv hypertrophy',0.207046,TRUE,0.71982,downsloping,3
+0.734667,Male,asymptomatic,0.406881,0.468082,FALSE,'lv hypertrophy',0.477347,TRUE,0.614794,downsloping,3
+0.730163,Male,asymptomatic,0.384928,0.496966,FALSE,'lv hypertrophy',0.297345,TRUE,0.639209,downsloping,3
+0.710686,Male,asymptomatic,0.385871,0.523806,FALSE,'lv hypertrophy',0.280262,TRUE,0.779841,downsloping,3
+0.661103,Male,asymptomatic,0.386711,0.543893,FALSE,'lv hypertrophy',0.30113,TRUE,0.646896,downsloping,3
+0.739833,Male,asymptomatic,0.649283,0.680775,FALSE,normal,0.312345,TRUE,0.074019,flat,3
+0.723758,Male,asymptomatic,0.850438,0.583687,FALSE,normal,0.46992,TRUE,0.815447,flat,3
+0.888978,Male,asymptomatic,0.401092,0.488003,FALSE,normal,0.252573,TRUE,0.56021,flat,3
+0.7712,Male,asymptomatic,0.649168,0.574096,FALSE,normal,0.518514,TRUE,0.811212,flat,3
+0.934234,Male,asymptomatic,0.671871,0.572108,FALSE,normal,0.312977,TRUE,0.809928,flat,3
+0.417878,Male,asymptomatic,0.504714,0.802881,FALSE,'lv hypertrophy',0.568701,FALSE,0.165516,flat,3
+0.535583,Male,asymptomatic,0.490681,0.63001,FALSE,'lv hypertrophy',0.520637,FALSE,0.229638,flat,3
+0.397743,Male,asymptomatic,0.350909,0.514472,FALSE,'lv hypertrophy',0.548433,FALSE,0.206054,flat,3
+0.606949,Male,asymptomatic,0.462889,0.635939,FALSE,'lv hypertrophy',0.658296,FALSE,0.182826,flat,3
+0.226236,Male,asymptomatic,0.376459,0.607151,FALSE,'lv hypertrophy',0.557088,FALSE,0.168636,flat,3
+0.858515,Male,asymptomatic,0.248348,0.604109,FALSE,'lv hypertrophy',0.398821,TRUE,0.18865,flat,3
+0.54093,Male,asymptomatic,0.266585,0.505882,FALSE,'lv hypertrophy',0.41238,TRUE,0.25,flat,3
+0.700929,Male,asymptomatic,0.137173,0.684864,FALSE,'lv hypertrophy',0.386194,TRUE,0.886204,flat,3
+0.59655,Male,asymptomatic,0.152677,0.574588,FALSE,'lv hypertrophy',0.406381,TRUE,0.046503,flat,3
+0.811543,Male,asymptomatic,0.37607,0.651783,FALSE,'lv hypertrophy',0.373756,TRUE,0.24096,flat,3
+0.449508,Male,asymptomatic,0.597087,0.709403,FALSE,'lv hypertrophy',0.577303,TRUE,0.168574,flat,3
+0.491224,Male,asymptomatic,0.512767,0.722373,FALSE,'lv hypertrophy',0.501019,TRUE,0,flat,3
+0.375769,Male,asymptomatic,0.643209,0.573748,FALSE,'lv hypertrophy',0.491075,TRUE,0.154071,flat,3
+0.795717,Male,asymptomatic,0.633066,0.468509,FALSE,'lv hypertrophy',0.470633,TRUE,0,flat,3
+0.380208,Male,asymptomatic,0.659658,0.551816,FALSE,'lv hypertrophy',0.423187,TRUE,0.145641,flat,3
+0.572608,Male,asymptomatic,0.582688,0.709463,FALSE,'lv hypertrophy',0.414975,TRUE,0.099413,flat,3
+0.588838,Male,asymptomatic,0.435831,0.626481,FALSE,'lv hypertrophy',0.357394,TRUE,0.861706,flat,3
+0.607359,Male,asymptomatic,0.391438,0.598463,FALSE,'lv hypertrophy',0.441035,TRUE,0.870405,flat,3
+0.550612,Male,asymptomatic,0.420215,0.628913,FALSE,'lv hypertrophy',0.344044,TRUE,0.842272,flat,3
+0.470283,Male,asymptomatic,0.453762,0.484316,FALSE,'lv hypertrophy',0.403964,TRUE,0.81659,flat,3
+0.577056,Male,asymptomatic,0.551534,0.560081,FALSE,'lv hypertrophy',0.424869,TRUE,0.714346,flat,3
+0.541665,Male,asymptomatic,0.624191,0.447678,FALSE,'lv hypertrophy',0.43971,TRUE,0.344863,flat,3
+0.532001,Male,asymptomatic,0.603126,0.400489,FALSE,'lv hypertrophy',0.432298,TRUE,0.427405,flat,3
+0.530185,Male,asymptomatic,0.562009,0.388619,FALSE,'lv hypertrophy',0.414788,TRUE,0.21502,flat,3
+0.520427,Male,asymptomatic,0.651862,0.41793,FALSE,'lv hypertrophy',0.43714,TRUE,0.696334,flat,3
+0.469105,Male,asymptomatic,0.548969,0.378883,FALSE,'lv hypertrophy',0.399329,TRUE,0.012198,flat,3
+0.561125,Male,asymptomatic,0.506638,0.541161,FALSE,normal,0.363229,TRUE,0.488354,flat,3
+0.539426,Male,asymptomatic,0.465364,0.314371,FALSE,normal,0.303292,TRUE,0.392439,flat,3
+0.542499,Male,asymptomatic,0.466433,0.662254,FALSE,normal,0.340459,TRUE,0.552165,flat,3
+0.518742,Male,asymptomatic,0.232108,0.577286,FALSE,normal,0.415553,TRUE,0.715376,flat,3
+0.522953,Male,asymptomatic,0.35219,0.58755,FALSE,normal,0.23892,TRUE,0.742809,flat,3
+0.701037,Male,asymptomatic,0.127555,0.432468,FALSE,'lv hypertrophy',0.392063,TRUE,0.232375,flat,3
+0.486937,Male,asymptomatic,0.629009,0.385577,FALSE,'lv hypertrophy',0.40757,TRUE,0.197822,flat,3
+0.406389,Male,asymptomatic,0.579543,0.463246,FALSE,'lv hypertrophy',0.473333,TRUE,0,flat,3
+0.466972,Male,asymptomatic,0.596475,0.390579,FALSE,'lv hypertrophy',0.407694,TRUE,0.03096,flat,3
+0.334136,Male,asymptomatic,0.230769,0.279599,FALSE,'lv hypertrophy',0.323211,TRUE,0.4484,flat,3
+0.521827,Male,asymptomatic,0.375133,0.405812,FALSE,'lv hypertrophy',0.348582,TRUE,0.809002,flat,3
+0.530612,Male,asymptomatic,0.535178,0.502257,FALSE,'lv hypertrophy',0.484335,TRUE,0.850666,flat,3
+0.530612,Male,asymptomatic,0.23458,0.596006,FALSE,'lv hypertrophy',0.400092,TRUE,0.836677,flat,3
+0.464091,Male,asymptomatic,0.367506,0.6335,FALSE,'lv hypertrophy',0.370925,TRUE,0.816325,flat,3
+0.412212,Male,asymptomatic,0.381457,0.632489,FALSE,'lv hypertrophy',0.3477,TRUE,0.83413,flat,3
+0.68131,Male,asymptomatic,0.508451,0.603802,FALSE,normal,0.522251,FALSE,0.265717,flat,3
+0.431137,Male,asymptomatic,0.414431,0.540697,FALSE,normal,0.731056,FALSE,0.25743,flat,3
+0.427764,Male,asymptomatic,0.419394,0.425683,FALSE,normal,0.733226,FALSE,0.204321,flat,3
+0.444221,Male,asymptomatic,0.507769,0.396895,FALSE,normal,0.729633,FALSE,0.367555,flat,3
+0.663412,Male,asymptomatic,0.423077,0.523426,FALSE,normal,0.735531,FALSE,0.130232,flat,3
+0.830659,Male,'typical angina',0.52076,0.507244,TRUE,'lv hypertrophy',0.56862,FALSE,0.220151,flat,3
+0.612245,Male,'typical angina',0.537286,0.548706,TRUE,'lv hypertrophy',0.620595,FALSE,0.014529,flat,3
+0.628828,Male,'typical angina',0.525896,0.750235,TRUE,'lv hypertrophy',0.588822,FALSE,0.098087,flat,3
+0.618849,Male,'typical angina',0.35972,0.756344,TRUE,'lv hypertrophy',0.367425,FALSE,0.058397,flat,3
+0.612245,Male,'typical angina',0.532466,0.699862,TRUE,'lv hypertrophy',0.741956,FALSE,0.644609,flat,3
+0.599963,Male,asymptomatic,0.461538,0.561322,FALSE,'lv hypertrophy',0.450382,TRUE,0.63067,flat,3
+0.646668,Male,asymptomatic,0.652698,0.409028,FALSE,'lv hypertrophy',0.495585,TRUE,0.708298,flat,3
+0.433374,Male,asymptomatic,0.392678,0.369457,FALSE,'lv hypertrophy',0.437431,TRUE,0.693706,flat,3
+0.723006,Male,asymptomatic,0.55914,0.397325,FALSE,'lv hypertrophy',0.488318,TRUE,0.555556,flat,3
+0.637867,Male,asymptomatic,0.552316,0.430838,FALSE,'lv hypertrophy',0.434595,TRUE,0.555556,flat,3
+0.610168,Male,asymptomatic,0.478691,0.40591,FALSE,'lv hypertrophy',0.406957,TRUE,0.555556,flat,3
+0.668677,Male,asymptomatic,0.817315,0.31712,TRUE,'st-t abnormality',0.159591,FALSE,0.272384,flat,3
+0.762187,Male,asymptomatic,0.920292,0.303543,TRUE,'st-t abnormality',0.496371,FALSE,0.271257,flat,3
+0.640954,Male,asymptomatic,0.550729,0.386564,TRUE,'st-t abnormality',0.279484,FALSE,0.267416,flat,3
+0.66353,Male,asymptomatic,0.650511,0.387913,TRUE,'st-t abnormality',0.254605,FALSE,0.259477,flat,3
+0.701633,Male,asymptomatic,0.489999,0.454189,TRUE,'st-t abnormality',0.521001,FALSE,0.252446,flat,3
+0.670283,Male,asymptomatic,0.83627,0.607861,TRUE,'st-t abnormality',0.348636,FALSE,0.251891,flat,3
+0.680556,Male,asymptomatic,0.5604,0.430292,FALSE,normal,0.366033,TRUE,0.341422,flat,3
+0.851608,Male,asymptomatic,0.559068,0.329187,FALSE,normal,0.314952,TRUE,0.586291,flat,3
+0.568329,Male,asymptomatic,0.49719,0.264558,FALSE,normal,0.375932,TRUE,0.390787,flat,3
+0.591725,Male,asymptomatic,0.48485,0.470718,FALSE,normal,0.413392,TRUE,0.435731,flat,3
+0.581469,Male,asymptomatic,0.478596,0.251248,FALSE,normal,0.215625,TRUE,0.469351,flat,3
+0.727214,Male,asymptomatic,0.778008,0.574668,TRUE,'st-t abnormality',0.219399,TRUE,0.126336,flat,3
+0.742987,Male,asymptomatic,0.862963,0.553172,TRUE,'st-t abnormality',0.214165,TRUE,0.417331,flat,3
+0.755807,Male,asymptomatic,0.626272,0.48506,TRUE,'st-t abnormality',0.308259,TRUE,0.09697,flat,3
+0.77882,Male,asymptomatic,0.665273,0.443924,TRUE,'st-t abnormality',0.313584,TRUE,0.520579,flat,3
+0.528703,Male,asymptomatic,0.730849,0.660762,TRUE,'st-t abnormality',0.294465,TRUE,0.290988,flat,3
+0.790586,Male,asymptomatic,0.617839,0.466337,TRUE,'st-t abnormality',0.320246,TRUE,0,flat,3
+0.665732,Male,non-anginal,0.514518,0.440406,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.560178,Male,non-anginal,0.514518,0.463345,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.75103,Male,non-anginal,0.514518,0.453566,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.514535,Male,non-anginal,0.514518,0.492391,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.530744,Male,non-anginal,0.514518,0.72786,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.533071,Male,non-anginal,0.514518,0.471034,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.788909,Male,asymptomatic,0.485546,0.284294,FALSE,'st-t abnormality',0.453356,TRUE,0.533879,flat,3
+0.919587,Male,asymptomatic,0.483797,0.305126,FALSE,'st-t abnormality',0.393953,TRUE,0.555556,flat,3
+0.94385,Male,asymptomatic,0.474187,0.425598,FALSE,'st-t abnormality',0.329805,TRUE,0.021316,flat,3
+0.996066,Male,asymptomatic,0.474785,0.304544,FALSE,'st-t abnormality',0.332604,TRUE,0.276033,flat,3
+0.959669,Male,asymptomatic,0.422759,0.396935,FALSE,'st-t abnormality',0.438718,TRUE,0.555556,flat,3
+0.874391,Male,asymptomatic,0.721289,0.450057,FALSE,'st-t abnormality',0.297977,TRUE,0.3317,flat,3
+0.676546,Male,asymptomatic,0.567977,0.463805,TRUE,normal,0.320921,TRUE,0.313586,flat,3
+0.714429,Male,asymptomatic,0.764503,0.479743,TRUE,normal,0.336927,TRUE,0.376722,flat,3
+0.692098,Male,asymptomatic,0.599541,0.190468,TRUE,normal,0.309321,TRUE,0.28098,flat,3
+0.714286,Male,asymptomatic,0.871795,0.521208,TRUE,normal,0.168724,TRUE,0.332128,flat,3
+0.600414,Male,asymptomatic,0.528474,0.754416,TRUE,normal,0.397394,TRUE,0.320007,flat,3
+0.606116,Male,asymptomatic,0.514518,0.488517,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.647018,Male,asymptomatic,0.514518,0.69566,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.616576,Male,asymptomatic,0.514518,0.79559,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.7096,Male,asymptomatic,0.514518,0.721365,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.684829,Male,asymptomatic,0.514518,0.662363,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.916252,Male,non-anginal,0.514969,0.507805,FALSE,normal,0.423856,FALSE,0.69434,flat,3
+0.646578,Male,non-anginal,0.495518,0.431917,FALSE,normal,0.504946,FALSE,0.651713,flat,3
+0.512583,Male,non-anginal,0.468894,0.33773,FALSE,normal,0.513167,FALSE,0.649769,flat,3
+0.492481,Male,non-anginal,0.574504,0.569417,FALSE,normal,0.538725,FALSE,0.3452,flat,3
+0.665762,Male,non-anginal,0.572391,0.507295,FALSE,normal,0.651021,FALSE,0.887474,flat,3
+0.539157,Male,asymptomatic,0.539806,0.205409,FALSE,normal,0.348433,TRUE,0.652132,flat,3
+0.640846,Male,asymptomatic,0.702109,0.46781,FALSE,normal,0.473388,TRUE,0.538488,flat,3
+0.549924,Male,asymptomatic,0.643228,0.440019,FALSE,normal,0.402154,TRUE,0.547771,flat,3
+0.530612,Male,asymptomatic,0.278282,0.47355,FALSE,normal,0.451562,TRUE,0.794783,flat,3
+0.520727,Male,asymptomatic,0.415178,0.478707,FALSE,normal,0.318215,TRUE,0.636782,flat,3
+0.821541,Male,non-anginal,0.425609,0.42605,FALSE,normal,0.337549,TRUE,0.307328,flat,3
+0.88239,Male,non-anginal,0.370715,0.432235,FALSE,normal,0.422618,TRUE,0.269246,flat,3
+0.717822,Male,non-anginal,0.358974,0.73035,FALSE,normal,0.2243,TRUE,0.237695,flat,3
+0.86649,Male,non-anginal,0.717247,0.505219,FALSE,normal,0.307734,TRUE,0.76582,flat,3
+0.83882,Male,non-anginal,0.41042,0.237272,FALSE,normal,0.25041,TRUE,0.308371,flat,3
+0.59041,Male,non-anginal,0.514518,0.653842,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.441783,Male,non-anginal,0.414233,0.58628,FALSE,normal,0.51002,FALSE,0.441269,flat,3
+0.824395,Male,non-anginal,0.514518,0.470507,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.584625,Male,non-anginal,0.514518,0.888176,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.785832,Male,non-anginal,0.514518,0.499097,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.666653,Male,asymptomatic,0.527754,0.483701,FALSE,'st-t abnormality',0.507762,TRUE,0.651452,flat,3
+0.82291,Male,asymptomatic,0.615385,0.414985,FALSE,'st-t abnormality',0.497985,TRUE,0.555556,flat,3
+0.660284,Male,asymptomatic,0.474041,0.484906,FALSE,'st-t abnormality',0.456098,TRUE,0.830523,flat,3
+0.843367,Male,asymptomatic,0.598883,0.409689,FALSE,'st-t abnormality',0.451811,TRUE,0.144158,flat,3
+0.464091,Male,asymptomatic,0.633841,0.397423,FALSE,'st-t abnormality',0.440457,TRUE,0.515904,flat,3
+0.807625,Male,asymptomatic,0.564103,0.45128,FALSE,normal,0.377843,TRUE,0.833333,flat,3
+0.672449,Male,asymptomatic,0.488712,0.223083,FALSE,normal,0.315646,TRUE,0.378097,flat,3
+0.812056,Male,asymptomatic,0.445526,0.489885,FALSE,normal,0.210333,TRUE,0.795041,flat,3
+0.666168,Male,asymptomatic,0.564103,0.442558,FALSE,normal,0.513322,TRUE,0.833333,flat,3
+0.812625,Male,asymptomatic,0.252155,0.464699,FALSE,normal,0.388403,TRUE,0.794382,flat,3
+0.717927,Male,asymptomatic,0.777116,0.531549,TRUE,'st-t abnormality',0.151664,TRUE,0.539722,flat,3
+0.736546,Male,asymptomatic,0.79302,0.582148,TRUE,'st-t abnormality',0.139233,TRUE,0.233003,flat,3
+0.754643,Male,asymptomatic,0.841563,0.502286,TRUE,'st-t abnormality',0.255213,TRUE,0.043155,flat,3
+0.7292,Male,asymptomatic,0.851505,0.442814,TRUE,'st-t abnormality',0.400381,TRUE,0.555556,flat,3
+0.659244,Male,asymptomatic,0.842911,0.590584,TRUE,'st-t abnormality',0.296209,TRUE,0.555556,flat,3
+0.702999,Male,asymptomatic,0.594166,0.798138,FALSE,normal,0.410937,TRUE,0.35965,flat,3
+0.607143,Male,asymptomatic,0.706324,0.502459,FALSE,normal,0.319658,TRUE,0.513683,flat,3
+0.665128,Male,asymptomatic,0.720567,0.723082,FALSE,normal,0.397307,TRUE,0.347759,flat,3
+0.745431,Male,asymptomatic,0.625309,0.469469,FALSE,normal,0.516852,TRUE,0.453819,flat,3
+0.587249,Male,asymptomatic,0.698069,0.783292,FALSE,normal,0.419317,TRUE,0.375182,flat,3
+0.757542,Male,asymptomatic,0.514518,0.725432,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.766926,Male,asymptomatic,0.514518,0.871958,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.784822,Male,asymptomatic,0.514518,0.778033,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.811988,Male,asymptomatic,0.514518,0.706873,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.743289,Male,asymptomatic,0.514518,0.726467,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.491843,Male,non-anginal,0.514518,0.375592,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.663508,Male,non-anginal,0.514518,0.40628,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.436667,Male,non-anginal,0.514518,0.436592,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.245939,Male,non-anginal,0.495359,0.332662,FALSE,normal,0.524368,FALSE,0.289039,flat,3
+0.428571,Male,non-anginal,0.487616,0.291897,FALSE,normal,0.514417,FALSE,0.494491,flat,3
+0.735609,Male,asymptomatic,0.514518,0.66939,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.684822,Male,asymptomatic,0.514518,0.726093,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.742351,Male,asymptomatic,0.514518,0.731103,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.681525,Male,asymptomatic,0.514518,0.738532,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.756255,Male,asymptomatic,0.514518,0.707946,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.529761,Male,asymptomatic,0.420116,0.601797,FALSE,normal,0.237047,TRUE,0.616534,downsloping,3
+0.593355,Male,asymptomatic,0.252546,0.491244,FALSE,normal,0.43731,TRUE,0.706329,downsloping,3
+0.596661,Male,asymptomatic,0.469153,0.442263,FALSE,normal,0.504831,TRUE,0.725816,downsloping,3
+0.668543,Male,asymptomatic,0.420345,0.500271,FALSE,normal,0.385313,TRUE,0.634263,downsloping,3
+0.605989,Male,asymptomatic,0.412952,0.564203,FALSE,normal,0.453242,TRUE,0.571853,downsloping,3
+0.668001,Male,'typical angina',0.536433,0.712148,TRUE,'st-t abnormality',0.501092,FALSE,0.301015,flat,3
+0.62486,Male,'typical angina',0.539753,0.380789,TRUE,'st-t abnormality',0.257723,FALSE,0.392573,flat,3
+0.689328,Male,'typical angina',0.598936,0.553928,TRUE,'st-t abnormality',0.363934,FALSE,0.300973,flat,3
+0.595825,Male,'typical angina',0.629502,0.385705,TRUE,'st-t abnormality',0.279711,FALSE,0.343403,flat,3
+0.729961,Male,'typical angina',0.547162,0.701505,TRUE,'st-t abnormality',0.36299,FALSE,0.24485,flat,3
+0.903179,Male,'typical angina',0.587139,0.386316,TRUE,'st-t abnormality',0.240193,FALSE,0.300312,flat,3
+0.600068,Male,non-anginal,0.514518,0.551532,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.481815,Male,non-anginal,0.514518,0.701326,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.746672,Male,non-anginal,0.514518,0.624951,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.87967,Male,non-anginal,0.514518,0.424759,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.769112,Male,non-anginal,0.514518,0.443126,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.908994,Male,non-anginal,0.514518,0.438283,TRUE,normal,0.507982,FALSE,0.244108,flat,3
+0.888182,Male,non-anginal,0.503683,0.535749,TRUE,normal,0.621595,FALSE,0.134824,flat,3
+0.658912,Male,non-anginal,0.514518,0.207443,TRUE,normal,0.507982,FALSE,0.244108,flat,3
+0.566947,Male,non-anginal,0.514518,0.474984,TRUE,normal,0.507982,FALSE,0.244108,flat,3
+0.860463,Male,non-anginal,0.481594,0.440105,TRUE,normal,0.574462,FALSE,0.095137,flat,3
+0.581966,Male,asymptomatic,0.666667,0.659123,TRUE,'st-t abnormality',0.455499,TRUE,0.506528,flat,3
+0.660529,Male,asymptomatic,0.711181,0.59196,TRUE,'st-t abnormality',0.443898,TRUE,0.555556,flat,3
+0.639029,Male,asymptomatic,0.870602,0.591641,TRUE,'st-t abnormality',0.28142,TRUE,0.555556,flat,3
+0.521474,Male,asymptomatic,0.666667,0.604026,TRUE,'st-t abnormality',0.51466,TRUE,0.479296,flat,3
+0.660728,Male,asymptomatic,0.646186,0.477728,TRUE,'st-t abnormality',0.41914,TRUE,0.555556,flat,3
+0.683713,Male,asymptomatic,0.514518,0.706365,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.680121,Male,asymptomatic,0.514518,0.691476,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.473614,Male,asymptomatic,0.435519,0.619963,FALSE,'st-t abnormality',0.569441,FALSE,0.170667,flat,3
+0.566526,Male,asymptomatic,0.484228,0.638716,FALSE,'st-t abnormality',0.585937,FALSE,0.178812,flat,3
+0.821914,Male,asymptomatic,0.514518,0.668268,FALSE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.8133,Male,asymptomatic,0.184394,0.689613,FALSE,'st-t abnormality',0.356022,TRUE,0.129857,flat,3
+0.769411,Male,asymptomatic,0.458552,0.399035,FALSE,'st-t abnormality',0.334067,TRUE,0,flat,3
+0.838228,Male,asymptomatic,0.595536,0.436003,FALSE,'st-t abnormality',0.376306,TRUE,0.244406,flat,3
+0.840824,Male,asymptomatic,0.371421,0.401974,FALSE,'st-t abnormality',0.302231,TRUE,0,flat,3
+0.838409,Male,asymptomatic,0.641057,0.483299,FALSE,'st-t abnormality',0.26501,TRUE,0,flat,3
+0.237792,Male,asymptomatic,0.337688,0.640803,FALSE,normal,0.525807,FALSE,0.314809,flat,3
+0.795918,Male,asymptomatic,0.45993,0.612306,FALSE,normal,0.624424,FALSE,0.182188,flat,3
+0.748471,Male,asymptomatic,0.514518,0.866474,FALSE,normal,0.507982,FALSE,0.244108,flat,3
+0.732903,Male,asymptomatic,0.44934,0.65292,FALSE,normal,0.708806,FALSE,0.23527,flat,3
+0.284986,Male,asymptomatic,0.503819,0.841309,FALSE,normal,0.509995,FALSE,0.309047,flat,3
+0.612585,Male,asymptomatic,0.746622,0.440741,FALSE,'lv hypertrophy',0.40076,TRUE,0.756415,downsloping,3
+0.602533,Male,asymptomatic,0.532517,0.339002,FALSE,'lv hypertrophy',0.436116,TRUE,0.833333,downsloping,3
+0.533453,Male,asymptomatic,0.578728,0.313918,FALSE,'lv hypertrophy',0.351663,TRUE,0.883262,downsloping,3
+0.575852,Male,asymptomatic,0.674031,0.481783,FALSE,'lv hypertrophy',0.35866,TRUE,0.858233,downsloping,3
+0.605517,Male,asymptomatic,0.740693,0.500655,FALSE,'lv hypertrophy',0.248451,TRUE,0.712791,downsloping,3
+0.783487,Male,asymptomatic,0.514518,0.691294,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.757069,Male,asymptomatic,0.514518,0.689135,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.715345,Male,asymptomatic,0.514518,0.663689,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.820919,Male,asymptomatic,0.514518,0.703784,TRUE,'st-t abnormality',0.507982,FALSE,0.244108,flat,3
+0.79874,Male,asymptomatic,0.465402,0.656459,TRUE,'st-t abnormality',0.647993,FALSE,0.232683,flat,3
+0.47257,Male,asymptomatic,0.69429,0.571253,FALSE,normal,0.597382,TRUE,0.227812,flat,3
+0.538723,Male,asymptomatic,0.502444,0.344266,FALSE,normal,0.551076,TRUE,0.392871,flat,3
+0.483848,Male,asymptomatic,0.551682,0.335256,FALSE,normal,0.599202,TRUE,0.35825,flat,3
+0.549471,Male,asymptomatic,0.691402,0.414071,FALSE,normal,0.532325,TRUE,0.416667,flat,3
+0.444794,Male,asymptomatic,0.5862,0.387395,FALSE,normal,0.723808,TRUE,0.330428,flat,3
+0.475818,Male,asymptomatic,0.613595,0.38433,FALSE,normal,0.633603,TRUE,0.793845,flat,3
+0.822517,Male,asymptomatic,0.506704,0.438652,FALSE,'st-t abnormality',0.343122,TRUE,0.264574,flat,3
+0.729679,Male,asymptomatic,0.650051,0.374309,FALSE,'st-t abnormality',0.410148,TRUE,0.513856,flat,3
+0.744005,Male,asymptomatic,0.55357,0.513889,FALSE,'st-t abnormality',0.403961,TRUE,0.590832,flat,3
+0.704593,Male,asymptomatic,0.66076,0.397658,FALSE,'st-t abnormality',0.389346,TRUE,0.369114,flat,3
+0.833689,Male,asymptomatic,0.514705,0.433919,FALSE,'st-t abnormality',0.339448,TRUE,0.424676,flat,3
+0.739045,Male,asymptomatic,0.600518,0.463751,FALSE,'st-t abnormality',0.416756,TRUE,0.819926,flat,3
+0.612245,Male,asymptomatic,0.752225,0.585768,TRUE,'lv hypertrophy',0.308342,TRUE,0.244741,upsloping,3
+0.624302,Male,asymptomatic,0.804024,0.506269,TRUE,'lv hypertrophy',0.280465,TRUE,0.037874,upsloping,3
+0.585437,Male,asymptomatic,0.542273,0.553398,TRUE,'lv hypertrophy',0.570978,TRUE,0.195315,upsloping,3
+0.699974,Male,asymptomatic,0.781643,0.560799,TRUE,'lv hypertrophy',0.352328,TRUE,0.460788,upsloping,3
+0.619008,Male,asymptomatic,0.558723,0.694056,TRUE,'lv hypertrophy',0.385595,TRUE,0.429751,upsloping,3
+0.564311,Male,non-anginal,0.452964,0.81877,FALSE,normal,0.482181,TRUE,0.02067,flat,3
+0.866487,Male,non-anginal,0.358974,0.694482,FALSE,normal,0.234917,TRUE,0.042556,flat,3
+0.572866,Male,non-anginal,0.392692,0.77289,FALSE,normal,0.185622,TRUE,0.332308,flat,3
+0.524392,Male,non-anginal,0.500311,0.816542,FALSE,normal,0.50519,TRUE,0.206794,flat,3
+0.700607,Male,non-anginal,0.455933,0.702176,FALSE,normal,0.266123,TRUE,0.542344,flat,3
+0.845431,Male,non-anginal,0.735698,0.777585,FALSE,normal,0.227967,TRUE,0.063219,flat,3
+0.781094,Male,asymptomatic,0.64423,0.645442,TRUE,'st-t abnormality',0.461097,TRUE,0.493353,flat,3
+0.577241,Male,asymptomatic,0.705622,0.539786,TRUE,'st-t abnormality',0.289197,TRUE,0.087579,flat,3
+0.665958,Male,asymptomatic,0.686673,0.593905,TRUE,'st-t abnormality',0.367045,TRUE,0.251213,flat,3
+0.68275,Male,asymptomatic,0.766203,0.660698,TRUE,'st-t abnormality',0.278857,TRUE,0.457761,flat,3
+0.598675,Male,asymptomatic,0.629626,0.655168,TRUE,'st-t abnormality',0.397325,TRUE,0.518406,flat,3
+0.459756,Male,asymptomatic,0.727457,0.439144,FALSE,'lv hypertrophy',0.455038,TRUE,0.683003,flat,4
+0.72363,Male,asymptomatic,0.590883,0.402913,FALSE,'lv hypertrophy',0.465649,TRUE,0.582036,flat,4
+0.655914,Male,asymptomatic,0.558456,0.287349,FALSE,'lv hypertrophy',0.46538,TRUE,0.841045,flat,4
+0.667449,Male,asymptomatic,0.515388,0.381827,FALSE,'lv hypertrophy',0.433022,TRUE,0.984977,flat,4
+0.525844,Male,asymptomatic,0.53454,0.392865,FALSE,'lv hypertrophy',0.460732,TRUE,0.676559,flat,4
+0.62723,Male,asymptomatic,0.520566,0.416285,FALSE,'lv hypertrophy',0.439827,TRUE,0.689252,flat,4
+0.62927,Male,asymptomatic,0.829452,0.401881,FALSE,'lv hypertrophy',0.524435,TRUE,0.375478,flat,4
+0.450636,Male,asymptomatic,0.6375,0.506802,FALSE,'lv hypertrophy',0.457553,TRUE,0.686828,flat,4
+0.65987,Male,asymptomatic,0.532637,0.326325,FALSE,'lv hypertrophy',0.412268,TRUE,0.876802,flat,4
+0.618274,Male,asymptomatic,0.589406,0.422924,FALSE,'lv hypertrophy',0.479227,TRUE,0.42396,flat,4
+0.692343,Male,asymptomatic,0.492907,0.371471,FALSE,'lv hypertrophy',0.415363,TRUE,0.759245,flat,4
+0.547186,Male,asymptomatic,0.622237,0.434699,FALSE,'lv hypertrophy',0.452136,TRUE,0.705533,flat,4
+0.657654,Male,asymptomatic,0.588011,0.287557,FALSE,'lv hypertrophy',0.42096,TRUE,0.721035,flat,4
+0.620328,Male,asymptomatic,0.738882,0.491743,FALSE,'lv hypertrophy',0.55601,TRUE,0.531451,flat,4
+0.667824,Male,asymptomatic,0.539435,0.263806,FALSE,'lv hypertrophy',0.45746,TRUE,0.903525,flat,4
+0.663457,Male,asymptomatic,0.554289,0.299965,FALSE,'lv hypertrophy',0.45144,TRUE,0.687816,flat,4
+0.653635,Male,asymptomatic,0.54784,0.382133,FALSE,'lv hypertrophy',0.461692,TRUE,0.893312,flat,4
+0.681905,Male,asymptomatic,0.516982,0.398708,FALSE,'lv hypertrophy',0.465649,TRUE,0.639822,flat,4
+0.474195,Male,asymptomatic,0.678013,0.442264,FALSE,'lv hypertrophy',0.454174,TRUE,0.681739,flat,4
+0.669201,Male,asymptomatic,0.57371,0.335089,FALSE,'lv hypertrophy',0.447553,TRUE,0.766375,flat,4
+0.640308,Male,asymptomatic,0.683031,0.442799,FALSE,'lv hypertrophy',0.435139,TRUE,0.670106,flat,4
+0.698188,Male,asymptomatic,0.591683,0.395502,FALSE,'lv hypertrophy',0.465649,TRUE,0.587887,flat,4
+0.580933,Male,asymptomatic,0.617072,0.554721,FALSE,'lv hypertrophy',0.49695,TRUE,0.65579,flat,4
+0.674021,Male,asymptomatic,0.74359,0.460709,FALSE,'lv hypertrophy',0.332738,FALSE,0.644131,flat,4
+0.603394,Male,asymptomatic,0.862705,0.575253,FALSE,'lv hypertrophy',0.480644,FALSE,0.271639,flat,4
+0.499331,Male,asymptomatic,0.74359,0.474597,FALSE,'lv hypertrophy',0.387562,FALSE,0.667979,flat,4
+0.739701,Male,asymptomatic,0.733485,0.4513,FALSE,'lv hypertrophy',0.380269,FALSE,0.49628,flat,4
+0.695445,Male,asymptomatic,0.845841,0.562234,FALSE,'lv hypertrophy',0.427074,FALSE,0.229972,flat,4
+0.624558,Male,asymptomatic,0.74359,0.4964,FALSE,'lv hypertrophy',0.367285,FALSE,0.617224,flat,4
+0.579824,Male,asymptomatic,0.844694,0.45473,FALSE,'lv hypertrophy',0.337957,FALSE,0.252795,flat,4
+0.613975,Male,asymptomatic,0.835779,0.614203,FALSE,'lv hypertrophy',0.396421,FALSE,0.234369,flat,4
+0.735392,Male,asymptomatic,0.693569,0.439737,FALSE,'lv hypertrophy',0.431166,FALSE,0.460208,flat,4
+0.741713,Male,asymptomatic,0.706908,0.429684,FALSE,'lv hypertrophy',0.362636,FALSE,0.533411,flat,4
+0.6871,Male,asymptomatic,0.752244,0.60113,FALSE,'lv hypertrophy',0.371686,FALSE,0.277778,flat,4
+0.65683,Male,asymptomatic,0.597454,0.504127,FALSE,'lv hypertrophy',0.339999,FALSE,0.246194,flat,4
+0.636865,Male,asymptomatic,0.810435,0.537491,FALSE,'lv hypertrophy',0.407675,FALSE,0.270118,flat,4
+0.67577,Male,asymptomatic,0.777596,0.459779,FALSE,'lv hypertrophy',0.486743,FALSE,0.273647,flat,4
+0.552909,Male,asymptomatic,0.869176,0.484877,FALSE,'lv hypertrophy',0.548401,FALSE,0.252249,flat,4
+0.614036,Male,asymptomatic,0.788335,0.500326,FALSE,'lv hypertrophy',0.367905,FALSE,0.244743,flat,4
+0.691712,Male,asymptomatic,0.58717,0.535052,FALSE,'lv hypertrophy',0.341192,FALSE,0.24505,flat,4
+0.743189,Male,asymptomatic,0.719888,0.413275,FALSE,'lv hypertrophy',0.422563,FALSE,0.340159,flat,4
+0.754976,Male,asymptomatic,0.763962,0.656769,FALSE,'lv hypertrophy',0.374125,FALSE,0.277778,flat,4
+0.707476,Male,asymptomatic,0.74359,0.471698,FALSE,'lv hypertrophy',0.38699,FALSE,0.509893,flat,4
+0.743984,Male,asymptomatic,0.695922,0.416077,FALSE,'lv hypertrophy',0.378557,FALSE,0.465999,flat,4
+0.753373,Male,asymptomatic,0.740236,0.433303,FALSE,'lv hypertrophy',0.440872,FALSE,0.546971,flat,4
+0.718995,Male,asymptomatic,0.278306,0.426953,FALSE,'lv hypertrophy',0.573947,FALSE,0.688906,flat,4
+0.64277,Male,asymptomatic,0.344071,0.46089,FALSE,'lv hypertrophy',0.524587,FALSE,0.688645,flat,4
+0.63824,Male,asymptomatic,0.365735,0.398789,FALSE,'lv hypertrophy',0.591467,FALSE,0.691762,flat,4
+0.455562,Male,asymptomatic,0.655303,0.478293,FALSE,'lv hypertrophy',0.482064,FALSE,0.701548,flat,4
+0.563565,Male,asymptomatic,0.333806,0.48443,FALSE,'lv hypertrophy',0.585655,FALSE,0.719538,flat,4
+0.581921,Male,asymptomatic,0.271089,0.429396,FALSE,'lv hypertrophy',0.640434,FALSE,0.297142,flat,4
+0.498031,Male,asymptomatic,0.325286,0.503211,FALSE,'lv hypertrophy',0.530864,FALSE,0.702376,flat,4
+0.624203,Male,asymptomatic,0.460757,0.426977,FALSE,'lv hypertrophy',0.540765,FALSE,0.68936,flat,4
+0.728228,Male,asymptomatic,0.414138,0.421796,FALSE,'lv hypertrophy',0.649358,FALSE,0.627555,flat,4
+0.907342,Male,asymptomatic,0.247991,0.421342,FALSE,'lv hypertrophy',0.38738,FALSE,0.760587,flat,4
+0.490505,Male,asymptomatic,0.524326,0.488387,FALSE,'lv hypertrophy',0.51247,FALSE,0.714734,flat,4
+0.905725,Male,asymptomatic,0.220535,0.456272,FALSE,'lv hypertrophy',0.411147,FALSE,0.814435,flat,4
+0.513132,Male,asymptomatic,0.739649,0.479552,FALSE,'lv hypertrophy',0.612428,FALSE,0.708868,flat,4
+0.584082,Male,asymptomatic,0.321338,0.489381,FALSE,'lv hypertrophy',0.470338,FALSE,0.705901,flat,4
+0.676142,Male,asymptomatic,0.440109,0.451185,FALSE,'lv hypertrophy',0.650071,FALSE,0.651932,flat,4
+0.648564,Male,asymptomatic,0.262794,0.421726,FALSE,'lv hypertrophy',0.644484,FALSE,0.692177,flat,4
+0.64019,Male,asymptomatic,0.358193,0.439394,FALSE,'lv hypertrophy',0.640544,FALSE,0.628952,flat,4
+0.639081,Male,asymptomatic,0.404859,0.46399,FALSE,'lv hypertrophy',0.565727,FALSE,0.679106,flat,4
+0.622963,Male,asymptomatic,0.330433,0.430676,FALSE,'lv hypertrophy',0.565916,FALSE,0.672702,flat,4
+0.951052,Male,asymptomatic,0.15425,0.395678,FALSE,'lv hypertrophy',0.436216,FALSE,0.856106,flat,4
+0.617759,Male,asymptomatic,0.41381,0.435893,FALSE,'lv hypertrophy',0.505997,FALSE,0.558449,flat,4
+0.641705,Male,asymptomatic,0.422895,0.428782,FALSE,'lv hypertrophy',0.473879,FALSE,0.67366,flat,4
+0.45356,Male,asymptomatic,0.815636,0.572357,FALSE,'lv hypertrophy',0.412809,FALSE,0.698427,flat,4
+0.462438,Male,asymptomatic,0.610484,0.414184,FALSE,'lv hypertrophy',0.451286,FALSE,0.682147,flat,4
+0.540921,Male,asymptomatic,0.893659,0.565355,FALSE,'lv hypertrophy',0.411233,FALSE,0.585836,flat,4
+0.529329,Male,asymptomatic,0.495936,0.473325,FALSE,'lv hypertrophy',0.450117,FALSE,0.668344,flat,4
+0.567344,Male,asymptomatic,0.685338,0.592821,FALSE,'lv hypertrophy',0.473446,FALSE,0.282837,flat,4
+0.520479,Male,asymptomatic,0.668875,0.512103,FALSE,'lv hypertrophy',0.452415,FALSE,0.5491,flat,4
+0.532088,Male,asymptomatic,0.674003,0.500741,FALSE,'lv hypertrophy',0.440539,FALSE,0.709624,flat,4
+0.525979,Male,asymptomatic,0.559221,0.604815,FALSE,'lv hypertrophy',0.441961,FALSE,0.452017,flat,4
+0.580176,Male,asymptomatic,0.601198,0.61999,FALSE,'lv hypertrophy',0.503713,FALSE,0.275508,flat,4
+0.596046,Male,asymptomatic,0.732453,0.477904,FALSE,'lv hypertrophy',0.458834,FALSE,0.711383,flat,4
+0.654198,Male,asymptomatic,0.712284,0.448224,FALSE,'lv hypertrophy',0.438761,FALSE,0.700943,flat,4
+0.668331,Male,asymptomatic,0.690951,0.459556,FALSE,'lv hypertrophy',0.43962,FALSE,0.648263,flat,4
+0.588057,Male,asymptomatic,0.563154,0.519015,FALSE,'lv hypertrophy',0.480726,FALSE,0.293316,flat,4
+0.549354,Male,asymptomatic,0.52543,0.487813,FALSE,'lv hypertrophy',0.449635,FALSE,0.690427,flat,4
+0.653639,Male,asymptomatic,0.671902,0.294202,FALSE,'lv hypertrophy',0.432683,FALSE,0.830931,flat,4
+0.449017,Male,asymptomatic,0.88731,0.612821,FALSE,'lv hypertrophy',0.405729,FALSE,0.702583,flat,4
+0.455323,Male,asymptomatic,0.82145,0.557461,FALSE,'lv hypertrophy',0.424191,FALSE,0.572369,flat,4
+0.488993,Male,asymptomatic,0.676349,0.503442,FALSE,'lv hypertrophy',0.445635,FALSE,0.68004,flat,4
+0.571631,Male,asymptomatic,0.674248,0.446272,FALSE,'lv hypertrophy',0.44809,FALSE,0.713276,flat,4
+0.592358,Male,asymptomatic,0.676836,0.41473,FALSE,'lv hypertrophy',0.434979,FALSE,0.974476,flat,4
+0.507335,Male,asymptomatic,0.72769,0.519502,FALSE,'lv hypertrophy',0.488619,FALSE,0.551975,flat,4
+0.671829,Male,asymptomatic,0.684752,0.450755,FALSE,'lv hypertrophy',0.459276,FALSE,0.644745,flat,4
+0.48658,Male,asymptomatic,0.577848,0.526157,FALSE,'lv hypertrophy',0.505186,FALSE,0.624863,flat,4
+0.702961,Male,asymptomatic,0.554535,0.305016,FALSE,'lv hypertrophy',0.464712,TRUE,0.713478,flat,4
+0.853052,Male,asymptomatic,0.530031,0.279974,FALSE,'lv hypertrophy',0.384715,TRUE,0.750341,flat,4
+0.759128,Male,asymptomatic,0.531146,0.320664,FALSE,'lv hypertrophy',0.462536,TRUE,0.674307,flat,4
+0.846722,Male,asymptomatic,0.610248,0.273891,FALSE,'lv hypertrophy',0.412214,TRUE,0.818173,flat,4
+0.77529,Male,asymptomatic,0.841287,0.289943,FALSE,'lv hypertrophy',0.315825,TRUE,0.710623,flat,4
+0.675215,Male,asymptomatic,0.640056,0.287371,FALSE,'lv hypertrophy',0.412214,TRUE,0.764718,flat,4
+0.622405,Male,asymptomatic,0.752379,0.418429,FALSE,'lv hypertrophy',0.438999,TRUE,0.599522,flat,4
+0.722149,Male,asymptomatic,0.653393,0.272941,FALSE,'lv hypertrophy',0.412214,TRUE,0.986439,flat,4
+0.798688,Male,asymptomatic,0.659245,0.285659,FALSE,'lv hypertrophy',0.397758,TRUE,0.832866,flat,4
+0.749791,Male,asymptomatic,0.804768,0.291831,FALSE,'lv hypertrophy',0.398146,TRUE,0.699611,flat,4
+0.798551,Male,asymptomatic,0.81624,0.348141,FALSE,'lv hypertrophy',0.489129,TRUE,0.704143,flat,4
+0.815183,Male,asymptomatic,0.672164,0.275613,FALSE,'lv hypertrophy',0.412214,TRUE,0.909526,flat,4
+0.773901,Male,asymptomatic,0.839811,0.291353,FALSE,'lv hypertrophy',0.461672,TRUE,0.65461,flat,4
+0.81678,Male,asymptomatic,0.706773,0.292187,FALSE,'lv hypertrophy',0.238301,TRUE,0.705103,flat,4
+0.598232,Male,asymptomatic,0.689436,0.623107,FALSE,'lv hypertrophy',0.480664,TRUE,0.326133,flat,4
+0.810565,Male,asymptomatic,0.912386,0.29279,FALSE,'lv hypertrophy',0.105757,TRUE,0.70604,flat,4
+0.764824,Male,asymptomatic,0.669764,0.275661,FALSE,'lv hypertrophy',0.412214,TRUE,0.832681,flat,4
+0.816181,Male,asymptomatic,0.786603,0.295067,FALSE,'lv hypertrophy',0.139893,TRUE,0.708036,flat,4
+0.848592,Male,asymptomatic,0.971574,0.291954,FALSE,'lv hypertrophy',0.384841,TRUE,0.703686,flat,4
+0.749286,Male,asymptomatic,0.851667,0.295338,FALSE,'lv hypertrophy',0.100797,TRUE,0.717753,flat,4
+0.762501,Male,asymptomatic,0.664906,0.318773,FALSE,'lv hypertrophy',0.444706,TRUE,0.715525,flat,4
+0.791165,Male,asymptomatic,0.763858,0.293924,FALSE,'lv hypertrophy',0.539775,TRUE,0.620233,flat,4
+0.683358,Male,asymptomatic,0.719309,0.435206,FALSE,'lv hypertrophy',0.511527,TRUE,0.640911,flat,4
+0.571081,Male,asymptomatic,0.916041,0.660194,TRUE,'lv hypertrophy',0.469945,FALSE,0.260882,flat,4
+0.733946,Male,asymptomatic,0.874334,0.449072,TRUE,'lv hypertrophy',0.406829,FALSE,0.316644,flat,4
+0.573975,Male,asymptomatic,0.931271,0.660194,TRUE,'lv hypertrophy',0.495368,FALSE,0.23527,flat,4
+0.627056,Male,asymptomatic,0.866663,0.57402,TRUE,'lv hypertrophy',0.413699,FALSE,0.542002,flat,4
+0.562133,Male,asymptomatic,0.87523,0.565865,TRUE,'lv hypertrophy',0.433384,FALSE,0.492823,flat,4
+0.577226,Male,asymptomatic,0.887377,0.660194,TRUE,'lv hypertrophy',0.53067,FALSE,0.236999,flat,4
+0.70487,Male,asymptomatic,0.782571,0.633392,TRUE,'lv hypertrophy',0.438581,FALSE,0.282016,flat,4
+0.591837,Male,asymptomatic,0.517903,0.643379,TRUE,'lv hypertrophy',0.506106,FALSE,0.253563,flat,4
+0.591837,Male,asymptomatic,0.821503,0.646243,TRUE,'lv hypertrophy',0.428925,FALSE,0.249406,flat,4
+0.591837,Male,asymptomatic,0.596658,0.654919,TRUE,'lv hypertrophy',0.491926,FALSE,0.246482,flat,4
+0.668268,Male,asymptomatic,0.701639,0.58308,TRUE,'lv hypertrophy',0.460192,FALSE,0.49758,flat,4
+0.495219,Male,asymptomatic,0.77241,0.628191,TRUE,'lv hypertrophy',0.424159,FALSE,0.642248,flat,4
+0.703207,Male,asymptomatic,0.720777,0.647271,TRUE,'lv hypertrophy',0.460248,FALSE,0.312178,flat,4
+0.577803,Male,asymptomatic,0.733626,0.427605,TRUE,'lv hypertrophy',0.496618,FALSE,0.250602,flat,4
+0.597427,Male,asymptomatic,0.841076,0.487351,TRUE,'lv hypertrophy',0.414722,FALSE,0.391903,flat,4
+0.552988,Male,asymptomatic,0.882125,0.660194,TRUE,'lv hypertrophy',0.527801,FALSE,0.239555,flat,4
+0.578835,Male,asymptomatic,0.524954,0.566305,TRUE,'lv hypertrophy',0.481222,FALSE,0.261956,flat,4
+0.634168,Male,asymptomatic,0.7648,0.648195,TRUE,'lv hypertrophy',0.459407,FALSE,0.38144,flat,4
+0.667182,Male,asymptomatic,0.904312,0.647481,TRUE,'lv hypertrophy',0.412957,FALSE,0.356004,flat,4
+0.502463,Male,asymptomatic,0.75635,0.603705,TRUE,'lv hypertrophy',0.43324,FALSE,0.436982,flat,4
+0.577172,Male,asymptomatic,0.651741,0.490756,TRUE,'lv hypertrophy',0.468256,FALSE,0.272845,flat,4
+0.576329,Male,asymptomatic,0.814855,0.641016,TRUE,'lv hypertrophy',0.45356,FALSE,0.25997,flat,4
+0.671593,Male,asymptomatic,0.822974,0.575781,TRUE,'lv hypertrophy',0.414202,FALSE,0.457332,flat,4
+0.493148,Male,asymptomatic,0.803771,0.537065,FALSE,'lv hypertrophy',0.548133,TRUE,0.5542,flat,4
+0.673879,Male,asymptomatic,0.703697,0.473273,FALSE,'lv hypertrophy',0.520186,TRUE,0.522842,flat,4
+0.523301,Male,asymptomatic,0.804754,0.5592,FALSE,'lv hypertrophy',0.563044,TRUE,0.230395,flat,4
+0.609063,Male,asymptomatic,0.596503,0.380668,FALSE,'lv hypertrophy',0.513866,TRUE,0.467779,flat,4
+0.559275,Male,asymptomatic,0.488578,0.658147,FALSE,'lv hypertrophy',0.498321,TRUE,0.288962,flat,4
+0.534136,Male,asymptomatic,0.792704,0.632391,FALSE,'lv hypertrophy',0.4648,TRUE,0.584815,flat,4
+0.469449,Male,asymptomatic,0.822375,0.512847,FALSE,'lv hypertrophy',0.471783,TRUE,0.357428,flat,4
+0.684927,Male,asymptomatic,0.629651,0.613766,FALSE,'lv hypertrophy',0.52303,TRUE,0.782278,flat,4
+0.639256,Male,asymptomatic,0.742681,0.60824,FALSE,'lv hypertrophy',0.54805,TRUE,0.553783,flat,4
+0.624729,Male,asymptomatic,0.692859,0.292188,FALSE,'lv hypertrophy',0.489013,TRUE,0.451842,flat,4
+0.587206,Male,asymptomatic,0.644852,0.408295,FALSE,'lv hypertrophy',0.539232,TRUE,0.409031,flat,4
+0.575665,Male,asymptomatic,0.828913,0.556085,FALSE,'lv hypertrophy',0.494321,TRUE,0.60754,flat,4
+0.713128,Male,asymptomatic,0.822013,0.645178,FALSE,'lv hypertrophy',0.560907,TRUE,0.275625,flat,4
+0.470062,Male,asymptomatic,0.871081,0.65486,FALSE,'lv hypertrophy',0.483068,TRUE,0.236894,flat,4
+0.588376,Male,asymptomatic,0.696531,0.599082,FALSE,'lv hypertrophy',0.528125,TRUE,0.3248,flat,4
+0.566459,Male,asymptomatic,0.615202,0.59158,FALSE,'lv hypertrophy',0.534927,TRUE,0.463798,flat,4
+0.507908,Male,asymptomatic,0.760749,0.566018,FALSE,'lv hypertrophy',0.477332,TRUE,0.279218,flat,4
+0.720356,Male,asymptomatic,0.830935,0.452186,FALSE,'lv hypertrophy',0.509217,TRUE,0.478504,flat,4
+0.60647,Male,asymptomatic,0.761964,0.435595,FALSE,'lv hypertrophy',0.486482,TRUE,0.265363,flat,4
+0.478862,Male,asymptomatic,0.751981,0.571952,FALSE,'lv hypertrophy',0.446308,TRUE,0.47518,flat,4
+0.605871,Male,asymptomatic,0.825301,0.505506,FALSE,'lv hypertrophy',0.524831,TRUE,0.292443,flat,4
+0.551355,Male,asymptomatic,0.870047,0.430727,FALSE,'lv hypertrophy',0.473278,TRUE,0.29902,flat,4
+0.566572,Male,asymptomatic,0.844819,0.576798,FALSE,'lv hypertrophy',0.444632,TRUE,0.698284,flat,4
+0.762949,Male,asymptomatic,0.440286,0.436883,FALSE,'lv hypertrophy',0.623816,TRUE,0.151604,flat,4
+0.897018,Male,asymptomatic,0.482764,0.504837,FALSE,'lv hypertrophy',0.614579,TRUE,0.500797,flat,4
+0.994358,Male,asymptomatic,0.57559,0.679404,FALSE,'lv hypertrophy',0.588625,TRUE,0.174546,flat,4
+0.810253,Male,asymptomatic,0.524889,0.345484,FALSE,'lv hypertrophy',0.577036,TRUE,0.937042,flat,4
+0.584935,Male,asymptomatic,0.497397,0.668405,FALSE,'lv hypertrophy',0.668844,TRUE,0.155193,flat,4
+0.923118,Male,asymptomatic,0.548828,0.571741,FALSE,'lv hypertrophy',0.512546,TRUE,0.528032,flat,4
+0.906797,Male,asymptomatic,0.593408,0.41464,FALSE,'lv hypertrophy',0.506261,TRUE,0.053637,flat,4
+0.959705,Male,asymptomatic,0.463251,0.708642,FALSE,'lv hypertrophy',0.640609,TRUE,0.122817,flat,4
+0.837492,Male,asymptomatic,0.491394,0.587599,FALSE,'lv hypertrophy',0.543218,TRUE,0.163322,flat,4
+0.863178,Male,asymptomatic,0.509779,0.672995,FALSE,'lv hypertrophy',0.455312,TRUE,0.431992,flat,4
+0.923962,Male,asymptomatic,0.474354,0.388735,FALSE,'lv hypertrophy',0.687789,TRUE,0.195132,flat,4
+0.932691,Male,asymptomatic,0.50134,0.698777,FALSE,'lv hypertrophy',0.544334,TRUE,0.460322,flat,4
+0.758754,Male,asymptomatic,0.586203,0.70355,FALSE,'lv hypertrophy',0.432888,TRUE,0.390179,flat,4
+0.869329,Male,asymptomatic,0.515003,0.642079,FALSE,'lv hypertrophy',0.598414,TRUE,0.386894,flat,4
+0.859625,Male,asymptomatic,0.499074,0.314025,FALSE,'lv hypertrophy',0.425061,TRUE,0.801359,flat,4
+0.990166,Male,asymptomatic,0.499784,0.638449,FALSE,'lv hypertrophy',0.40155,TRUE,0.419283,flat,4
+0.934462,Male,asymptomatic,0.438705,0.413797,FALSE,'lv hypertrophy',0.553648,TRUE,0.417706,flat,4
+0.887613,Male,asymptomatic,0.482891,0.538733,FALSE,'lv hypertrophy',0.686643,TRUE,0.44771,flat,4
+0.893071,Male,asymptomatic,0.473713,0.703343,FALSE,'lv hypertrophy',0.510521,TRUE,0.429701,flat,4
+0.998427,Male,asymptomatic,0.798598,0.677276,FALSE,'lv hypertrophy',0.606954,TRUE,0.15831,flat,4
+0.937135,Male,asymptomatic,0.468453,0.432767,FALSE,'lv hypertrophy',0.54532,TRUE,0.038423,flat,4
+0.968691,Male,asymptomatic,0.432372,0.514968,FALSE,'lv hypertrophy',0.496993,TRUE,0.195661,flat,4
+0.78649,Male,asymptomatic,0.510531,0.398076,FALSE,'lv hypertrophy',0.48022,TRUE,0.633444,flat,4
+0.603246,Male,asymptomatic,0.726393,0.502262,FALSE,'lv hypertrophy',0.446648,FALSE,0.715001,flat,4
+0.717772,Male,asymptomatic,0.731682,0.429291,FALSE,'lv hypertrophy',0.435778,FALSE,0.668196,flat,4
+0.706316,Male,asymptomatic,0.627617,0.546703,FALSE,'lv hypertrophy',0.499071,FALSE,0.28956,flat,4
+0.635752,Male,asymptomatic,0.768226,0.612805,FALSE,'lv hypertrophy',0.440289,FALSE,0.463416,flat,4
+0.720575,Male,asymptomatic,0.639225,0.392068,FALSE,'lv hypertrophy',0.465649,FALSE,0.641319,flat,4
+0.494026,Male,asymptomatic,0.743361,0.463187,FALSE,'lv hypertrophy',0.461937,FALSE,0.555594,flat,4
+0.684914,Male,asymptomatic,0.461226,0.447615,FALSE,'lv hypertrophy',0.684232,FALSE,0.598287,flat,4
+0.640249,Male,asymptomatic,0.42129,0.468291,FALSE,'lv hypertrophy',0.703609,FALSE,0.600231,flat,4
+0.59309,Male,asymptomatic,0.629136,0.443827,FALSE,'lv hypertrophy',0.481965,FALSE,0.294504,flat,4
+0.633461,Male,asymptomatic,0.816757,0.564016,FALSE,'lv hypertrophy',0.425848,FALSE,0.2798,flat,4
+0.717604,Male,asymptomatic,0.545855,0.45782,FALSE,'lv hypertrophy',0.700984,FALSE,0.605889,flat,4
+0.664545,Male,asymptomatic,0.552643,0.544976,FALSE,'lv hypertrophy',0.480436,FALSE,0.335166,flat,4
+0.722405,Male,asymptomatic,0.606762,0.42455,FALSE,'lv hypertrophy',0.500188,FALSE,0.342105,flat,4
+0.675002,Male,asymptomatic,0.734453,0.470812,FALSE,'lv hypertrophy',0.444176,FALSE,0.671205,flat,4
+0.695153,Male,asymptomatic,0.507651,0.406957,FALSE,'lv hypertrophy',0.465649,FALSE,0.634176,flat,4
+0.669192,Male,asymptomatic,0.606189,0.418353,FALSE,'lv hypertrophy',0.650647,FALSE,0.585106,flat,4
+0.672419,Male,asymptomatic,0.664971,0.398353,FALSE,'lv hypertrophy',0.465649,FALSE,0.583712,flat,4
+0.505428,Male,asymptomatic,0.694827,0.489858,FALSE,'lv hypertrophy',0.453307,FALSE,0.579605,flat,4
+0.624552,Male,asymptomatic,0.858624,0.533844,FALSE,'lv hypertrophy',0.408774,FALSE,0.298691,flat,4
+0.707096,Male,asymptomatic,0.613289,0.552127,FALSE,'lv hypertrophy',0.471522,FALSE,0.384051,flat,4
+0.649978,Male,asymptomatic,0.730194,0.455182,FALSE,'lv hypertrophy',0.440663,FALSE,0.699112,flat,4
+0.638078,Male,asymptomatic,0.844805,0.531208,FALSE,'lv hypertrophy',0.45444,FALSE,0.379709,flat,4
+0.486189,Male,asymptomatic,0.685859,0.503346,FALSE,'lv hypertrophy',0.452223,FALSE,0.568685,flat,4
+0.594244,Male,asymptomatic,0.714583,0.431972,FALSE,'lv hypertrophy',0.415924,TRUE,0.971526,flat,4
+0.657647,Male,asymptomatic,0.533152,0.371597,FALSE,'lv hypertrophy',0.452786,TRUE,0.688222,flat,4
+0.688931,Male,asymptomatic,0.750399,0.409912,FALSE,'lv hypertrophy',0.379989,TRUE,0.942462,flat,4
+0.666557,Male,asymptomatic,0.57397,0.323687,FALSE,'lv hypertrophy',0.423388,TRUE,0.949716,flat,4
+0.68951,Male,asymptomatic,0.848874,0.41199,FALSE,'lv hypertrophy',0.29216,TRUE,0.83502,flat,4
+0.676785,Male,asymptomatic,0.580061,0.265715,FALSE,'lv hypertrophy',0.397232,TRUE,0.876581,flat,4
+0.457728,Male,asymptomatic,0.645113,0.268246,FALSE,'lv hypertrophy',0.430698,TRUE,0.963953,flat,4
+0.666252,Male,asymptomatic,0.555812,0.276488,FALSE,'lv hypertrophy',0.42843,TRUE,0.86694,flat,4
+0.498243,Male,asymptomatic,0.740525,0.450533,FALSE,'lv hypertrophy',0.414883,TRUE,0.747091,flat,4
+0.633344,Male,asymptomatic,0.790411,0.341569,FALSE,'lv hypertrophy',0.532972,TRUE,0.89278,flat,4
+0.659516,Male,asymptomatic,0.577727,0.346265,FALSE,'lv hypertrophy',0.4623,TRUE,0.919811,flat,4
+0.680448,Male,asymptomatic,0.8537,0.335203,FALSE,'lv hypertrophy',0.320625,TRUE,0.883145,flat,4
+0.67529,Male,asymptomatic,0.53419,0.269549,FALSE,'lv hypertrophy',0.405775,TRUE,0.99525,flat,4
+0.684599,Male,asymptomatic,0.543522,0.26302,FALSE,'lv hypertrophy',0.409431,TRUE,0.903234,flat,4
+0.693648,Male,asymptomatic,0.572005,0.273324,FALSE,'lv hypertrophy',0.375319,TRUE,0.84628,flat,4
+0.646127,Male,asymptomatic,0.601918,0.452916,FALSE,'lv hypertrophy',0.427826,TRUE,0.959873,flat,4
+0.682643,Male,asymptomatic,0.629458,0.308689,FALSE,'lv hypertrophy',0.372916,TRUE,0.854705,flat,4
+0.67868,Male,asymptomatic,0.772372,0.495337,FALSE,'lv hypertrophy',0.359951,TRUE,0.885966,flat,4
+0.59949,Male,asymptomatic,0.620108,0.306683,FALSE,'lv hypertrophy',0.455724,TRUE,0.456711,flat,4
+0.682467,Male,asymptomatic,0.617882,0.439363,FALSE,'lv hypertrophy',0.37926,TRUE,0.862185,flat,4
+0.663799,Male,asymptomatic,0.691127,0.344105,FALSE,'lv hypertrophy',0.433635,TRUE,0.975232,flat,4
+0.690255,Male,asymptomatic,0.64538,0.484265,FALSE,'lv hypertrophy',0.34808,TRUE,0.917031,flat,4
+0.709406,Male,asymptomatic,0.981093,0.342513,FALSE,'lv hypertrophy',0.134238,TRUE,0.612939,flat,4
+0.69655,Male,asymptomatic,0.75703,0.367604,FALSE,'lv hypertrophy',0.415393,TRUE,0.678576,flat,4
+0.669706,Male,asymptomatic,0.91303,0.319818,FALSE,'lv hypertrophy',0.129207,TRUE,0.691018,flat,4
+0.600514,Male,asymptomatic,0.903479,0.432887,FALSE,'lv hypertrophy',0.345778,TRUE,0.550516,flat,4
+0.702472,Male,asymptomatic,0.92189,0.288214,FALSE,'lv hypertrophy',0.186218,TRUE,0.728906,flat,4
+0.70374,Male,asymptomatic,0.5423,0.282178,FALSE,'lv hypertrophy',0.194878,TRUE,0.730751,flat,4
+0.692928,Male,asymptomatic,0.623611,0.266849,FALSE,'lv hypertrophy',0.154378,TRUE,0.757188,flat,4
+0.712937,Male,asymptomatic,0.751712,0.277213,FALSE,'lv hypertrophy',0.134493,TRUE,0.74323,flat,4
+0.56818,Male,asymptomatic,0.986443,0.513293,FALSE,'lv hypertrophy',0.5065,TRUE,0.45665,flat,4
+0.82098,Male,asymptomatic,0.944565,0.290728,FALSE,'lv hypertrophy',0.280656,TRUE,0.716776,flat,4
+0.715567,Male,asymptomatic,0.979256,0.289649,FALSE,'lv hypertrophy',0.278068,TRUE,0.707768,flat,4
+0.614543,Male,asymptomatic,0.912968,0.419615,FALSE,'lv hypertrophy',0.254763,TRUE,0.555454,flat,4
+0.691314,Male,asymptomatic,0.768003,0.374547,FALSE,'lv hypertrophy',0.336577,TRUE,0.686388,flat,4
+0.607948,Male,asymptomatic,0.876916,0.558942,FALSE,'lv hypertrophy',0.389289,TRUE,0.466079,flat,4
+0.744471,Male,asymptomatic,0.828959,0.296453,FALSE,'lv hypertrophy',0.329778,TRUE,0.714405,flat,4
+0.577096,Male,asymptomatic,0.985195,0.593473,FALSE,'lv hypertrophy',0.482777,TRUE,0.429548,flat,4
+0.706426,Male,asymptomatic,0.569493,0.27802,FALSE,'lv hypertrophy',0.304195,TRUE,0.714251,flat,4
+0.69269,Male,asymptomatic,0.83245,0.313718,FALSE,'lv hypertrophy',0.255536,TRUE,0.68817,flat,4
+0.764532,Male,asymptomatic,0.986339,0.290621,FALSE,'lv hypertrophy',0.207768,TRUE,0.714505,flat,4
+0.678733,Male,asymptomatic,0.949375,0.523297,FALSE,'lv hypertrophy',0.153081,TRUE,0.277635,flat,4
+0.752566,Male,asymptomatic,0.735011,0.288942,FALSE,'lv hypertrophy',0.404689,TRUE,0.713062,flat,4
+0.689981,Male,asymptomatic,0.589474,0.306663,FALSE,'lv hypertrophy',0.145706,TRUE,0.690566,flat,4
+0.712303,Male,asymptomatic,0.838478,0.283439,FALSE,'lv hypertrophy',0.235928,TRUE,0.787563,flat,4
+0.682421,Male,asymptomatic,0.529545,0.589934,TRUE,'lv hypertrophy',0.499366,FALSE,0.37634,flat,4
+0.685989,Male,asymptomatic,0.779603,0.549899,TRUE,'lv hypertrophy',0.396541,FALSE,0.830799,flat,4
+0.574167,Male,asymptomatic,0.514518,0.560345,TRUE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,4
+0.577963,Male,asymptomatic,0.514518,0.556217,TRUE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,4
+0.57205,Male,asymptomatic,0.514518,0.468626,TRUE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,4
+0.585293,Male,asymptomatic,0.514518,0.513286,TRUE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,4
+0.595368,Male,asymptomatic,0.641065,0.550657,TRUE,'lv hypertrophy',0.463818,FALSE,0.767907,flat,4
+0.544395,Male,asymptomatic,0.607886,0.606805,TRUE,'lv hypertrophy',0.503773,FALSE,0.483594,flat,4
+0.591837,Male,asymptomatic,0.857261,0.655763,TRUE,'lv hypertrophy',0.484626,FALSE,0.275743,flat,4
+0.64243,Male,asymptomatic,0.534066,0.430121,TRUE,'lv hypertrophy',0.48323,FALSE,0.424621,flat,4
+0.513475,Male,asymptomatic,0.538395,0.521884,TRUE,'lv hypertrophy',0.484929,FALSE,0.316984,flat,4
+0.672669,Male,asymptomatic,0.845911,0.611816,TRUE,'lv hypertrophy',0.349625,FALSE,0.608675,flat,4
+0.670149,Male,asymptomatic,0.573917,0.593723,TRUE,'lv hypertrophy',0.493498,FALSE,0.490175,flat,4
+0.591837,Male,asymptomatic,0.599898,0.645526,TRUE,'lv hypertrophy',0.413209,FALSE,0.255993,flat,4
+0.580388,Male,asymptomatic,0.514518,0.46621,TRUE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,4
+0.583971,Male,asymptomatic,0.514518,0.458882,TRUE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,4
+0.591837,Male,asymptomatic,0.605832,0.623487,TRUE,'lv hypertrophy',0.438252,FALSE,0.262595,flat,4
+0.543613,Male,asymptomatic,0.606005,0.540708,TRUE,'lv hypertrophy',0.442607,FALSE,0.332945,flat,4
+0.588422,Male,asymptomatic,0.514518,0.441653,TRUE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,4
+0.58962,Male,asymptomatic,0.514518,0.515036,TRUE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,4
+0.484222,Male,asymptomatic,0.688086,0.527029,TRUE,'lv hypertrophy',0.487364,FALSE,0.577824,flat,4
+0.534252,Male,asymptomatic,0.581067,0.562451,TRUE,'lv hypertrophy',0.481831,FALSE,0.540813,flat,4
+0.497147,Male,asymptomatic,0.36723,0.393266,FALSE,'lv hypertrophy',0.43033,FALSE,0.954008,flat,4
+0.883215,Male,asymptomatic,0.567653,0.288974,FALSE,'lv hypertrophy',0.384118,FALSE,0.842365,flat,4
+0.852368,Male,asymptomatic,0.194114,0.393654,FALSE,'lv hypertrophy',0.378585,FALSE,0.528272,flat,4
+0.80264,Male,asymptomatic,0.240532,0.433043,FALSE,'lv hypertrophy',0.633943,FALSE,0.850019,flat,4
+0.936384,Male,asymptomatic,0.316674,0.391915,FALSE,'lv hypertrophy',0.458383,FALSE,0.402361,flat,4
+0.809978,Male,asymptomatic,0.507765,0.495608,FALSE,'lv hypertrophy',0.43074,FALSE,0.840173,flat,4
+0.461332,Male,asymptomatic,0.729415,0.450744,FALSE,'lv hypertrophy',0.432145,FALSE,0.774124,flat,4
+0.90671,Male,asymptomatic,0.467639,0.403687,FALSE,'lv hypertrophy',0.42894,FALSE,0.83539,flat,4
+0.821433,Male,asymptomatic,0.477146,0.375415,FALSE,'lv hypertrophy',0.448704,FALSE,0.290038,flat,4
+0.959692,Male,asymptomatic,0.482447,0.298943,FALSE,'lv hypertrophy',0.409335,FALSE,0.951224,flat,4
+0.505155,Male,asymptomatic,0.188672,0.392103,FALSE,'lv hypertrophy',0.380608,FALSE,0.79027,flat,4
+0.855104,Male,asymptomatic,0.251572,0.410314,FALSE,'lv hypertrophy',0.399807,FALSE,0.741466,flat,4
+0.701492,Male,asymptomatic,0.626983,0.397008,FALSE,'lv hypertrophy',0.424739,FALSE,0.922601,flat,4
+0.862825,Male,asymptomatic,0.44541,0.362876,FALSE,'lv hypertrophy',0.398629,FALSE,0.747543,flat,4
+0.947623,Male,asymptomatic,0.330486,0.325544,FALSE,'lv hypertrophy',0.386967,FALSE,0.860172,flat,4
+0.944415,Male,asymptomatic,0.171584,0.460637,FALSE,'lv hypertrophy',0.604839,FALSE,0.821544,flat,4
+0.787899,Male,asymptomatic,0.185543,0.425827,FALSE,'lv hypertrophy',0.62476,FALSE,0.954792,flat,4
+0.692796,Male,asymptomatic,0.175835,0.421906,FALSE,'lv hypertrophy',0.580228,FALSE,0.699799,flat,4
+0.797507,Male,asymptomatic,0.666772,0.384347,FALSE,'lv hypertrophy',0.452223,FALSE,0.793869,flat,4
+0.922654,Male,asymptomatic,0.222775,0.448507,FALSE,'lv hypertrophy',0.704761,FALSE,0.95956,flat,4
+0.599644,Male,asymptomatic,0.347576,0.3703,FALSE,'lv hypertrophy',0.470555,FALSE,0.928104,flat,4
+0.86366,Male,asymptomatic,0.216971,0.457298,FALSE,'lv hypertrophy',0.443771,FALSE,0.70243,flat,4
+0.602418,Male,asymptomatic,0.673373,0.385508,FALSE,'lv hypertrophy',0.395988,FALSE,0.900835,flat,4
+0.579838,Male,asymptomatic,0.723895,0.438597,TRUE,'lv hypertrophy',0.485646,FALSE,0.26771,flat,4
+0.637926,Male,asymptomatic,0.612335,0.403045,TRUE,'lv hypertrophy',0.488156,FALSE,0.550465,flat,4
+0.516482,Male,asymptomatic,0.549282,0.447122,TRUE,'lv hypertrophy',0.452774,FALSE,0.540979,flat,4
+0.59398,Male,asymptomatic,0.50551,0.413846,TRUE,'lv hypertrophy',0.563112,FALSE,0.651765,flat,4
+0.584728,Male,asymptomatic,0.295718,0.453001,TRUE,'lv hypertrophy',0.689145,FALSE,0.479979,flat,4
+0.6026,Male,asymptomatic,0.626038,0.410553,TRUE,'lv hypertrophy',0.479096,FALSE,0.286612,flat,4
+0.577197,Male,asymptomatic,0.683825,0.560527,TRUE,'lv hypertrophy',0.483179,FALSE,0.248384,flat,4
+0.614405,Male,asymptomatic,0.660485,0.405637,TRUE,'lv hypertrophy',0.507936,FALSE,0.434144,flat,4
+0.590314,Male,asymptomatic,0.311826,0.400943,TRUE,'lv hypertrophy',0.703555,FALSE,0.350199,flat,4
+0.577748,Male,asymptomatic,0.555236,0.458999,TRUE,'lv hypertrophy',0.461515,FALSE,0.276153,flat,4
+0.577315,Male,asymptomatic,0.907516,0.585342,TRUE,'lv hypertrophy',0.424886,FALSE,0.26413,flat,4
+0.561094,Male,asymptomatic,0.635609,0.480533,TRUE,'lv hypertrophy',0.46008,FALSE,0.657034,flat,4
+0.57679,Male,asymptomatic,0.293383,0.459405,TRUE,'lv hypertrophy',0.693757,FALSE,0.377797,flat,4
+0.588974,Male,asymptomatic,0.514518,0.404959,TRUE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,4
+0.572781,Male,asymptomatic,0.514518,0.529212,TRUE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,4
+0.658755,Male,asymptomatic,0.614203,0.404529,TRUE,'lv hypertrophy',0.469267,FALSE,0.27048,flat,4
+0.588976,Male,asymptomatic,0.514518,0.465965,TRUE,'lv hypertrophy',0.507982,FALSE,0.244108,flat,4
+0.495976,Male,asymptomatic,0.715333,0.425195,TRUE,'lv hypertrophy',0.442801,FALSE,0.530094,flat,4
+0.690691,Male,asymptomatic,0.66442,0.400074,TRUE,'lv hypertrophy',0.46604,FALSE,0.507948,flat,4
+0.574444,Male,asymptomatic,0.594188,0.533088,TRUE,'lv hypertrophy',0.449913,FALSE,0.266776,flat,4
+0.590535,Male,asymptomatic,0.824068,0.443262,TRUE,'lv hypertrophy',0.486832,FALSE,0.24675,flat,4
+0.469845,Male,asymptomatic,0.61474,0.417213,TRUE,'lv hypertrophy',0.487314,FALSE,0.508094,flat,4
+0.693878,Male,asymptomatic,0.695449,0.47984,FALSE,'lv hypertrophy',0.297915,TRUE,0.833333,flat,4
+0.693878,Male,asymptomatic,0.607441,0.408809,FALSE,'lv hypertrophy',0.338531,TRUE,0.833333,flat,4
+0.659368,Male,asymptomatic,0.501252,0.313367,FALSE,'lv hypertrophy',0.420923,TRUE,0.78402,flat,4
+0.649642,Male,asymptomatic,0.772579,0.334764,FALSE,'lv hypertrophy',0.531503,TRUE,0.38568,flat,4
+0.693878,Male,asymptomatic,0.612968,0.297162,FALSE,'lv hypertrophy',0.308279,TRUE,0.833333,flat,4
+0.693878,Male,asymptomatic,0.515956,0.380488,FALSE,'lv hypertrophy',0.345545,TRUE,0.833333,flat,4
+0.708364,Male,asymptomatic,0.658572,0.396889,FALSE,'lv hypertrophy',0.395986,TRUE,0.580382,flat,4
+0.68203,Male,asymptomatic,0.578768,0.266325,FALSE,'lv hypertrophy',0.392689,TRUE,0.906703,flat,4
+0.693878,Male,asymptomatic,0.697761,0.407656,FALSE,'lv hypertrophy',0.344952,TRUE,0.833333,flat,4
+0.693878,Male,asymptomatic,0.69914,0.363178,FALSE,'lv hypertrophy',0.362439,TRUE,0.833333,flat,4
+0.688623,Male,asymptomatic,0.557855,0.271003,FALSE,'lv hypertrophy',0.375404,TRUE,0.982127,flat,4
+0.693878,Male,asymptomatic,0.831715,0.337256,FALSE,'lv hypertrophy',0.320254,TRUE,0.833333,flat,4
+0.674275,Male,asymptomatic,0.524638,0.263772,FALSE,'lv hypertrophy',0.381075,TRUE,0.857475,flat,4
+0.693878,Male,asymptomatic,0.810636,0.385493,FALSE,'lv hypertrophy',0.304372,TRUE,0.833333,flat,4
+0.693878,Male,asymptomatic,0.756185,0.364595,FALSE,'lv hypertrophy',0.341153,TRUE,0.833333,flat,4
+0.67637,Male,asymptomatic,0.544997,0.269242,FALSE,'lv hypertrophy',0.378644,TRUE,0.95004,flat,4
+0.693878,Male,asymptomatic,0.5332,0.463996,FALSE,'lv hypertrophy',0.345163,TRUE,0.833333,flat,4
+0.693878,Male,asymptomatic,0.594401,0.422065,FALSE,'lv hypertrophy',0.331398,TRUE,0.833333,flat,4
+0.723699,Male,asymptomatic,0.64131,0.275102,FALSE,'lv hypertrophy',0.438717,TRUE,0.621298,flat,4
+0.693878,Male,asymptomatic,0.835917,0.374023,FALSE,'lv hypertrophy',0.285055,TRUE,0.833333,flat,4
+0.693878,Male,asymptomatic,0.684485,0.542786,FALSE,'lv hypertrophy',0.300755,TRUE,0.833333,flat,4
+0.693878,Male,asymptomatic,0.541875,0.436522,FALSE,'lv hypertrophy',0.291589,TRUE,0.833333,flat,4
+0.593988,Male,asymptomatic,0.637887,0.484611,FALSE,'lv hypertrophy',0.555945,TRUE,0.408226,flat,4
+0.679783,Male,asymptomatic,0.815816,0.496272,FALSE,'lv hypertrophy',0.407152,TRUE,0.716321,flat,4
+0.638463,Male,asymptomatic,0.819991,0.587494,FALSE,'lv hypertrophy',0.456981,TRUE,0.334935,flat,4
+0.68406,Male,asymptomatic,0.618576,0.317965,FALSE,'lv hypertrophy',0.353475,TRUE,0.865092,flat,4
+0.623064,Male,asymptomatic,0.688113,0.577903,FALSE,'lv hypertrophy',0.476244,TRUE,0.764374,flat,4
+0.693878,Male,asymptomatic,0.654506,0.371789,FALSE,'lv hypertrophy',0.340278,TRUE,0.833333,flat,4
+0.689929,Male,asymptomatic,0.707646,0.268826,FALSE,'lv hypertrophy',0.354213,TRUE,0.926856,flat,4
+0.65985,Male,asymptomatic,0.704215,0.572355,FALSE,'lv hypertrophy',0.471479,TRUE,0.286877,flat,4
+0.679959,Male,asymptomatic,0.583267,0.471001,FALSE,'lv hypertrophy',0.384083,TRUE,0.792969,flat,4
+0.658457,Male,asymptomatic,0.630783,0.397407,FALSE,'lv hypertrophy',0.444503,TRUE,0.797061,flat,4
+0.65142,Male,asymptomatic,0.651458,0.609969,FALSE,'lv hypertrophy',0.319171,TRUE,0.717863,flat,4
+0.682103,Male,asymptomatic,0.871795,0.615812,FALSE,'lv hypertrophy',0.46782,TRUE,0.732288,flat,4
+0.63041,Male,asymptomatic,0.82275,0.5635,FALSE,'lv hypertrophy',0.450431,TRUE,0.641504,flat,4
+0.687868,Male,asymptomatic,0.610776,0.475845,FALSE,'lv hypertrophy',0.393237,TRUE,0.920423,flat,4
+0.679536,Male,asymptomatic,0.633711,0.429743,FALSE,'lv hypertrophy',0.367237,TRUE,0.852462,flat,4
+0.685163,Male,asymptomatic,0.801402,0.527294,FALSE,'lv hypertrophy',0.344809,TRUE,0.836968,flat,4
+0.640583,Male,asymptomatic,0.709046,0.575506,FALSE,'lv hypertrophy',0.351382,TRUE,0.75861,flat,4
+0.607766,Male,asymptomatic,0.682618,0.596232,FALSE,'lv hypertrophy',0.45825,TRUE,0.707207,flat,4
+0.673909,Male,asymptomatic,0.734624,0.537514,FALSE,'lv hypertrophy',0.36519,TRUE,0.774849,flat,4
+0.693878,Male,asymptomatic,0.830694,0.365509,FALSE,'lv hypertrophy',0.304159,TRUE,0.833333,flat,4
+0.678719,Male,asymptomatic,0.826847,0.397237,FALSE,'lv hypertrophy',0.312362,TRUE,0.886344,flat,4
+0.680538,Male,asymptomatic,0.751722,0.29156,FALSE,'lv hypertrophy',0.289152,TRUE,0.946754,flat,4
+0.674242,Male,asymptomatic,0.782646,0.463659,FALSE,'lv hypertrophy',0.317362,TRUE,0.908526,flat,4
